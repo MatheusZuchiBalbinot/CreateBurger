@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.header {
+    display: grid;
+    grid-template-columns: 0.7fr 2fr 2fr 0.7fr;
+    grid-template-rows: auto;
+    grid-template-areas: ". header_logo header_icons .";
+    background-color: #fedfb2;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.header_logo {
+    grid-area: header_logo;
+    display: flex;
+    margin: auto;
+}
+
+.header_icons {
+    margin: auto;
+    display: flex;
+    grid-area: header_icons;
+    gap: 2vw;
+}
+
+.logo_image {
+    height: 10vh;
+}
+
+.label_logo_image {
+    margin: auto;
+}
+
