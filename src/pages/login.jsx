@@ -11,6 +11,9 @@ function Login() {
     const CheckLogin = () => {
         if(login === 'asd' && password === '123') {
             return window.location.href="/home";
+            // localStorage.setItem('validation', 'true')
+            // const validation = localStorage.getItem('validation')
+            // console.log(validation)
         }
         else {
             return <alert> A senha de acesso está errada </alert>

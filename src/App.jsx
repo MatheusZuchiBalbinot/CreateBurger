@@ -1,7 +1,8 @@
 import './App.css';
-import Home from "./pages/Home";
 import {useRoutes } from 'react-router-dom';
 import Login from "./pages/Login";
+import Home from "./pages/Home";
+import CreateBurguer from './pages/CreateBurguer';
 
 function App() {
 
@@ -13,6 +14,10 @@ function App() {
     {
       path: '/home',
       element: <Home />
+    },
+    {
+      path: '/home/createburguer',
+      element: <CreateBurguer />
     }
   ])
 
