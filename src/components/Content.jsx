@@ -5,7 +5,7 @@ export default function Content() {
     return (
         <div className={styles.content_div}>
             <div className={styles.content_logo}>
-                <img className={styles.logo_image}src="https://www.sabornamesa.com.br/media/k2/items/cache/b9ad772005653afce4d4bd46c2efe842_XL.jpg"></img>
+                <img className={styles.logo_image} src="https://www.sabornamesa.com.br/media/k2/items/cache/b9ad772005653afce4d4bd46c2efe842_XL.jpg"></img>
             </div>
             <div className={styles.characteristics}>
                     <div classname={styles.delivery}>

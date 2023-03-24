@@ -23,7 +23,7 @@
     grid-template-columns: 2fr 2fr 2fr;
     grid-template-areas: 
     "delivery quality price";
-    padding: 2vw;
+    padding: 1vw;
     text-align: center;
     gap: 5vw;
     

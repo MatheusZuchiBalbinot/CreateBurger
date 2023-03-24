@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from './login.module.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+import Home from "./Home";
 
 function Login() {
 
@@ -8,11 +9,11 @@ function Login() {
     const [password, setPassword] = useState(['']);
 
     const CheckLogin = () => {
-        if(login === 'Matheus' && password === '123') {
-            console.log('a');
-            localStorage.setItem('validation', 'true')
-            const validation = localStorage.getItem('validation')
-            console.log(validation)
+        if(login === 'asd' && password === '123') {
+            return window.location.href="/home";
+        }
+        else {
+            return <alert> A senha de acesso está errada </alert>
         }
     }
 
@@ -25,6 +26,7 @@ function Login() {
                     <input type="text" className={styles.user_password_input} placeholder="Digite o seu usuário: " onChange={(e) => {setLogin(e.target.value)}}></input>
                 </div>
                 <div className={styles.password_div}>
+                    
                     <label htmlFor="user_input" style={{margin: 'auto 0'}}> Password: </label>
                     <input type="password" className={styles.user_password_input} placeholder="Digite a sua senha: " onChange={(e) => {setPassword(e.target.value)}}></input>
                 </div>

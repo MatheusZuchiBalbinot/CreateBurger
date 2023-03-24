@@ -1,17 +1,25 @@
-import { useState } from 'react'
 import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Content from './components/Content';
+import Home from "./pages/Home";
+import {useRoutes } from 'react-router-dom';
+import Login from "./pages/Login";
 
 function App() {
 
+  const routes = useRoutes ([
+    {
+      path: '/',
+      element: <Login />
+    },
+    {
+      path: '/home',
+      element: <Home />
+    }
+  ])
+
   return (
-    <div className="App">
-      <Header />
-      <Content />
-      <Footer />
-    </div>
+      <div className="App">
+        {routes}
+      </div>
   )
 }
 
