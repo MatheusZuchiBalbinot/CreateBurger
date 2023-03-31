@@ -36,7 +36,7 @@
 }
 
 .choose_specific_div {
-    margin: 1.5vw;
+    margin: 1.5vw 1.5vw 0 1.5vw;
     display: flex;
     padding: 0.5vw;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -57,5 +57,21 @@
 }
 
 .choose_all_options_div {
-    margin: 0vw 2vw 0vw 2vw;
+    position: absolute;
+    display: none;
+    margin: 0 1.5vw 0 1.5vw;
+    background-color: white;
+    color: black;
+    width: 15%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.choose_specific_div:hover ~ .choose_all_options_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.choose_all_options_div:hover {
+    display: flex;
+    flex-direction: column;
 }
