@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Roboto:wght@300&display=swap%27');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 .header {
     display: grid;
@@ -7,7 +6,8 @@
     grid-template-rows: auto;
     grid-template-areas: ". header_logo header_icons .";
     background-color: #fedfb2;
-    font-family: 'Delicious Handrawn', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     font-size: 1.3vw;
 }
 
@@ -15,7 +15,8 @@
     grid-area: header_logo;
     display: flex;
     margin: auto;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 .header_icons {

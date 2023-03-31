@@ -2,6 +2,10 @@ import styles from "./Content.module.css";
 import { GrFormAdd } from "react-icons/gr";
 
 export default function Content() {
+
+    function move_to_create() {
+        return window.location.href="/home/createburguer";
+    }
     return (
         <div className={styles.content_div}>
             <div className={styles.content_logo}>
@@ -22,7 +26,7 @@ export default function Content() {
                     </div>
             </div>
             <div className={styles.content_button}>
-                <button type="button" className="content_button_button">
+                <button type="button" className={styles.content_button_button} onClick={move_to_create}>
                 <label for="content_button_button"> Monte seu Hambúrguer</label><GrFormAdd /></button>
             </div>
         </div>

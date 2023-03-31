@@ -1,49 +1,69 @@
-import {BsArrowDown} from "react-icons/bs";
+import { BsChevronDown } from "react-icons/bs";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import CreateBurguerOptionCreator from "./CreateBurguerOptionCreator";
+import styles from './CreateBurguer.module.css';
 
 export default function CreateBurguer () {
     return (
         <>
         <Header />
-        <div className="CreateBurguer_div">
-            <div className="Chooses">
-                <h3>Escolha os ingredientes do seu Hambúrguer: </h3>
-                <div className="Bread">
-                    <p> Escolha o Pão: </p>
-                    <input type="text" className="dropdown_input"></input> <BsArrowDown />
-                    <div className="bread_options">
-                        <p>ABC</p>
-                        <p>DEF</p>
-                        <p>GHI</p>
+        <div className={styles.createBurguer_div}>
+            <h3 className={styles.choose_title}>Escolha os ingredientes do seu Hambúrguer: </h3>
+            <div className={styles.chooses}>
+                <div className={styles.choose_options_div}>
+                    <p className={styles.choose_p}> Escolha o Pão: </p>
+                    <div className={styles.choose_input_div}>
+                        <div className={styles.choose_specific_div}>
+                            <input type="text" className={styles.choose_dropdown_input}></input> <BsChevronDown />
+                        </div>
+                        <div className={styles.choose_all_options_div}>
+                            <CreateBurguerOptionCreator />
+                        </div>
                     </div>
                 </div>
-                <div className="Meat">
-                    <p> Escolha a Carne: </p>
-                    <input type="text" className="dropdown_input"></input> <BsArrowDown />
-                    <div className="meat_options">
-                        
+                <div className={styles.choose_options_div}>
+                    <p className={styles.choose_p}> Escolha a Carne: </p>
+                    <div className={styles.choose_input_div}>
+                        <div className={styles.choose_specific_div}>
+                            <input type="text" className={styles.choose_dropdown_input}></input> <BsChevronDown />
+                        </div>
+                        <div className={styles.choose_all_options_div}>
+                            <CreateBurguerOptionCreator />
+                        </div>
                     </div>
                 </div>
-                <div className="Sauce">
-                    <p> Escolha o Tempero: </p>
-                    <input type="text" className="dropdown_input"></input> <BsArrowDown />
-                    <div className="sauce_options">
-                        
+                <div className={styles.choose_options_div}>
+                    <p className={styles.choose_p}> Escolha o Tempero: </p>
+                    <div className={styles.choose_input_div}>
+                        <div className={styles.choose_specific_div}>
+                            <input type="text" className={styles.choose_dropdown_input}></input> <BsChevronDown />
+                        </div>
+                        <div className={styles.choose_all_options_div}>
+                            <CreateBurguerOptionCreator />
+                        </div>
                     </div>
                 </div>
-                <div className="Salads">
-                    <p> Escolha as Saladas: </p>
-                    <input type="text" className="dropdown_input"></input> <BsArrowDown />
-                    <div className="salads_options">
-                        
+                <div className={styles.choose_options_div}>
+                    <p className={styles.choose_p}> Escolha as Saladas: </p>
+                    <div className={styles.choose_input_div}>
+                        <div className={styles.choose_specific_div}>
+                            <input type="text" className={styles.choose_dropdown_input}></input> <BsChevronDown />
+                        </div>
+                        <div className={styles.choose_all_options_div}>
+                            <CreateBurguerOptionCreator />
+                        </div>
                     </div>
                 </div>
-                <div className="Cheese">
-                    <p> Escolha o Queijo: </p>
-                    <input type="text" className="dropdown_input"></input> <BsArrowDown />
-                    <div className="cheese_options">
-                        
+                <div className={styles.choose_options_div}>
+                    <p className={styles.choose_p}> Escolha o Queijo: </p>
+                    <div className={styles.choose_input_div}>
+                        <div className={styles.choose_specific_div}>
+                            <input type="text" className={styles.choose_dropdown_input}></input> <BsChevronDown />
+                        </div>
+                        <div className={styles.choose_all_options_div}>
+                            <CreateBurguerOptionCreator />
+                        </div>
                     </div>
                 </div>
             </div>
