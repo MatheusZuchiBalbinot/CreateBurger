@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.login_div {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-areas:
+    ". . ." ". login_form ." ". . .";
+    font-family: 'Roboto', sans-serif;
+}
+
+.login_form {
+    grid-area: login_form;
+    margin: auto;
+    padding: 1vw;
+    border: 1px solid black;
+    border-radius: 2vw;
+}
+
+.form_title {
+    margin: 0;
+    padding: 1vw;
+    text-align: center;
+}
+
+.user_div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.password_div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user_password_input {
+    width: 20vw;
+    border: none;
+    margin: 1vw 2vw 1vw 2vw;
+}
+
+
+.buttons_div {
+    display: flex;
+    margin: auto;
+    padding: 1vw;
+    justify-content: space-between;
+}
+
+.button_send {
+    border: none;
+    color: white;
+    background-color: rgb(33, 44, 44); 
+    padding: 1vw;
+    margin: 1vw;
+    width: 35%;
+    border-radius: 2vw;
+}
+
+.button_forgot_password {
+    border: none;
+    color: white;
+    background-color: rgb(33, 44, 44); 
+    padding: 1vw;
+    margin: 1vw;
+    border-radius: 2vw;
+}
+
+.button_forgot_password:hover {
+    background-color: rgb(245, 214, 214);
+    color: black;
+}
+
+.button_send:hover {
+    background-color: rgb(231, 245, 214);
+    color: black;
+}

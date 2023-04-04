@@ -1,4 +1,4 @@
-import styles from "./Content.module.css";
+import styles from "./modules/Content.module.css";
 import { GrFormAdd } from "react-icons/gr";
 
 export default function Content() {

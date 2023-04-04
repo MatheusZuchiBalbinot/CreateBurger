@@ -1,8 +1,8 @@
 import { BsChevronDown } from "react-icons/bs";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import CreateBurguerOptionCreator from "./CreateBurguerOptionCreator";
-import styles from './CreateBurguer.module.css';
+import CreateBurguerOptionCreator from "../components/CreateBurguerOptionCreator";
+import styles from './modules/CreateBurguer.module.css';
 
 export default function CreateBurguer () {
 

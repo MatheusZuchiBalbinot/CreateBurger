@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Roboto:wght@300&display=swap');
+.content_div {
+    display: grid;
+    grid-template-columns: 10vh auto 10vh;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "content_logo content_logo content_logo"
+    ". characteristics ."
+    ". content_button .";
+}
+
+.content_logo {
+    grid-area: content_logo;
+}
+.logo_image {
+    width: 100%;
+    height: 100%;
+}
+
+.characteristics {
+    grid-area: characteristics;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-areas: 
+    "delivery quality price";
+    padding: 1vw;
+    text-align: center;
+    gap: 5vw;
+    
+}
+
+.characteristics_text {
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 1.5vw;
+}
+
+.delivery {
+    grid-area: delivery;
+}
+
+.characteristics_image {
+    width: 8vw;
+    height: auto;
+}
+
+.quality {
+    grid-area: quality;
+}
+
+
+.price {
+    grid-area: price;
+}
+
+
+.content_button {
+    grid-area: content_button;
+    display: flex;
+    padding-bottom: 3vw;
+}
+
+.content_button button:hover{
+    background-color: rgb(219, 235, 194);
+    color: black;
+    cursor: pointer;
+}
+
+
+.content_button button {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    border: none;
+    background-color: white;
+    color: black;
+    padding: 1vw;
+    border-radius: 2vw;
+    font-family: 'Delicious Handrawn', cursive;
+}
+
+.content_button svg {
+    color: bisque;
+    font-size: 3vw;
+}
+
+.content_button label {
+    display: flex;
+    margin: auto;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
