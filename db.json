@@ -1,0 +1,31 @@
+{
+    "burguer_requests": [
+        {
+            "bread": 
+            {
+                "tipos":["Pão italiano","Brioche","Pão de azeite","Ciabatta","Pão australiano"],
+                "preços":[12.00,15.00,11.00,20.00,17.00]
+            },
+            "meat": 
+            {
+                "tipos":["Frango","Peixe","Boi","Porco"],
+                "preços":[7.00,12.00,8.50,9.50]
+            },
+            "meat_state": 
+            {
+                "tipos":["Mal passada","Ao Ponto Para Mal","Ao ponto","Ao ponto para bem","Bem passada"],
+                "preços":[7.50,8.00,7.00,8.50,9.00]
+            },
+            "salads": 
+            {
+                "tipos":["Repolho","Tomate","Alface","Rúcula","Cebola"],
+                "preços":[4.00,4.00,2.50,3.50,1.50]
+            },
+            "cheese": 
+            {
+                "tipos":["Cheddar","Mussarela","Emmental","Queijo de Cabra","Queijo Azul"],
+                "preços":[10.00,12.00,15.50,11.00,25.00]
+            }
+        }
+    ]
+}

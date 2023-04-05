@@ -40,7 +40,6 @@
 .choose_specific_div {
     margin: 1.5vw 1.5vw 0 1.5vw;
     display: flex;
-    padding: 0.5vw;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 }
@@ -49,9 +48,9 @@
     border: none;
     outline: none;
     padding: 1vw;
-    width: 15vw;
+    width: 20vw;
     background-color: white;
-    color: white;
+    color: black;
 }
 
 .choose_specific_div svg {
@@ -65,7 +64,6 @@
     margin: 0 1.5vw 0 1.5vw;
     background-color: white;
     color: black;
-    width: 15%;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 

@@ -1,12 +1,17 @@
 import styles from './modules/CreateBurguerOptionCreator.module.css';
 
-export default function CreateBurguerOptionCreator () {
+export default function CreateBurguerOptionCreator ({all_options}) {
+
+    function options_add() {
+        if(all_options) {
+            // console.log(all_options)
+            return all_options.tipos.map((tipos) => (<option key={tipos}> {tipos} </option>))
+        }
+    }
 
     return (
-        <div className={styles.options}>
-            <p>ABC</p>
-            <p>DEF</p>
-            <p>GHI</p>
-        </div>
+        <>
+            {options_add()}
+        </>
     )
 }
