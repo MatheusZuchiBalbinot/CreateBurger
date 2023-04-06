@@ -1,4 +1,4 @@
-import { BsChevronDown } from "react-icons/bs";
+import { GiMeat } from "react-icons/gi";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CreateBurguerOptionCreator from "../components/CreateBurguerOptionCreator";
@@ -38,27 +38,27 @@ export default function CreateBurguer () {
                     <p className={styles.choose_p}> Escolha o Pão: </p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
-                            <select className={styles.choose_dropdown_input}><BsChevronDown />
+                            <select className={styles.choose_dropdown_input}>
                             {options[0] ? <CreateBurguerOptionCreator all_options={options[0].bread}/> : null}
                             </select> 
                         </div>
                     </div>
                 </div>
                 <div className={styles.choose_options_div} id="choose_meat" onClick={handleClick}>
-                    <p className={styles.choose_p}> Escolha a Carne: </p>
+                    <p className={styles.choose_p}> Escolha a Carne: <GiMeat /></p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
-                            <select className={styles.choose_dropdown_input}><BsChevronDown />
+                            <select className={styles.choose_dropdown_input}>
                             {options[0] ? <CreateBurguerOptionCreator all_options={options[0].meat}/> : null}
                             </select> 
                         </div>
                     </div>
                 </div>
                 <div className={styles.choose_options_div} id="choose_meat_state" onClick={handleClick}>
-                    <p className={styles.choose_p}> Escolha o Tempero: </p>
+                    <p className={styles.choose_p}> Escolha o Ponto da Carne: </p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
-                            <select className={styles.choose_dropdown_input}><BsChevronDown />
+                            <select className={styles.choose_dropdown_input}>
                             {options[0] ? <CreateBurguerOptionCreator all_options={options[0].meat_state}/> : null}
                             </select> 
                         </div>
@@ -68,7 +68,7 @@ export default function CreateBurguer () {
                     <p className={styles.choose_p}> Escolha as Saladas: </p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
-                            <select className={styles.choose_dropdown_input}><BsChevronDown />
+                            <select className={styles.choose_dropdown_input}>
                             {options[0] ? <CreateBurguerOptionCreator all_options={options[0].salads}/> : null}
                             </select> 
                         </div>
@@ -78,12 +78,15 @@ export default function CreateBurguer () {
                     <p className={styles.choose_p}> Escolha o Queijo: </p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
-                            <select className={styles.choose_dropdown_input}><BsChevronDown />
+                            <select className={styles.choose_dropdown_input}>
                             {options[0] ? <CreateBurguerOptionCreator all_options={options[0].cheese}/> : null}
                             </select> 
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className={styles.finalize_order}>
+                <button type="button" className={styles.finalize_order_button}> Finalizar Pedido </button>
             </div>
         </div>
         <Footer />

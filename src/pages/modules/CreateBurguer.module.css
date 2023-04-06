@@ -2,7 +2,7 @@
 
 .createBurguer_div {
     justify-content: center;
-    padding: 3vw 1vw 3vw 1vw;
+    padding: 3vw 1vw 2vw 1vw;
 }
 
 .chooses {
@@ -48,7 +48,7 @@
     border: none;
     outline: none;
     padding: 1vw;
-    width: 20vw;
+    width: 30vw;
     background-color: white;
     color: black;
 }
@@ -75,4 +75,27 @@
 .choose_all_options_div:hover {
     display: flex;
     flex-direction: column;
+}
+
+.finalize_order {
+    display: flex;
+    justify-content: center;
+}
+
+.finalize_order_button {
+    padding: 1.5vw;
+    width: 20%;
+    margin: 2vw;
+    border: none;
+    background-color: rgb(157, 228, 128);
+    color: rgb(56, 53, 53);
+    border-radius: 2vw;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2vw;
+}
+
+.finalize_order_button:hover {
+    background-color: rgb(219, 241, 184);
+    color: black;
 }
