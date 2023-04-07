@@ -25,7 +25,7 @@ export default function CreateBurguer () {
     }, [])
 
     const handleClick = (event) => {
-        console.log(event.currentTarget.id)
+        // console.log(event.currentTarget.id)
     }
 
     return (
@@ -39,6 +39,7 @@ export default function CreateBurguer () {
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input}>
+                            <option></option>
                             {options[0] ? <CreateBurguerOptionCreator all_options={options[0].bread}/> : null}
                             </select> 
                         </div>
@@ -49,6 +50,7 @@ export default function CreateBurguer () {
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input}>
+                            <option></option>
                             {options[0] ? <CreateBurguerOptionCreator all_options={options[0].meat}/> : null}
                             </select> 
                         </div>
@@ -59,6 +61,7 @@ export default function CreateBurguer () {
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input}>
+                            <option></option>
                             {options[0] ? <CreateBurguerOptionCreator all_options={options[0].meat_state}/> : null}
                             </select> 
                         </div>
@@ -69,6 +72,7 @@ export default function CreateBurguer () {
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input}>
+                            <option></option>
                             {options[0] ? <CreateBurguerOptionCreator all_options={options[0].salads}/> : null}
                             </select> 
                         </div>
@@ -79,7 +83,8 @@ export default function CreateBurguer () {
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input}>
-                            {options[0] ? <CreateBurguerOptionCreator all_options={options[0].cheese}/> : null}
+                                <option></option>
+                                {options[0] ? <CreateBurguerOptionCreator all_options={options[0].cheese}/> : null}
                             </select> 
                         </div>
                     </div>
