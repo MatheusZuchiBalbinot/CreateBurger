@@ -11,7 +11,7 @@ export default function CreateBurguer () {
     const [options, setOptions] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/burguer_requests", {
+        fetch("http://localhost:3000/burguer_requests", {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json'
@@ -28,6 +28,22 @@ export default function CreateBurguer () {
         // console.log(event.currentTarget.id)
     }
 
+    function handleChoosedOptions() {
+        var bread = document.getElementById("bread");
+        var meat = document.getElementById("meat");
+        var meat_state = document.getElementById("meat_state");
+        var salads = document.getElementById("salads");
+        var cheese = document.getElementById("cheese");
+
+        var bread_option = bread.value;
+        var meat_option = meat.value;
+        var meat_state_option = meat_state.value;
+        var salads_option = salads.value;
+        var cheese_option = cheese.value;
+
+        console.log(bread_option,meat_option,meat_state_option,salads_option,cheese_option)
+    }
+
     return (
         <>
         <Header />
@@ -38,7 +54,7 @@ export default function CreateBurguer () {
                     <p className={styles.choose_p}> Escolha o Pão: </p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
-                            <select className={styles.choose_dropdown_input}>
+                            <select className={styles.choose_dropdown_input} id="bread">
                             <option></option>
                             {options[0] ? <CreateBurguerOptionCreator all_options={options[0].bread}/> : null}
                             </select> 
@@ -46,10 +62,10 @@ export default function CreateBurguer () {
                     </div>
                 </div>
                 <div className={styles.choose_options_div} id="choose_meat" onClick={handleClick}>
-                    <p className={styles.choose_p}> Escolha a Carne: <GiMeat /></p>
+                    <p className={styles.choose_p}> Escolha a Carne: </p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
-                            <select className={styles.choose_dropdown_input}>
+                            <select className={styles.choose_dropdown_input} id="meat">
                             <option></option>
                             {options[0] ? <CreateBurguerOptionCreator all_options={options[0].meat}/> : null}
                             </select> 
@@ -60,7 +76,7 @@ export default function CreateBurguer () {
                     <p className={styles.choose_p}> Escolha o Ponto da Carne: </p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
-                            <select className={styles.choose_dropdown_input}>
+                            <select className={styles.choose_dropdown_input} id="meat_state">
                             <option></option>
                             {options[0] ? <CreateBurguerOptionCreator all_options={options[0].meat_state}/> : null}
                             </select> 
@@ -71,7 +87,7 @@ export default function CreateBurguer () {
                     <p className={styles.choose_p}> Escolha as Saladas: </p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
-                            <select className={styles.choose_dropdown_input}>
+                            <select className={styles.choose_dropdown_input} id="salads">
                             <option></option>
                             {options[0] ? <CreateBurguerOptionCreator all_options={options[0].salads}/> : null}
                             </select> 
@@ -82,17 +98,17 @@ export default function CreateBurguer () {
                     <p className={styles.choose_p}> Escolha o Queijo: </p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
-                            <select className={styles.choose_dropdown_input}>
+                            <select className={styles.choose_dropdown_input} id="cheese">
                                 <option></option>
-                                {options[0] ? <CreateBurguerOptionCreator all_options={options[0].cheese}/> : null}
+                                {options[0] && <CreateBurguerOptionCreator all_options={options[0].cheese}/>}
                             </select> 
                         </div>
                     </div>
                 </div>
             </div>
             <div className={styles.finalize_order}>
-                <button type="button" className={styles.finalize_order_button}> Finalizar Pedido </button>
-            </div>
+                <button type="button" className={styles.finalize_order_button} onClick={handleChoosedOptions}> Finalizar Pedido </button>
+            </div>  
         </div>
         <Footer />
         </>

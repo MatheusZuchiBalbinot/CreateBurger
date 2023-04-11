@@ -87,7 +87,7 @@
     width: 20%;
     margin: 2vw;
     border: none;
-    background-color: rgb(157, 228, 128);
+    background-color: rgb(219, 241, 184);
     color: rgb(56, 53, 53);
     border-radius: 2vw;
     font-weight: bold;
@@ -96,8 +96,9 @@
 }
 
 .finalize_order_button:hover {
-    background-color: rgb(219, 241, 184);
+    background-color: rgb(157, 228, 128);
     color: black;
+    cursor: pointer;
 }
 
 .choose_with_checkbox {
