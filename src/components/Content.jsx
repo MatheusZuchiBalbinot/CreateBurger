@@ -1,10 +1,13 @@
 import styles from "./modules/Content.module.css";
 import { GrFormAdd } from "react-icons/gr";
+import { useNavigate } from "react-router-dom";
 
 export default function Content() {
 
+    const navigate = useNavigate();
+
     function move_to_create() {
-        return window.location.href="/home/createburguer";
+        return navigate("/home/createburguer");
     }
     return (
         <div className={styles.content_div}>

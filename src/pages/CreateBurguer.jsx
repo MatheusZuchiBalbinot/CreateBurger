@@ -3,12 +3,14 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CreateBurguerOptionCreator from "../components/CreateBurguerOptionCreator";
 import styles from './modules/CreateBurguer.module.css';
+import { useNavigate } from "react-router-dom";
 
 import { useState, useEffect } from "react";
 
 export default function CreateBurguer () {
 
     const [options, setOptions] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch("http://localhost:3000/burguer_requests", {
@@ -28,6 +30,11 @@ export default function CreateBurguer () {
         // console.log(event.currentTarget.id)
     }
 
+    function redirect() {
+        console.log('a')
+        return navigate("/home/CreateBurguer/pedido")
+    }
+
     function handleChoosedOptions() {
         var bread = document.getElementById("bread");
         var meat = document.getElementById("meat");
@@ -41,7 +48,26 @@ export default function CreateBurguer () {
         var salads_option = salads.value;
         var cheese_option = cheese.value;
 
-        console.log(bread_option,meat_option,meat_state_option,salads_option,cheese_option)
+        const location = document.getElementById("check_order")
+        if(bread_option != '' && meat_option != '' && meat_state_option != '' && salads_option != '' && cheese_option != '') {
+            location.style.display = "none";
+            var choosed_ingredients = [{
+                bread: bread_option,
+                meat: meat_option,
+                meat_state: meat_state_option,
+                salads: salads_option,
+                cheese: cheese_option
+            }];
+            
+            // console.log(choosed_ingredients)
+            localStorage.setItem("choosed_ingredients", JSON.stringify(choosed_ingredients))
+            redirect()
+        }
+        else {
+            location.style.display = "flex";
+            
+        }
+        
     }
 
     return (
@@ -107,6 +133,7 @@ export default function CreateBurguer () {
                 </div>
             </div>
             <div className={styles.finalize_order}>
+                <span className={styles.check_order} id="check_order"> Selecione todos os ingredientes!! </span>
                 <button type="button" className={styles.finalize_order_button} onClick={handleChoosedOptions}> Finalizar Pedido </button>
             </div>  
         </div>

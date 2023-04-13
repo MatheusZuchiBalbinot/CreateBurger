@@ -114,3 +114,10 @@
     color: black;
     padding-left: 1vw;
 }
+
+.check_order {
+    position: absolute;
+    color: red;
+    font-family:'Courier New', Courier, monospace;
+    display: none;
+}
