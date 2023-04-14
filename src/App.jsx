@@ -1,4 +1,3 @@
-import './App.css';
 import {useRoutes } from 'react-router-dom';
 import Login from "./pages/Login";
 import Home from "./pages/Home";
@@ -21,7 +20,7 @@ function App() {
       element: <CreateBurguer />
     },
     {
-      path: '/home/createburguer/pedido',
+      path: '/home/pedido',
       element: <Orders />
     }
 

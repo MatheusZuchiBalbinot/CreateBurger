@@ -31,8 +31,7 @@ export default function CreateBurguer () {
     }
 
     function redirect() {
-        console.log('a')
-        return navigate("/home/CreateBurguer/pedido")
+        return navigate("/home/pedido")
     }
 
     function handleChoosedOptions() {

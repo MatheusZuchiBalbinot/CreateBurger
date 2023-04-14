@@ -11,7 +11,7 @@ export default function Header() {
                 </div>
                 <div className={styles.header_icons}>
                     <Link to={"/home/CreateBurguer"} className={styles.header_navs}> Monte o seu </Link>
-                    <Link to={"/home/pedidos"} className={styles.header_navs}> Seus pedidos </Link>
+                    <Link to={"/home/pedido"} className={styles.header_navs}> Seus pedidos </Link>
                     <p className={styles.header_navs_p}> Bem vindo: XXXXXXX </p>
                 </div>
             </div>

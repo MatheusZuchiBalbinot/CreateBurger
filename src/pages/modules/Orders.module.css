@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+.orders_title {
+    padding: 1.5vw;
+    font-weight: bold;
+    font-size: 1.5vw;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;;
+}
