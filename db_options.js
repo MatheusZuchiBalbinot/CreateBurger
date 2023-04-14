@@ -20,8 +20,18 @@ app_express.get("/", (req, res) => {
     res.json("Hello This is the Backend")
 });
 
-app_express.get ("/options", (req, res) => {
+app_express.get ("/options/breads", (req, res) => {
     const q = "SELECT bread FROM options"
+    db.query(q,(error,data)=> {
+        if(error) {
+            return res.json("A consulta deu o seguinte erro: "+error)
+        }
+        return res.json(data)
+    })
+});
+
+app_express.get ("/options/meat", (req, res) => {
+    const q = "SELECT meat FROM options"
     db.query(q,(error,data)=> {
         if(error) {
             return res.json("A consulta deu o seguinte erro: "+error)
