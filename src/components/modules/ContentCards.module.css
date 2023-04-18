@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 
 .card {
-    padding: 1vw;
     margin: 1vw;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-family: 'Montserrat', sans-serif;
@@ -13,11 +13,23 @@
 }
 
 .card_p {
-    padding: 0.7vw;
+    padding: 0.2vw;
     font-weight: bold;
 }
 
 .card_price {
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     text-align: center;
+    padding: 1vw;
+}
+
+.card_title {
+    display: flex;
+    padding: 1vw;
+    justify-content: center;
+    font-family: 'Delicious Handrawn', cursive;
+}
+
+.ingredients {
+    padding: 0 1vw 0vw 1vw;
 }

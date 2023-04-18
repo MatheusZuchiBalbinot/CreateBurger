@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 
 .header {
     display: grid;
@@ -6,7 +6,7 @@
     grid-template-rows: auto;
     grid-template-areas: ". header_logo header_icons .";
     background-color: #fedfb2;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Delius', cursive;
     font-weight: bold;
     font-size: 1.3vw;
 }
@@ -15,7 +15,7 @@
     grid-area: header_logo;
     display: flex;
     margin: auto;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Delius', cursive;
     font-weight: bold;
 }
 

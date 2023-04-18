@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 .content_div {
     display: grid;
     grid-template-columns: 10vh auto 10vh;
@@ -41,13 +41,13 @@
 .house_orders_title {
     grid-area: house_orders_title;
     padding: 1vw;
-    font-family: 'Delicious Handrawn', cursive;
+    font-family: 'Delius', cursive;
     margin: auto;
     font-size: 2vw;
 }
 
 .characteristics_text {
-    font-family: 'Delicious Handrawn', cursive;
+    font-family: 'Delius', cursive;
     font-size: 1.5vw;
 }
 
@@ -92,7 +92,7 @@
     color: black;
     padding: 1vw;
     border-radius: 2vw;
-    font-family: 'Delicious Handrawn', cursive;
+    font-family: 'Delius', cursive;
 }
 
 .content_button svg {
