@@ -5,6 +5,8 @@
     grid-template-rows: auto;
     grid-template-areas: 
     "content_logo content_logo content_logo"
+    ". house_orders_title ."
+    ". house_ready_orders ."
     ". characteristics ."
     ". content_button .";
 }
@@ -27,6 +29,21 @@
     text-align: center;
     gap: 5vw;
     
+}
+
+.house_ready_orders {
+    grid-area: house_ready_orders;
+    display: flex;
+    padding: 2vw;
+    justify-content: center;
+}
+
+.house_orders_title {
+    grid-area: house_orders_title;
+    padding: 1vw;
+    font-family: 'Delicious Handrawn', cursive;
+    margin: auto;
+    font-size: 2vw;
 }
 
 .characteristics_text {
@@ -56,7 +73,7 @@
 .content_button {
     grid-area: content_button;
     display: flex;
-    padding-bottom: 3vw;
+    padding-bottom: 2vw;
 }
 
 .content_button button:hover{

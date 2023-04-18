@@ -9,7 +9,7 @@ export default function Orders() {
         choosed_ingredients_dict = JSON.parse(choosed_ingredients_dict)
         console.log(choosed_ingredients_dict)  
         // console.log(choosed_ingredients_dict[0].bread) 
-        return <p>{choosed_ingredients_dict[0].bread}</p> 
+        return <p>{choosed_ingredients_dict[0]}</p> 
     }
 
     return (

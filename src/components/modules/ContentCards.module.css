@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.card {
+    padding: 1vw;
+    margin: 1vw;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card_image {
+    width: 15vw;
+    height: auto;
+}
+
+.card_p {
+    padding: 0.7vw;
+    font-weight: bold;
+}
+
+.card_price {
+    font-size: 1.5vw;
+    text-align: center;
+}

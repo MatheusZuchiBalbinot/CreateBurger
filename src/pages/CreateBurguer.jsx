@@ -9,14 +9,27 @@ import { useState, useEffect } from "react";
 
 export default function CreateBurguer () {
 
-    const [options, setOptions] = useState([]);
+    const [bread, setBread] = useState([]);
+    const [meat, setMeat] = useState([]);
+    const [meat_state, setMeat_state] = useState([]);
+    const [salads, setSalads] = useState([]);
+    const [cheese, setCheese] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
         const fetchalloptions = async () => {
             try {
-                const res = await axios.get("http://localhost:8800/options/breads")
-                setOptions(res.data)
+                const fetch_bread = await axios.get("http://localhost:8800/options/bread")
+                const fetch_meat = await axios.get("http://localhost:8800/options/meat")
+                const fetch_meat_state = await axios.get("http://localhost:8800/options/meat_state")
+                const fetch_salads = await axios.get("http://localhost:8800/options/salads")
+                const fetch_cheese = await axios.get("http://localhost:8800/options/cheese")
+
+                setBread(fetch_bread.data)
+                setMeat(fetch_meat.data)
+                setMeat_state(fetch_meat_state.data)
+                setSalads(fetch_salads.data)
+                setCheese(fetch_cheese.data)
                 // console.log(options)
             } 
             catch (err) {
@@ -82,18 +95,18 @@ export default function CreateBurguer () {
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input} id="bread">
                             <option></option>
-                            {options[0] ? <CreateBurguerOptionCreator all_options={options}/> : null}
+                            {bread[0] ? <CreateBurguerOptionCreator all_options={bread}/> : null}
                             </select> 
                         </div>
                     </div>
                 </div>
-                {/* <div className={styles.choose_options_div} id="choose_meat" onClick={handleClick}>
+                <div className={styles.choose_options_div} id="choose_meat" onClick={handleClick}>
                     <p className={styles.choose_p}> Escolha a Carne: </p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input} id="meat">
                             <option></option>
-                            {options[0] ? <CreateBurguerOptionCreator all_options={options[1]}/> : null}
+                            {meat[0] ? <CreateBurguerOptionCreator all_options={meat}/> : null}
                             </select> 
                         </div>
                     </div>
@@ -104,7 +117,7 @@ export default function CreateBurguer () {
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input} id="meat_state">
                             <option></option>
-                            {options[0] ? <CreateBurguerOptionCreator all_options={options[2]}/> : null}
+                            {meat_state[0] ? <CreateBurguerOptionCreator all_options={meat_state}/> : null}
                             </select> 
                         </div>
                     </div>
@@ -115,7 +128,7 @@ export default function CreateBurguer () {
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input} id="salads">
                             <option></option>
-                            {options[0] ? <CreateBurguerOptionCreator all_options={options[3]}/> : null}
+                            {salads[0] ? <CreateBurguerOptionCreator all_options={salads}/> : null}
                             </select> 
                         </div>
                     </div>
@@ -126,11 +139,11 @@ export default function CreateBurguer () {
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input} id="cheese">
                                 <option></option>
-                                {options[0] && <CreateBurguerOptionCreator all_options={options[4]}/>}
+                                {cheese[0] && <CreateBurguerOptionCreator all_options={cheese}/>}
                             </select> 
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
             <div className={styles.finalize_order}>
                 <span className={styles.check_order} id="check_order"> Selecione todos os ingredientes!! </span>
