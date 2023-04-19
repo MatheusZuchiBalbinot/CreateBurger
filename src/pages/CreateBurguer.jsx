@@ -31,6 +31,8 @@ export default function CreateBurguer () {
                 setMeat_state(fetch_meat_state.data)
                 setSalads(fetch_salads.data)
                 setCheese(fetch_cheese.data)
+
+                // Só estou pegando a primeira coluna e não a segunda, onde tem o preço
             } 
             catch (err) {
                 console.log(err) 
@@ -95,6 +97,7 @@ export default function CreateBurguer () {
                 salads: salads_array,
                 cheese: cheese_option
             }];
+            console.log(choosed_ingredients)
             
             localStorage.setItem("choosed_ingredients", JSON.stringify(choosed_ingredients))
             redirect()
@@ -117,6 +120,7 @@ export default function CreateBurguer () {
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input} id="bread">
                             <option></option>
+                            {/* {console.log(bread)} */}
                             {bread[0] ? <CreateBurguerOptionCreator all_options={bread}/> : null}
                             </select> 
                         </div>

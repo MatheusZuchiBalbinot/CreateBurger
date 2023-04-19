@@ -21,7 +21,7 @@ app_express.use(cors())
 // });
 
 app_express.get ("/options/bread", (req, res) => {
-    const q = "SELECT bread FROM bread"
+    const q = "SELECT bread, bread_price FROM bread"
     db.query(q,(error,data)=> {
         if(error) {
             return res.json("A consulta deu o seguinte erro: "+error)
@@ -31,7 +31,7 @@ app_express.get ("/options/bread", (req, res) => {
 });
 
 app_express.get ("/options/meat", (req, res) => {
-    const q = "SELECT meat FROM meat"
+    const q = "SELECT meat, meat_price FROM meat"
     db.query(q,(error,data)=> {
         if(error) {
             return res.json("A consulta deu o seguinte erro: "+error)
@@ -41,7 +41,7 @@ app_express.get ("/options/meat", (req, res) => {
 });
 
 app_express.get ("/options/meat_state", (req, res) => {
-    const q = "SELECT meat_state FROM meat_state"
+    const q = "SELECT meat_state, meat_state_price FROM meat_state"
     db.query(q,(error,data)=> {
         if(error) {
             return res.json("A consulta deu o seguinte erro: "+error)
@@ -51,7 +51,7 @@ app_express.get ("/options/meat_state", (req, res) => {
 });
 
 app_express.get ("/options/salads", (req, res) => {
-    const q = "SELECT salads FROM salads"
+    const q = "SELECT salads, salads_price FROM salads"
     db.query(q,(error,data)=> {
         if(error) {
             return res.json("A consulta deu o seguinte erro: "+error)
@@ -61,7 +61,7 @@ app_express.get ("/options/salads", (req, res) => {
 });
 
 app_express.get ("/options/cheese", (req, res) => {
-    const q = "SELECT cheese FROM cheese"
+    const q = "SELECT cheese, cheese_price FROM cheese"
     db.query(q,(error,data)=> {
         if(error) {
             return res.json("A consulta deu o seguinte erro: "+error)

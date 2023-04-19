@@ -86,6 +86,9 @@ export default function Content() {
                         <img className={styles.characteristics_image} src="https://img.freepik.com/vetores-premium/ilustracao-vetorial-de-cozinhar-com-amor-estilo-de-arte-de-linha-de-logotipo-de-cozinha-receita-logotipo-de-receita-secreta_771881-23.jpg?w=2000"></img>
                     </div>
             </div>
+
+            <h3 className={styles.ou_title}> Ou: </h3>
+
             <div className={styles.content_button}>
                 <button type="button" className={styles.content_button_button} onClick={move_to_create}>
                 <label for="content_button_button"> Monte seu Hambúrguer</label><GrFormAdd /></button>
