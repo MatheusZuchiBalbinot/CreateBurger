@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CreateBurguerOptionCreator from '../components/CreateBurguerOptionCreator';
+import CreateBurguerCheckbox from '../components/CreateBurguerCheckbox';
 import styles from './modules/CreateBurguer.module.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
@@ -30,14 +31,12 @@ export default function CreateBurguer () {
                 setMeat_state(fetch_meat_state.data)
                 setSalads(fetch_salads.data)
                 setCheese(fetch_cheese.data)
-                // console.log(options)
             } 
             catch (err) {
                 console.log(err) 
             }
         }
         fetchalloptions()
-        // console.log(options)
     }, [])
 
     const handleClick = (event) => {
@@ -49,36 +48,59 @@ export default function CreateBurguer () {
     }
 
     function handleChoosedOptions() {
-        var bread = document.getElementById("bread");
-        var meat = document.getElementById("meat");
-        var meat_state = document.getElementById("meat_state");
-        var salads = document.getElementById("salads");
-        var cheese = document.getElementById("cheese");
+        var bread_div = document.getElementById("bread");
+        var meat_div = document.getElementById("meat");
+        var meat_state_div = document.getElementById("meat_state");
+        var cheese_div = document.getElementById("cheese");
 
-        var bread_option = bread.value;
-        var meat_option = meat.value;
-        var meat_state_option = meat_state.value;
-        var salads_option = salads.value;
-        var cheese_option = cheese.value;
+        var salads_repolho = document.getElementById("Repolho");
+        var salads_tomate = document.getElementById("Tomate");
+        var salads_alface = document.getElementById("Alface");
+        var salads_cebola = document.getElementById("Cebola");
+        var salads_rucula = document.getElementById("Rúcula");
+
+        const salads_array = []
+        
+        if(salads_repolho.checked == true) {
+            salads_array.push('Repolho')
+        }
+        if(salads_tomate.checked == true) {
+            salads_array.push('Tomate')
+        }
+        if(salads_alface.checked == true) {
+            salads_array.push('Alface')
+        }
+        if(salads_rucula.checked == true) {
+            salads_array.push('Rúcula')
+        }
+        if(salads_cebola.checked == true) {
+            salads_array.push('Cebola')
+        }
+
+        var bread_option = bread_div.value;
+        var meat_option = meat_div.value;
+        var meat_state_option = meat_state_div.value;
+        var cheese_option = cheese_div.value;
 
         const location = document.getElementById("check_order")
-        if(bread_option != '' && meat_option != '' && meat_state_option != '' && salads_option != '' && cheese_option != '') {
+        if(bread_option != '' && meat_option != '' && meat_state_option != '' && salads_array != '' && cheese_option != '') {
             location.style.display = "none";
-            var choosed_ingredients = [{
+
+            console.log(bread_option, meat_option, meat_state_option, salads_array, cheese_option)
+
+            const choosed_ingredients = [{
                 bread: bread_option,
                 meat: meat_option,
                 meat_state: meat_state_option,
-                salads: salads_option,
+                salads: salads_array,
                 cheese: cheese_option
             }];
             
-            // console.log(choosed_ingredients)
             localStorage.setItem("choosed_ingredients", JSON.stringify(choosed_ingredients))
             redirect()
         }
         else {
             location.style.display = "flex";
-            
         }
         
     }
@@ -126,10 +148,7 @@ export default function CreateBurguer () {
                     <p className={styles.choose_p}> Escolha as Saladas: </p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
-                            <select className={styles.choose_dropdown_input} id="salads">
-                            <option></option>
-                            {salads[0] ? <CreateBurguerOptionCreator all_options={salads}/> : null}
-                            </select> 
+                            {salads[0] ? <CreateBurguerCheckbox all_options={salads}/> : null}
                         </div>
                     </div>
                 </div>

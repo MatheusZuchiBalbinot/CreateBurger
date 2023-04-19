@@ -6,3 +6,13 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
+
+.checkbox_label {
+    color: black;
+    padding: 0.3vw;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.checkbox_input {
+    transform: scale(1.5);
+}

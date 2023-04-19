@@ -5,7 +5,6 @@ export default function ContentCards ({name, image, price, bread, meat, meat_sta
 
     return (
         <div className={styles.card}>
-            <div class="card">
                 <img src={image} className={styles.card_image}></img>
                 <h3 className={styles.card_title}>{name} </h3>
                 <div className={styles.ingredients}>
@@ -16,7 +15,6 @@ export default function ContentCards ({name, image, price, bread, meat, meat_sta
                     <p className={styles.card_p}>Queijo: {cheese}</p>
                 </div>
                 <h3 className={styles.card_price}>Preço: R${price}</h3>
-            </div>
         </div>
     )
 }

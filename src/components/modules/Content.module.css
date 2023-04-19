@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 .content_div {
     display: grid;
-    grid-template-columns: 10vh auto 10vh;
+    grid-template-columns: 10vw auto 10vw;
     grid-template-rows: auto;
     grid-template-areas: 
     "content_logo content_logo content_logo"

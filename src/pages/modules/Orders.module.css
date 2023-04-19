@@ -6,5 +6,18 @@
     font-size: 1.5vw;
     font-family: 'Montserrat', sans-serif;
     display: flex;
-    justify-content: center;;
+    justify-content: center;
+}
+
+.orders_main_div {
+    display: grid;
+    grid-template-columns: 10vw auto 10vw;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    ". cards_div .";
+}
+
+.cards_div {
+    grid-area: cards_div;
+    padding: 0 2vw 2vw 2vw;
 }

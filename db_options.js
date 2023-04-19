@@ -16,12 +16,12 @@ const db = mysql.createConnection({
 app_express.use(express.json())
 app_express.use(cors())
 
-app_express.get("/", (req, res) => {
-    res.json("Hello This is the Backend")
-});
+// app_express.get("/", (req, res) => {
+//     res.json("Hello This is the Backend")
+// });
 
 app_express.get ("/options/bread", (req, res) => {
-    const q = "SELECT bread FROM options"
+    const q = "SELECT bread FROM bread"
     db.query(q,(error,data)=> {
         if(error) {
             return res.json("A consulta deu o seguinte erro: "+error)
@@ -31,7 +31,7 @@ app_express.get ("/options/bread", (req, res) => {
 });
 
 app_express.get ("/options/meat", (req, res) => {
-    const q = "SELECT meat FROM options"
+    const q = "SELECT meat FROM meat"
     db.query(q,(error,data)=> {
         if(error) {
             return res.json("A consulta deu o seguinte erro: "+error)
@@ -41,7 +41,7 @@ app_express.get ("/options/meat", (req, res) => {
 });
 
 app_express.get ("/options/meat_state", (req, res) => {
-    const q = "SELECT meat_state FROM options"
+    const q = "SELECT meat_state FROM meat_state"
     db.query(q,(error,data)=> {
         if(error) {
             return res.json("A consulta deu o seguinte erro: "+error)
@@ -51,7 +51,7 @@ app_express.get ("/options/meat_state", (req, res) => {
 });
 
 app_express.get ("/options/salads", (req, res) => {
-    const q = "SELECT salads FROM options"
+    const q = "SELECT salads FROM salads"
     db.query(q,(error,data)=> {
         if(error) {
             return res.json("A consulta deu o seguinte erro: "+error)
@@ -61,7 +61,7 @@ app_express.get ("/options/salads", (req, res) => {
 });
 
 app_express.get ("/options/cheese", (req, res) => {
-    const q = "SELECT cheese FROM options"
+    const q = "SELECT cheese FROM cheese"
     db.query(q,(error,data)=> {
         if(error) {
             return res.json("A consulta deu o seguinte erro: "+error)

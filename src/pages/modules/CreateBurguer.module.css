@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 
 .createBurguer_div {
     justify-content: center;
-    padding: 3vw 1vw 2vw 1vw;
+    padding: 2vw 1vw 2vw 1vw;
 }
 
 .chooses {
@@ -13,7 +14,7 @@
 }
 
 .choose_title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Delius', cursive;
     font-weight: bold;
     text-align: center;
     padding: 1.5vw;
@@ -38,9 +39,8 @@
     margin: auto;
 }
 
-.choose_specific_div {
+.choose_specific_div { 
     margin: 1.5vw 1.5vw 0 1.5vw;
-    display: flex;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 }
