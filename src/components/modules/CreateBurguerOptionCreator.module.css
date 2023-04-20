@@ -16,3 +16,7 @@
 .checkbox_input {
     transform: scale(1.5);
 }
+
+.checkbox_div {
+    padding: 1vw;
+}

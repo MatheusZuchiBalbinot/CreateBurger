@@ -50,7 +50,7 @@ export default function Content() {
         
     }]
 
-    console.log(house_ready_orders_itens)
+    // console.log(house_ready_orders_itens)
     // console.log(house_ready_orders_itens[0].order_1)
 
     const navigate = useNavigate();

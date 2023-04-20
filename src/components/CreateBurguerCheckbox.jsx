@@ -7,12 +7,12 @@ export default function CreateBurguerCheckbox ({all_options}) {
         if(all_options) {
             const options_array = []
             for(var i = 0; i < all_options.length; i++) {
-                options_array.push(Object.values(all_options[i]).toString())
+                options_array.push(Object.values(all_options[i]))
             }
             return options_array.map((tipos) => (
-                <div>
-                    <input type="checkbox" id={tipos} className={styles.checkbox_input} value={tipos}></input>
-                    <label htmlFor={tipos} className={styles.checkbox_label}> {tipos} </label>
+                <div className={styles.checkbox_div}>
+                    <input type="checkbox" id={tipos[0]} className={styles.checkbox_input} value={tipos[1]}></input>
+                    <label htmlFor={tipos[0]} className={styles.checkbox_label}> {tipos[0]}, R${tipos[1]} </label>
                 </div>
             ))
         }

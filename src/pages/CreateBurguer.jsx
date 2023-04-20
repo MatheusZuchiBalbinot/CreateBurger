@@ -55,6 +55,8 @@ export default function CreateBurguer () {
         var meat_state_div = document.getElementById("meat_state");
         var cheese_div = document.getElementById("cheese");
 
+        var teste = document.getElementsByClassName("bread");
+
         var salads_repolho = document.getElementById("Repolho");
         var salads_tomate = document.getElementById("Tomate");
         var salads_alface = document.getElementById("Alface");
@@ -84,11 +86,14 @@ export default function CreateBurguer () {
         var meat_state_option = meat_state_div.value;
         var cheese_option = cheese_div.value;
 
+        // console.log(bread_option.id, bread_option.value)
+
         const location = document.getElementById("check_order")
+        
         if(bread_option != '' && meat_option != '' && meat_state_option != '' && salads_array != '' && cheese_option != '') {
             location.style.display = "none";
 
-            console.log(bread_option, meat_option, meat_state_option, salads_array, cheese_option)
+            // console.log(bread_option, meat_option, meat_state_option, salads_array, cheese_option)
 
             const choosed_ingredients = [{
                 bread: bread_option,
@@ -97,7 +102,7 @@ export default function CreateBurguer () {
                 salads: salads_array,
                 cheese: cheese_option
             }];
-            console.log(choosed_ingredients)
+            // console.log(choosed_ingredients)
             
             localStorage.setItem("choosed_ingredients", JSON.stringify(choosed_ingredients))
             redirect()

@@ -7,13 +7,12 @@ export default function CreateBurguerOptionCreator ({all_options}) {
             const items_options_array = []
             const price_options_array = []
             for(var i = 0; i < all_options.length; i++) {
-                items_options_array.push(Object.values(all_options[i])[0].toString())
-                price_options_array.push(Object.values(all_options[i])[1].toString())
+                items_options_array.push(Object.values(all_options[i]))
+                // price_options_array.push(Object.values(all_options[i])[1].toString())
 
-                // console.log(price_options_array[i])
             }
-            console.log(items_options_array)
-            return items_options_array.map((tipos) => (<option key={tipos} value={tipos}> {tipos} </option>))
+            // console.log(items_options_array)
+            return items_options_array.map((tipos) => (<option key={tipos[0]} id={tipos[0]} value={tipos[1]}> {tipos[0]}, R${tipos[1]} </option>))
         }
     }
 
