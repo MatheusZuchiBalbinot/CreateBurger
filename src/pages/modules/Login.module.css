@@ -2,19 +2,36 @@
 
 .login_div {
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-columns: 40vw 10vw 10vw 40vw;
+    grid-template-rows: 5vh 90vh 5vh;
     grid-template-areas:
-    ". . ." ". login_form ." ". . .";
+    ". . . ." 
+    "login_form gif_image gif_image gif_image" 
+    ". . . .";
     font-family: 'Roboto', sans-serif;
+
+}
+
+.gif_image {
+    grid-area: gif_image;
+    display: flex;
+    justify-content: center;
+
+}
+
+.image_gif {
+    background-color: red;
 }
 
 .login_form {
     grid-area: login_form;
     margin: auto;
-    padding: 1vw;
-    border: 1px solid black;
-    border-radius: 2vw;
+    padding: 1.5vw;
+    height: auto;
+    border-radius: 1vw;
+    background-color: #f6f1de;
+    opacity: 0.9;
+    
 }
 
 .form_title {
@@ -25,53 +42,68 @@
 
 .user_div {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+}
+
+.titles_style {
+    font-weight: bolder;
 }
 
 .password_div {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+}
+
+.input_with_icon {
+    padding: 1vw;
+    display: flex;
+}
+
+.input_with_icon svg {
+    margin: auto;
+    font-size: 2vw;
 }
 
 .user_password_input {
     width: 20vw;
     border: none;
-    margin: 1vw 2vw 1vw 2vw;
+    padding: 1vw;
+    margin: 0 1vw 0 1vw;
+    background-color: #f6f1de;
+    color: black;
+    outline: none;
+}
+
+.user_password_input:hover{
+    border-bottom: 1px solid rgb(68, 137, 228);
+}
+
+input:focus::placeholder {
+    color: transparent;
+  }
+
+::placeholder {
+    color: black;
 }
 
 
 .buttons_div {
     display: flex;
-    margin: auto;
     padding: 1vw;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
-.button_send {
+.button_buttons {
     border: none;
     color: white;
-    background-color: rgb(33, 44, 44); 
-    padding: 1vw;
-    margin: 1vw;
-    width: 35%;
-    border-radius: 2vw;
-}
-
-.button_forgot_password {
-    border: none;
-    color: white;
-    background-color: rgb(33, 44, 44); 
+    background-color: #FF725E; 
     padding: 1vw;
     margin: 1vw;
     border-radius: 2vw;
 }
 
-.button_forgot_password:hover {
-    background-color: rgb(245, 214, 214);
-    color: black;
-}
-
-.button_send:hover {
-    background-color: rgb(231, 245, 214);
-    color: black;
+.button_buttons:hover {
+    background-color: #ff5254;
+    color: white;
+    font-weight: bold;
 }

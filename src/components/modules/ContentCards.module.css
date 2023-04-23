@@ -6,6 +6,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-family: 'Montserrat', sans-serif;
     width: 15vw;
+    background-color: white;
 }
 
 .card_image {
@@ -15,7 +16,7 @@
 
 .card_p {
     padding: 0.2vw;
-    font-weight: bold;
+    font-size: 1vw;
 }
 
 .card_price {

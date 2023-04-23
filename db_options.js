@@ -2,13 +2,12 @@ import express from "express"
 import mysql from "mysql"
 import cors from "cors"
 
-
 const app_express = express()
 
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "",
+    password: "1234",
     database: "createb"
 
 })

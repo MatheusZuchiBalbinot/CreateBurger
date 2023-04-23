@@ -5,7 +5,7 @@
     grid-template-columns: 0.7fr 2fr 2fr 0.7fr;
     grid-template-rows: auto;
     grid-template-areas: ". header_logo header_icons .";
-    background-color: #fedfb2;
+    background-image: linear-gradient(to right, #fedfb2 , #fae894);
     font-family: 'Delius', cursive;
     font-weight: bold;
     font-size: 1.3vw;
@@ -39,7 +39,7 @@
 }
 
 .header_navs:hover {
-    color: white;
+    border-bottom: 2px solid rgb(68, 137, 228);
 }
 
 .logo_image {

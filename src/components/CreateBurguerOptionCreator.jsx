@@ -5,7 +5,6 @@ export default function CreateBurguerOptionCreator ({all_options}) {
     function options_add() {
         if(all_options) {
             const items_options_array = []
-            const price_options_array = []
             for(var i = 0; i < all_options.length; i++) {
                 items_options_array.push(Object.values(all_options[i]))
                 // price_options_array.push(Object.values(all_options[i])[1].toString())

@@ -75,15 +75,15 @@ export default function Content() {
             <div className={styles.characteristics}>
                     <div classname={styles.delivery}>
                         <p className={styles.characteristics_text}> Peça o seu em casa </p>
-                        <img className={styles.characteristics_image} src="https://img.freepik.com/vetores-premium/entregador-montando-a-ilustracao-de-scooter-vermelho_9845-14.jpg?w=2000"></img>
+                        <img className={styles.characteristics_image} src="../../Imagens/entregador.png"></img>
                     </div>
                     <div className={styles.quality}>
                         <p className={styles.characteristics_text}> Criado de maneira artesanal </p>
-                        <img className={styles.characteristics_image} src="https://img.freepik.com/vetores-gratis/hamburger_53876-25481.jpg?w=2000"></img>
+                        <img className={styles.characteristics_image} src="../../Imagens/hamburger.png"></img>
                     </div>
                     <div className={styles.price}>
                         <p className={styles.characteristics_text}> Feito com amor e carinho </p>
-                        <img className={styles.characteristics_image} src="https://img.freepik.com/vetores-premium/ilustracao-vetorial-de-cozinhar-com-amor-estilo-de-arte-de-linha-de-logotipo-de-cozinha-receita-logotipo-de-receita-secreta_771881-23.jpg?w=2000"></img>
+                        <img className={styles.characteristics_image} src="../../Imagens/cozinha.png"></img>
                     </div>
             </div>
 

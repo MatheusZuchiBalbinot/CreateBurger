@@ -10,6 +10,8 @@
     ". characteristics ."
     ". ou_title ."
     ". content_button .";
+    background-image: linear-gradient(to right, #fedfb2 , #fae894);
+
 }
 
 .content_logo {
@@ -22,7 +24,7 @@
 
 .ou_title {
     grid-area: ou_title;
-    padding: 1vw;
+    padding: 2vw;
     font-family: 'Delius', cursive;
     margin: auto;
     font-size: 2vw;
@@ -34,7 +36,7 @@
     grid-template-columns: 2fr 2fr 2fr;
     grid-template-areas: 
     "delivery quality price";
-    padding: 1vw;
+    padding: 1vw 1vw 0 1vw;
     text-align: center;
     gap: 5vw;
     
@@ -49,7 +51,7 @@
 
 .house_orders_title {
     grid-area: house_orders_title;
-    padding: 1vw;
+    padding: 1vw 1vw 0 1vw;
     font-family: 'Delius', cursive;
     margin: auto;
     font-size: 2vw;
@@ -82,7 +84,7 @@
 .content_button {
     grid-area: content_button;
     display: flex;
-    padding-bottom: 2vw;
+    padding: 2vw;
 }
 
 .content_button button:hover{
