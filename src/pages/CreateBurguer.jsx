@@ -50,7 +50,7 @@ export default function CreateBurguer () {
     }
 
     function handleChoosedOptions() {
-        var bread_div = document.getElementById("bread");
+        var bread_div = document.getElementById("bread")
         var meat_div = document.getElementById("meat");
         var meat_state_div = document.getElementById("meat_state");
         var cheese_div = document.getElementById("cheese");
@@ -82,6 +82,7 @@ export default function CreateBurguer () {
         }
 
         var bread_option = bread_div.value;
+        console.log(bread_option)
         var meat_option = meat_div.value;
         var meat_state_option = meat_state_div.value;
         var cheese_option = cheese_div.value;

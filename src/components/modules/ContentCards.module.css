@@ -2,11 +2,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 
 .card {
+    display: grid;
     margin: 1vw;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-family: 'Montserrat', sans-serif;
     width: 15vw;
     background-color: white;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
+}
+
+.order_button {
+    padding: 1vw;
+    margin: 1vw;
+    background-color: #afab50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.order_button:hover {
+    background-color: #ece9ac;
+    color: black;
 }
 
 .card_image {
@@ -27,7 +49,7 @@
 
 .card_title {
     display: flex;
-    padding: 1vw;
+    padding: 0.5vw;
     justify-content: center;
     font-family: 'Delicious Handrawn', cursive;
 }
