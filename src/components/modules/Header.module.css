@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 .header {
     display: grid;
@@ -30,21 +29,13 @@
 
 .header_navs {
     text-decoration: none;
-    font-size: 1.2vw;
-    margin: auto;
+    font-size: 1vw;
     color: black;
 }
 
 .header_navs_p {
-    display: flex;
-    margin: auto;
-    font-size: 1.5vw;
+    font-size: 1vw;
     color: black;
-    font-family: 'Source Code Pro', monospace;
-}
-
-.header_navs_p svg {
-    margin: auto;
 }
 
 .header_navs:hover {
@@ -58,18 +49,4 @@
 .label_logo_image {
     margin: auto;
 }
-
-.profile {
-    display: flex;
-    margin: auto;
-    padding: 1vw;
-    gap: 0.5vw;
-}
-
-.profile svg {
-    margin: auto;
-    font-size: 1.5vw;
-}
-
-
 
