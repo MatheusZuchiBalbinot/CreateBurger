@@ -69,6 +69,19 @@ app_express.get ("/options/cheese", (req, res) => {
     })
 });
 
+app_express.get ("/login", (req, res) => {
+    const q = "SELECT username, password FROM login"
+    db.query(q,(error,data)=> {
+        if(error) {
+            return res.json("A consulta deu o seguinte erro: "+error)
+        }
+        return res.json(data)
+    })
+});
+
+
+
+
 app_express.post("/options", (req, res) => {
     const q = "INSERT INTO options(`bread`,`meat`,`meat_state`,`salads`,`cheese`) VALUES (?)"
     const values = [req.body.bread,req.body.meat,req.body.meat_state,req.body.salads,req.body.cheese]

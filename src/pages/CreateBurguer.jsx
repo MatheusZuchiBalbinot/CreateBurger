@@ -55,8 +55,6 @@ export default function CreateBurguer () {
         var meat_state_div = document.getElementById("meat_state");
         var cheese_div = document.getElementById("cheese");
 
-        var teste = document.getElementsByClassName("bread");
-
         var salads_repolho = document.getElementById("Repolho");
         var salads_tomate = document.getElementById("Tomate");
         var salads_alface = document.getElementById("Alface");
