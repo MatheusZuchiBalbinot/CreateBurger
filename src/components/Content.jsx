@@ -39,7 +39,7 @@ export default function Content() {
         },
         order_4: {
             name: "Frango Voador",
-            bread: "Frango",
+            bread: "Pão australiano",
             meat: "Frango",
             meat_state: "Ao ponto",
             salads: "Tomate e Alface",

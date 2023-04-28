@@ -1,9 +1,11 @@
 import styles from "./modules/ContentCards.module.css"
+import axios from 'axios'
 
 export default function ContentCards ({name, image, price, bread, meat, meat_state, salads, cheese}) {
 
-    function sendOrder() {
-        const ready_order = [{
+    const sendOrder = async () => {
+
+        const ready_order = {
             name: name,
             bread: bread,
             meat: meat,
@@ -12,9 +14,14 @@ export default function ContentCards ({name, image, price, bread, meat, meat_sta
             cheese: cheese,
             price: price,
             image: image
-        }];
+        };
         localStorage.setItem("ready_order", JSON.stringify(ready_order))
-        // console.log(ready_order)
+        try {
+            await axios.post("http://localhost:8800/options", ready_order)
+        }catch(error) {
+            console.log(error)
+        }
+
     }
 
     return (
