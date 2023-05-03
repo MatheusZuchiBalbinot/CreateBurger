@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 .header {
     display: grid;
@@ -29,13 +30,17 @@
 
 .header_navs {
     text-decoration: none;
-    font-size: 1vw;
+    font-size: 1.2vw;
+    margin: auto;
     color: black;
 }
 
 .header_navs_p {
-    font-size: 1vw;
+    display: flex;
+    margin: auto;
+    font-size: 1.5vw;
     color: black;
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
     font-family: 'Source Code Pro', monospace;
@@ -55,6 +60,13 @@
 .header_navs_p svg {
     margin: auto;
 >>>>>>> Stashed changes
+=======
+    font-family: 'Source Code Pro', monospace;
+}
+
+.header_navs_p svg {
+    margin: auto;
+>>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c
 }
 
 .header_navs:hover {
@@ -69,13 +81,20 @@
     margin: auto;
 }
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c
 .profile {
     display: flex;
     margin: auto;
     padding: 1vw;
+<<<<<<< HEAD
     gap: 1vw;
+=======
+    gap: 0.5vw;
+>>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c
 }
 
 .profile svg {
@@ -85,4 +104,7 @@
 
 
 
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c

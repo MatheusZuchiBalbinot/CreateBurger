@@ -28,7 +28,11 @@ export default function Orders() {
             const options_array = Object.values(data[i])
             return(<ContentCards name={options_array[6]} image={options_array[7]} price={options_array[8]} bread={options_array[1]} meat={options_array[2]} meat_state={options_array[3]} salads={options_array[4]} cheese={options_array[5]} />)
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c
     }
 
     return (
@@ -36,7 +40,12 @@ export default function Orders() {
             <Header />
             <h3 className={styles.orders_title}> Pedidos: </h3>
                 <div className={styles.orders_main_div}>
+<<<<<<< HEAD
                     <div className={styles.cards_div} id='cards_div'>
+=======
+                    <div className={styles.cards_div}>
+                        {recived_orders}
+>>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c
                         {recived_orders()}
                     </div>
                 </div>

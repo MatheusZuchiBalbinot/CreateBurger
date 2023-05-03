@@ -1,6 +1,7 @@
 import styles from "./modules/Header.module.css";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import CreateBurguer from "../pages/CreateBurguer";
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 import { useState} from "react";
@@ -8,8 +9,22 @@ import { useState} from "react";
 import {CgProfile} from 'react-icons/Cg';
 import {FiLogOut} from 'react-icons/Fi';
 >>>>>>> Stashed changes
+=======
+import { useState} from "react";
+
+import {CgProfile} from 'react-icons/Cg';
+>>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c
 
 export default function Header() {
+
+    const navigate = useNavigate()
+
+    var loggedUsername = localStorage.getItem("logged_username")
+
+    if (loggedUsername == null || loggedUsername == undefined) {
+        return navigate("/");
+    }
+
         return (
             <div className={styles.header}>
                 <div className={styles.header_logo}>
@@ -19,6 +34,7 @@ export default function Header() {
                 <div className={styles.header_icons}>
                     <Link to={"/home/CreateBurguer"} className={styles.header_navs}> Monte o seu </Link>
                     <Link to={"/home/pedido"} className={styles.header_navs}> Seus pedidos </Link>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                     <p className={styles.header_navs_p}> Bem vindo: XXXXXXX </p>
 =======
@@ -29,6 +45,13 @@ export default function Header() {
                     </div>
                     
 >>>>>>> Stashed changes
+=======
+                    <div className={styles.profile}>
+                        <CgProfile />
+                        <p className={styles.header_navs_p}> {loggedUsername} </p>
+                    </div>
+                    
+>>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c
                 </div>
             </div>
         )
