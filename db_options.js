@@ -69,11 +69,6 @@ app_express.get ("/options/cheese", (req, res) => {
     })
 });
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c
 app_express.get ("/login", (req, res) => {
     const q = "SELECT username, password FROM login"
     db.query(q,(error,data)=> {
@@ -94,10 +89,6 @@ app_express.get ("/options/values", (req, res) => {
     })
 });
 
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c
 app_express.post("/options", (req, res) => {
     const q = "INSERT INTO orders(`name`,`price`,`image`,`bread`,`meat`,`meat_state`,`salads`,`cheese`) VALUES (?)"
     const values = [req.body.name,req.body.price,req.body.image,req.body.bread,req.body.meat,req.body.meat_state,req.body.salads,req.body.cheese]

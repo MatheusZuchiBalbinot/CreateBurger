@@ -11,19 +11,6 @@ function Login() {
     const [username, setUsername] = useState(['']);
     const [password, setPassword] = useState(['']);
 
-<<<<<<< HEAD
-    const CheckLogin = () => {
-<<<<<<< Updated upstream
-        if(login === 'asd' && password === '123') {
-            return window.location.href="/home";
-            // localStorage.setItem('validation', 'true')
-            // const validation = localStorage.getItem('validation')
-            // console.log(validation)
-        }
-        else {
-            return <alert> A senha de acesso está errada </alert>
-=======
-=======
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -48,7 +35,6 @@ function Login() {
     // }
 
     const CheckLogin = () => {
->>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c
 
         console.log(login)
         for(var i = 0; i < Object.keys(login).length; i++) {
@@ -56,18 +42,10 @@ function Login() {
                 localStorage.setItem("logged_username", login[i].username)
                 return trade_page();
             }
-<<<<<<< HEAD
             if(username != login[i].username && password != login[i].password) {
                 var form_field = document.getElementById("form_field")
                 return form_field.style.border = "3px solid red" 
             }
->>>>>>> Stashed changes
-=======
-            else {
-                var form_field = document.getElementById("form_field")
-                return form_field.style.border = "3px solid red" 
-            }
->>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c
         }
     }
 

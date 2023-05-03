@@ -40,9 +40,6 @@
     margin: auto;
     font-size: 1.5vw;
     color: black;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
     font-family: 'Source Code Pro', monospace;
 }
 
@@ -59,14 +56,6 @@
 
 .header_navs_p svg {
     margin: auto;
->>>>>>> Stashed changes
-=======
-    font-family: 'Source Code Pro', monospace;
-}
-
-.header_navs_p svg {
-    margin: auto;
->>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c
 }
 
 .header_navs:hover {
@@ -81,20 +70,11 @@
     margin: auto;
 }
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c
 .profile {
     display: flex;
     margin: auto;
     padding: 1vw;
-<<<<<<< HEAD
     gap: 1vw;
-=======
-    gap: 0.5vw;
->>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c
 }
 
 .profile svg {
@@ -104,7 +84,3 @@
 
 
 
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> 8e55acd9e4244861d1c9f512ba7553cc6dc3a31c
