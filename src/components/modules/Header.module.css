@@ -36,6 +36,25 @@
 .header_navs_p {
     font-size: 1vw;
     color: black;
+<<<<<<< Updated upstream
+=======
+    font-family: 'Source Code Pro', monospace;
+}
+
+.header_navs_link {
+    font-size: 1.5vw;
+    margin: auto;
+    display: flex;
+    color: black;
+}
+
+.header_navs_link:hover {
+    border-bottom: 2px solid rgb(68, 137, 228);
+}
+
+.header_navs_p svg {
+    margin: auto;
+>>>>>>> Stashed changes
 }
 
 .header_navs:hover {
@@ -50,3 +69,20 @@
     margin: auto;
 }
 
+<<<<<<< Updated upstream
+=======
+.profile {
+    display: flex;
+    margin: auto;
+    padding: 1vw;
+    gap: 1vw;
+}
+
+.profile svg {
+    margin: auto;
+    font-size: 1.5vw;
+}
+
+
+
+>>>>>>> Stashed changes

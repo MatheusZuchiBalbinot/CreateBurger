@@ -48,8 +48,8 @@ export default function CreateBurguer () {
     function redirect() {
         return navigate("/home/pedido")
     }
-
-    function handleChoosedOptions() {
+    
+    const handleChoosedOptions = async () => {
         var bread_div = document.getElementById("bread")
         var meat_div = document.getElementById("meat");
         var meat_state_div = document.getElementById("meat_state");
@@ -82,28 +82,35 @@ export default function CreateBurguer () {
         }
 
         var bread_option = bread_div.value;
-        console.log(bread_option)
         var meat_option = meat_div.value;
         var meat_state_option = meat_state_div.value;
         var cheese_option = cheese_div.value;
-
-        // console.log(bread_option.id, bread_option.value)
 
         const location = document.getElementById("check_order")
         
         if(bread_option != '' && meat_option != '' && meat_state_option != '' && salads_array != '' && cheese_option != '') {
             location.style.display = "none";
 
-            // console.log(bread_option, meat_option, meat_state_option, salads_array, cheese_option)
+            let name = 'montado';
+            let image = '../../../Imagens/montado_image.png';
+            let price = ''
 
-            const choosed_ingredients = [{
+            const choosed_ingredients = {  
+                name: name,
                 bread: bread_option,
                 meat: meat_option,
                 meat_state: meat_state_option,
-                salads: salads_array,
-                cheese: cheese_option
-            }];
-            // console.log(choosed_ingredients)
+                salads: salads_array.toString(),
+                cheese: cheese_option,
+                price: price,
+                image: image
+            };
+
+            try {
+                await axios.post("http://localhost:8800/options", choosed_ingredients)
+            }catch(error) {
+                console.log(error)
+            }
             
             localStorage.setItem("choosed_ingredients", JSON.stringify(choosed_ingredients))
             redirect()

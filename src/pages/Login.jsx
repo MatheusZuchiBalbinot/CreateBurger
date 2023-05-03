@@ -8,6 +8,7 @@ function Login() {
     const [password, setPassword] = useState(['']);
 
     const CheckLogin = () => {
+<<<<<<< Updated upstream
         if(login === 'asd' && password === '123') {
             return window.location.href="/home";
             // localStorage.setItem('validation', 'true')
@@ -16,6 +17,19 @@ function Login() {
         }
         else {
             return <alert> A senha de acesso está errada </alert>
+=======
+
+        console.log(login)
+        for(var i = 0; i < Object.keys(login).length; i++) {
+            if(username === login[i].username && password === login[i].password) {
+                localStorage.setItem("logged_username", login[i].username)
+                return trade_page();
+            }
+            if(username != login[i].username && password != login[i].password) {
+                var form_field = document.getElementById("form_field")
+                return form_field.style.border = "3px solid red" 
+            }
+>>>>>>> Stashed changes
         }
     }
 
