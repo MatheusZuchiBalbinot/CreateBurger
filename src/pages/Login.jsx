@@ -36,7 +36,7 @@ function Login() {
 
     const CheckLogin = () => {
 
-        console.log(login)
+        // console.log(login)
         for(var i = 0; i < Object.keys(login).length; i++) {
             if(username === login[i].username && password === login[i].password) {
                 localStorage.setItem("logged_username", login[i].username)

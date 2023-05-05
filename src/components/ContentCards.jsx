@@ -26,6 +26,16 @@ export default function ContentCards ({name, image, price, bread, meat, meat_sta
 
     }
 
+    const card_button = () => {
+        const actual_location = window.location.href
+        if (actual_location == "http://localhost:5173/home/pedido") {
+            return <button className={styles.order_button} onClick={sendOrder}> Remover Pedido </button>
+        }
+        else {
+            return <button className={styles.order_button} onClick={sendOrder}> Adicionar ao Pedido </button>
+        }
+    }
+
     return (
         <div className={styles.card} id={name}>
                 <img src={image} className={styles.card_image}></img>
@@ -38,7 +48,7 @@ export default function ContentCards ({name, image, price, bread, meat, meat_sta
                     <p className={styles.card_p}>Queijo: {cheese}</p>
                 </div>
                 <h3 className={styles.card_price}>Preço: R${price}</h3>
-                <button className={styles.order_button} onClick={sendOrder}> Adicionar ao Pedido </button>
+                {card_button()}
         </div>
     )
 }

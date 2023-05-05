@@ -22,12 +22,13 @@ export default function Orders() {
         fetch_orders()
     }, [])
 
+    var options_array = []
     function recived_orders() {
         for(var i = 0; i < data.length; i++) {
-            console.log(Object.values(data))
-            const options_array = Object.values(data[i])
-            return(<ContentCards name={options_array[6]} image={options_array[7]} price={options_array[8]} bread={options_array[1]} meat={options_array[2]} meat_state={options_array[3]} salads={options_array[4]} cheese={options_array[5]} />)
+            options_array.push(Object.values(data[i]))
         }
+        // console.log(options_array)
+        return options_array.map((options_array) => (<ContentCards name={options_array[6]} image={options_array[7]} price={options_array[8]} bread={options_array[1]} meat={options_array[2]} meat_state={options_array[3]} salads={options_array[4]} cheese={options_array[5]} />))           
 
     }
 

@@ -68,6 +68,12 @@
 
 .label_logo_image {
     margin: auto;
+    text-decoration: none;
+    color: black;
+}
+
+.label_logo_image:hover {
+    border-bottom: 2px solid rgb(68, 137, 228);
 }
 
 .profile {

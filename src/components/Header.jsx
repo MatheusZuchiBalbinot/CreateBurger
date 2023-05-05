@@ -20,7 +20,7 @@ export default function Header() {
             <div className={styles.header}>
                 <div className={styles.header_logo}>
                     <img className={styles.logo_image} src="https://img.freepik.com/vetores-premium/arte-vetorial-de-hamburguer_650710-2.jpg"></img>
-                    <label className={styles.label_logo_image} for="logo_image">CreateBurguer</label>
+                    <Link to={"/home"} className={styles.label_logo_image}> CreateBurguer </Link>
                 </div>
                 <div className={styles.header_icons}>
                     <Link to={"/home/CreateBurguer"} className={styles.header_navs}> Monte o seu </Link>

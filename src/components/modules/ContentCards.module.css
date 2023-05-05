@@ -48,6 +48,8 @@
 
 .card_title {
     display: flex;
+    font-size: 1.5vw;
+    text-transform:capitalize;
     padding: 0.5vw;
     justify-content: center;
     font-family: 'Delicious Handrawn', cursive;
