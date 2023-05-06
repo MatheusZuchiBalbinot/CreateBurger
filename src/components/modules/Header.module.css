@@ -51,7 +51,9 @@
 }
 
 .header_navs_link:hover {
-    border-bottom: 2px solid rgb(68, 137, 228);
+    padding: 0.5vw;
+    border: 1px solid white;
+    border-radius: 2vw;
 }
 
 .header_navs_p svg {

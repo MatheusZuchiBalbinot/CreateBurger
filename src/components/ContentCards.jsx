@@ -1,7 +1,7 @@
 import styles from "./modules/ContentCards.module.css"
 import axios from 'axios'
 
-export default function ContentCards ({name, image, price, bread, meat, meat_state, salads, cheese}) {
+export default function ContentCards ({id, name, image, price, bread, meat, meat_state, salads, cheese}) {
 
     const sendOrder = async () => {
 
@@ -26,10 +26,19 @@ export default function ContentCards ({name, image, price, bread, meat, meat_sta
 
     }
 
+    const removeOrder = async (id) => {
+        try {
+            await axios.delete("http://localhost:8800/orders/" + id)
+            window.location.reload()
+        }catch(error) {
+            console.log(error)
+        }
+    }
+
     const card_button = () => {
         const actual_location = window.location.href
         if (actual_location == "http://localhost:5173/home/pedido") {
-            return <button className={styles.order_button} onClick={sendOrder}> Remover Pedido </button>
+            return <button className={styles.order_button} onClick={()=>removeOrder(id)}> Remover Pedido </button>
         }
         else {
             return <button className={styles.order_button} onClick={sendOrder}> Adicionar ao Pedido </button>
@@ -37,7 +46,7 @@ export default function ContentCards ({name, image, price, bread, meat, meat_sta
     }
 
     return (
-        <div className={styles.card} id={name}>
+        <div className={styles.card} id={id}>
                 <img src={image} className={styles.card_image}></img>
                 <h3 className={styles.card_title}>{name} </h3>
                 <div className={styles.ingredients}>

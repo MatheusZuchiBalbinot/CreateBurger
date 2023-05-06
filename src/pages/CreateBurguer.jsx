@@ -131,9 +131,8 @@ export default function CreateBurguer () {
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input} id="bread">
                             <option></option>
-                            {/* {console.log(bread)} */}
                             {bread[0] ? <CreateBurguerOptionCreator all_options={bread}/> : null}
-                            </select> 
+                            </select>
                         </div>
                     </div>
                 </div>

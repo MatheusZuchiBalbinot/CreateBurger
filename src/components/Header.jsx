@@ -16,6 +16,10 @@ export default function Header() {
         return navigate("/");
     }
 
+    // const removeLogin = () => {
+    //     localStorage.removeItem("logged_username")
+    // }
+
         return (
             <div className={styles.header}>
                 <div className={styles.header_logo}>
@@ -28,7 +32,7 @@ export default function Header() {
                     <div className={styles.profile}>
                         <CgProfile />
                         <p className={styles.header_navs_p}> {loggedUsername} </p>
-                        <Link to={"/"} className={styles.header_navs_link}> <FiLogOut />    </Link>
+                        <Link to={"/"} className={styles.header_navs_link}> </Link>
                     </div>
                     
                 </div>

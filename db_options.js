@@ -100,6 +100,16 @@ app_express.post("/options", (req, res) => {
     })
 })
 
+app_express.delete("/orders/:id", (req, res) => {
+    const cardId = req.params.id
+    const q = "DELETE FROM orders WHERE id = ?" 
+    db.query(q, [cardId], (error,data) => {
+        if(error) {
+            return res.json("A inserção de elementos deu o seguinte erro: "+error)
+        }
+        return res.json("Card deleted")
+    })
+})
 
 app_express.listen(8800, ()=> {
     console.log("Coneccted with backend!!")
