@@ -20,5 +20,6 @@
 .cards_div {
     grid-area: cards_div;
     display: flex;
+    flex-wrap: wrap;
     padding: 0 2vw 2vw 2vw;
 }

@@ -16,8 +16,6 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
             image: image
         };
 
-        // localStorage.setItem("ready_order", JSON.stringify(ready_order))
-
         try {
             await axios.post("http://localhost:8800/options", ready_order)
         }catch(error) {

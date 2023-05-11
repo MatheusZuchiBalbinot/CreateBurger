@@ -3,6 +3,8 @@ import Footer from '../components/Footer';
 import CreateBurguerOptionCreator from '../components/CreateBurguerOptionCreator';
 import CreateBurguerCheckbox from '../components/CreateBurguerCheckbox';
 import styles from './modules/CreateBurguer.module.css';
+import Orders from './Orders';
+
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
@@ -32,13 +34,14 @@ export default function CreateBurguer () {
                 setSalads(fetch_salads.data)
                 setCheese(fetch_cheese.data)
 
+
                 // Só estou pegando a primeira coluna e não a segunda, onde tem o preço
             } 
             catch (err) {
                 console.log(err) 
             }
         }
-        fetchalloptions()
+        fetchalloptions();
     }, [])
 
     const handleClick = (event) => {
@@ -50,6 +53,7 @@ export default function CreateBurguer () {
     }
     
     const handleChoosedOptions = async () => {
+
         var bread_div = document.getElementById("bread")
         var meat_div = document.getElementById("meat");
         var meat_state_div = document.getElementById("meat_state");
@@ -109,8 +113,7 @@ export default function CreateBurguer () {
             }catch(error) {
                 console.log(error)
             }
-            
-            localStorage.setItem("choosed_ingredients", JSON.stringify(choosed_ingredients))
+
             redirect()
         }
         else {

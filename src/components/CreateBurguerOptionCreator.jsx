@@ -7,14 +7,10 @@ export default function CreateBurguerOptionCreator ({all_options}) {
             const items_options_array = []
             for(var i = 0; i < all_options.length; i++) {
                 items_options_array.push(Object.values(all_options[i]))
-                // price_options_array.push(Object.values(all_options[i])[1].toString())
 
             }
-            // console.log(items_options_array)
-            
-            // Agora o item_options_array[0] é o id.
 
-            return items_options_array.map((tipos) => (<option key={tipos[1]} id={tipos[1]} value={tipos[1]} > {tipos[1]}, R${tipos[2]} </option>))
+            return items_options_array.map((tipos) => (<option key={tipos[1]} className={tipos[0]} value={tipos[1]} > {tipos[1]}, R${tipos[2]} </option>))
         }
     }
 
