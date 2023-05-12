@@ -5,7 +5,7 @@ import axios from 'axios'
 import styles from './modules/Orders.module.css';
 import { useEffect, useState } from 'react';
 
-export default function Orders({data_for_price}) {
+export default function Orders() {
 
     const [data, setData] = useState([])
 
@@ -21,8 +21,6 @@ export default function Orders({data_for_price}) {
         }
         fetch_orders()
     }, [])
-
-    console.log(data_for_price)
 
     var options_array = []
     function recived_orders() {

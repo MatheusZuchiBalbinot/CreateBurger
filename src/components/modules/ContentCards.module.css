@@ -5,7 +5,7 @@
     display: grid;
     margin: 1vw;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Delius', cursive;
     width: 15vw;
     background-color: white;
     cursor: pointer;
@@ -16,18 +16,20 @@
 }
 
 .order_button {
-    padding: 1vw;
+    padding: 1vw 0 1vw 0;
     margin: 1vw;
-    background-color: #afab50;
+    background-color: #f5f08e;
     border: none;
+    font-family: 'Delius', cursive;
     border-radius: 5px;
-    color: white;
+    color: black;
     cursor: pointer;
 }
 
 .order_button:hover {
     background-color: #ece9ac;
     color: black;
+    font-weight: bold;
 }
 
 .card_image {
@@ -41,9 +43,10 @@
 }
 
 .card_price {
+    color: rgb(6, 161, 6);
     font-size: 1.2vw;
     text-align: center;
-    padding: 1vw;
+    padding: 0.5vw;
 }
 
 .card_title {

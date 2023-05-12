@@ -54,10 +54,10 @@ export default function CreateBurguer () {
     
     const handleChoosedOptions = async () => {
 
-        var bread_div = document.getElementById("bread")
-        var meat_div = document.getElementById("meat");
-        var meat_state_div = document.getElementById("meat_state");
-        var cheese_div = document.getElementById("cheese");
+        var bread_div = document.querySelector("#bread");
+        var meat_div = document.querySelector("#meat");
+        var meat_state_div = document.querySelector("#meat_state");
+        var cheese_div = document.querySelector("#cheese");
 
         var salads_repolho = document.getElementById("Repolho");
         var salads_tomate = document.getElementById("Tomate");
@@ -65,44 +65,68 @@ export default function CreateBurguer () {
         var salads_cebola = document.getElementById("Cebola");
         var salads_rucula = document.getElementById("Rúcula");
 
-        const salads_array = []
-        
-        if(salads_repolho.checked == true) {
-            salads_array.push('Repolho')
-        }
-        if(salads_tomate.checked == true) {
-            salads_array.push('Tomate')
-        }
-        if(salads_alface.checked == true) {
-            salads_array.push('Alface')
-        }
-        if(salads_rucula.checked == true) {
-            salads_array.push('Rúcula')
-        }
-        if(salads_cebola.checked == true) {
-            salads_array.push('Cebola')
+
+        var list_salads_name = []
+        var list_salads_price = []
+
+        var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+        for(var i = 0; i < checkboxes.length; i++) {
+            list_salads_name.push(checkboxes[i].id)
+            list_salads_price.push(checkboxes[i].value)
+        }   
+
+        // console.log(list_salads_name)
+
+        var selected_bread_value = bread_div.options[bread_div.selectedIndex].id;
+        var selected_bread_price = bread_div.options[bread_div.selectedIndex].value;
+
+        var selected_meat_value = meat_div.options[meat_div.selectedIndex].id;
+        var selected_meat_price = meat_div.options[meat_div.selectedIndex].value;
+
+        var selected_meat_state_value = meat_state_div.options[meat_state_div.selectedIndex].id;
+        var selected_meat_state = meat_state_div.options[meat_state_div.selectedIndex].value;
+
+        var selected_cheese_value = cheese_div.options[cheese_div.selectedIndex].id;
+        var selected_cheese_price = cheese_div.options[cheese_div.selectedIndex].value;
+
+        var bread_option = selected_bread_value;
+        var meat_option = selected_meat_value;
+        var meat_state_option = selected_meat_state_value;
+        var cheese_option = selected_cheese_value;
+
+        const selected_salads_price = []
+        var sum_of_salads = 0
+
+        list_salads_price.map((item) => {
+            selected_salads_price.push(Number(item))
+        })
+
+        for(var i = 0; i < selected_salads_price.length; i++) {
+            var sum_of_salads = sum_of_salads + selected_salads_price[i]
         }
 
-        var bread_option = bread_div.value;
-        var meat_option = meat_div.value;
-        var meat_state_option = meat_state_div.value;
-        var cheese_option = cheese_div.value;
+        var price_total = 0
+        const sum_of_selected_elements = [selected_bread_price, selected_meat_price, selected_meat_state, selected_cheese_price, sum_of_salads]
+
+        for(var i = 0; i < sum_of_selected_elements.length; i++) {
+            var price_total = price_total + Number(sum_of_selected_elements[i])
+        }
 
         const location = document.getElementById("check_order")
         
-        if(bread_option != '' && meat_option != '' && meat_state_option != '' && salads_array != '' && cheese_option != '') {
+        if(bread_option != '' && meat_option != '' && meat_state_option != '' && list_salads_name != '' && cheese_option != '') {
             location.style.display = "none";
 
             let name = 'montado';
             let image = '../../../Imagens/montado_image.png';
-            let price = ''
+            let price = price_total;
 
             const choosed_ingredients = {  
                 name: name,
                 bread: bread_option,
                 meat: meat_option,
                 meat_state: meat_state_option,
-                salads: salads_array.toString(),
+                salads: list_salads_name.toString(),
                 cheese: cheese_option,
                 price: price,
                 image: image
@@ -129,7 +153,7 @@ export default function CreateBurguer () {
             <h3 className={styles.choose_title}>Escolha os ingredientes do seu Hambúrguer: </h3>
             <div className={styles.chooses}>
                 <div className={styles.choose_options_div} id="choose_bread" onClick={handleClick}>
-                    <p className={styles.choose_p}> Escolha o Pão: </p>
+                    <p className={styles.choose_p}> Pão: </p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input} id="bread">
@@ -140,7 +164,7 @@ export default function CreateBurguer () {
                     </div>
                 </div>
                 <div className={styles.choose_options_div} id="choose_meat" onClick={handleClick}>
-                    <p className={styles.choose_p}> Escolha a Carne: </p>
+                    <p className={styles.choose_p}> Carne: </p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input} id="meat">
@@ -151,7 +175,7 @@ export default function CreateBurguer () {
                     </div>
                 </div>
                 <div className={styles.choose_options_div} id="choose_meat_state" onClick={handleClick}>
-                    <p className={styles.choose_p}> Escolha o Ponto da Carne: </p>
+                    <p className={styles.choose_p}> Ponto da Carne: </p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input} id="meat_state">
@@ -162,15 +186,15 @@ export default function CreateBurguer () {
                     </div>
                 </div>
                 <div className={styles.choose_options_div} id="choose_salads" onClick={handleClick}>
-                    <p className={styles.choose_p}> Escolha as Saladas: </p>
+                    <p className={styles.choose_p}> Saladas: </p>
                     <div className={styles.choose_input_div}>
-                        <div className={styles.choose_specific_div}>
+                        <div className={styles.choose_specific_div} id="salads">
                             {salads[0] ? <CreateBurguerCheckbox all_options={salads}/> : null}
                         </div>
                     </div>
                 </div>
                 <div className={styles.choose_options_div} id="choose_cheese" onClick={handleClick}>
-                    <p className={styles.choose_p}> Escolha o Queijo: </p>
+                    <p className={styles.choose_p}> Queijo: </p>
                     <div className={styles.choose_input_div}>
                         <div className={styles.choose_specific_div}>
                             <select className={styles.choose_dropdown_input} id="cheese">
