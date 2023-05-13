@@ -21,6 +21,10 @@
     font-size: 1.5vw;
 }
 
+.total_price {
+    font-family: 'Delius', cursive;
+}
+
 .choose_p {
     margin: auto;
     font-family: 'Delius', cursive;

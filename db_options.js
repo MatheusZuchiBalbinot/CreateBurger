@@ -100,6 +100,17 @@ app_express.post("/options", (req, res) => {
     })
 })
 
+app_express.post("/register", (req, res) => {
+    const q = "INSERT INTO login(`salads`,`cheese`) VALUES (?)"
+    const values = [req.body.login,req.body.password]
+    db.query(q, [values], (error,data) => {
+        if(error) {
+            return res.json("A inserção de elementos deu o seguinte erro: "+error)
+        }
+        return res.json(data)
+    })
+})
+
 
 app_express.delete("/orders/:id", (req, res) => {
     const cardId = req.params.id

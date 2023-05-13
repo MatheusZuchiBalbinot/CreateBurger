@@ -10,7 +10,7 @@ import axios from 'axios'
 
 import { useState, useEffect } from "react";
 
-export default function CreateBurguer () {
+export default function CreateBurguer() {
 
     const [bread, setBread] = useState([]);
     const [meat, setMeat] = useState([]);
@@ -59,13 +59,6 @@ export default function CreateBurguer () {
         var meat_state_div = document.querySelector("#meat_state");
         var cheese_div = document.querySelector("#cheese");
 
-        var salads_repolho = document.getElementById("Repolho");
-        var salads_tomate = document.getElementById("Tomate");
-        var salads_alface = document.getElementById("Alface");
-        var salads_cebola = document.getElementById("Cebola");
-        var salads_rucula = document.getElementById("Rúcula");
-
-
         var list_salads_name = []
         var list_salads_price = []
 
@@ -74,8 +67,6 @@ export default function CreateBurguer () {
             list_salads_name.push(checkboxes[i].id)
             list_salads_price.push(checkboxes[i].value)
         }   
-
-        // console.log(list_salads_name)
 
         var selected_bread_value = bread_div.options[bread_div.selectedIndex].id;
         var selected_bread_price = bread_div.options[bread_div.selectedIndex].value;
@@ -137,7 +128,6 @@ export default function CreateBurguer () {
             }catch(error) {
                 console.log(error)
             }
-
             redirect()
         }
         else {
@@ -207,6 +197,7 @@ export default function CreateBurguer () {
             </div>
             <div className={styles.finalize_order}>
                 <span className={styles.check_order} id="check_order"> Selecione todos os ingredientes!! </span>
+                <h3 className={styles.total_price}> R$ </h3>
                 <button type="button" className={styles.finalize_order_button} onClick={handleChoosedOptions}> Finalizar Pedido </button>
             </div>  
         </div>

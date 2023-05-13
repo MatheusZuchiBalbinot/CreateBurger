@@ -10,8 +10,6 @@
     ". characteristics ."
     ". ou_title ."
     ". content_button .";
-    background-image: linear-gradient(to right, #fcebd2 , #faebab);
-
 }
 
 .content_logo {
@@ -24,7 +22,7 @@
 
 .ou_title {
     grid-area: ou_title;
-    padding: 2vw;
+    padding: 1vw;
     font-family: 'Delius', cursive;
     margin: auto;
     font-size: 2vw;
