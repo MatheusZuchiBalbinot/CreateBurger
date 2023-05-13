@@ -1,5 +1,5 @@
 # CreateBurguer
-#### Olá, meu nome é Matheus Zuchi Balbinot e esse é um projeto que fiz do zero para melhorar as minhas habilidades de react e de utilização de APIs. 
+#### Olá, meu nome é Matheus Zuchi Balbinot e esse é um projeto que fiz do zero para melhorar as minhas habilidades em React, além de melhorar o meu consumo e também aprender a criação de APIs.
 ## Breve descrição do projeto:
 
 ####  Para esse trabalho estou aprendendo Node e melhorando as minhas habilidades em MySQL e PHP, além é claro, de React, Javascript, HTML e CSS.
