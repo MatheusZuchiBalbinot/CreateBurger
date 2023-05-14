@@ -144,53 +144,72 @@ export default function CreateBurguer() {
             <div className={styles.chooses}>
                 <div className={styles.choose_options_div} id="choose_bread" onClick={handleClick}>
                     <p className={styles.choose_p}> Pão: </p>
-                    <div className={styles.choose_input_div}>
-                        <div className={styles.choose_specific_div}>
-                            <select className={styles.choose_dropdown_input} id="bread">
-                            <option></option>
-                            {bread[0] ? <CreateBurguerOptionCreator all_options={bread}/> : null}
-                            </select>
+
+                    <div className={styles.image_and_select_merge_div}>
+                        <img className={styles.respective_option_image} src='https://breadmaker.com.br/wp-content/uploads/2021/04/standard.png'></img>
+                        <div className={styles.choose_input_div}>
+                            <div className={styles.choose_specific_div}>
+                                <select className={styles.choose_dropdown_input} id="bread">
+                                <option></option>
+                                {bread[0] ? <CreateBurguerOptionCreator all_options={bread}/> : null}
+                                </select>
+                            </div>
                         </div>
                     </div>
+
                 </div>
                 <div className={styles.choose_options_div} id="choose_meat" onClick={handleClick}>
                     <p className={styles.choose_p}> Carne: </p>
-                    <div className={styles.choose_input_div}>
-                        <div className={styles.choose_specific_div}>
-                            <select className={styles.choose_dropdown_input} id="meat">
-                            <option></option>
-                            {meat[0] ? <CreateBurguerOptionCreator all_options={meat}/> : null}
-                            </select> 
+
+                    <div className={styles.image_and_select_merge_div}>
+                    <img className={styles.respective_option_image} src='../../Imagens/ingredients/carne.png'></img>
+                        <div className={styles.choose_input_div}>
+                            <div className={styles.choose_specific_div}>
+                                <select className={styles.choose_dropdown_input} id="meat">
+                                <option></option>
+                                {meat[0] ? <CreateBurguerOptionCreator all_options={meat}/> : null}
+                                </select> 
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className={styles.choose_options_div} id="choose_meat_state" onClick={handleClick}>
                     <p className={styles.choose_p}> Ponto da Carne: </p>
-                    <div className={styles.choose_input_div}>
-                        <div className={styles.choose_specific_div}>
-                            <select className={styles.choose_dropdown_input} id="meat_state">
-                            <option></option>
-                            {meat_state[0] ? <CreateBurguerOptionCreator all_options={meat_state}/> : null}
-                            </select> 
+
+                    <div className={styles.image_and_select_merge_div}>
+                        <img className={styles.respective_option_image} src='../../Imagens/ingredients/ponto_da_carne.png'></img>
+                        <div className={styles.choose_input_div}>
+                            <div className={styles.choose_specific_div}>
+                                <select className={styles.choose_dropdown_input} id="meat_state">
+                                <option></option>
+                                {meat_state[0] ? <CreateBurguerOptionCreator all_options={meat_state}/> : null}
+                                </select> 
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className={styles.choose_options_div} id="choose_salads" onClick={handleClick}>
                     <p className={styles.choose_p}> Saladas: </p>
-                    <div className={styles.choose_input_div}>
-                        <div className={styles.choose_specific_div} id="salads">
-                            {salads[0] ? <CreateBurguerCheckbox all_options={salads}/> : null}
+                    <div className={styles.image_and_select_merge_div}>
+                        <img className={styles.respective_option_image} src='../../Imagens/ingredients/saladas.png'></img>
+                        <div className={styles.choose_input_div}>
+                            <div className={styles.choose_specific_div} id="salads">
+                                {salads[0] ? <CreateBurguerCheckbox all_options={salads}/> : null}
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className={styles.choose_options_div} id="choose_cheese" onClick={handleClick}>
                     <p className={styles.choose_p}> Queijo: </p>
-                    <div className={styles.choose_input_div}>
-                        <div className={styles.choose_specific_div}>
-                            <select className={styles.choose_dropdown_input} id="cheese">
-                                <option></option>
-                                {cheese[0] && <CreateBurguerOptionCreator all_options={cheese}/>}
-                            </select> 
+                    <div className={styles.image_and_select_merge_div}>
+                        <img className={styles.respective_option_image} src='../../Imagens/ingredients/queijo.png'></img>
+                        <div className={styles.choose_input_div}>
+                            <div className={styles.choose_specific_div}>
+                                <select className={styles.choose_dropdown_input} id="cheese">
+                                    <option></option>
+                                    {cheese[0] && <CreateBurguerOptionCreator all_options={cheese}/>}
+                                </select> 
+                            </div>
                         </div>
                     </div>
                 </div>

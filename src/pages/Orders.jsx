@@ -35,10 +35,12 @@ export default function Orders() {
     return (
         <>
             <Header />
-            <h3 className={styles.orders_title}> Pedidos: </h3>
-            <div className={styles.orders_main_div}>
-                <div className={styles.cards_div} id='cards_div'>
-                    {recived_orders()}
+                <div className={styles.orders}>
+                <h3 className={styles.orders_title}> Pedidos: </h3>
+                <div className={styles.orders_main_div}>
+                    <div className={styles.cards_div} id='cards_div'>
+                        {recived_orders()}
+                    </div>
                 </div>
             </div>
             <Footer />

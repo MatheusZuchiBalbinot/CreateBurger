@@ -2,8 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 
 .createBurguer_div {
-    justify-content: center;
     padding: 2vw 1vw 2vw 1vw;
+    color: white;
+    background-image: linear-gradient(to right bottom, #252525, #1f1f1f, #1a1a1a, #151515, #0e0e0e, #0d0b10, #0d0811, #0f0412, #1a0416, #240416, #2e0212, #360006);
 }
 
 .chooses {
@@ -61,6 +62,16 @@
 .choose_specific_div svg {
     font-size: 2vw;
     margin: auto;
+}
+
+.respective_option_image {
+    width: 200px;
+    height: auto;
+    margin: auto;
+}
+
+.image_and_select_merge_div {
+    display: flex;
 }
 
 .choose_all_options_div {
