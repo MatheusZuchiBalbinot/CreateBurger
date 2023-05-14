@@ -1,5 +1,7 @@
-import styles from "./modules/ContentCards.module.css"
-import axios from 'axios'
+import styles from "./modules/ContentCards.module.css";
+import axios from 'axios';
+import {IoMdAdd} from 'react-icons/io';
+import {RiSubtractFill} from 'react-icons/ri';
 
 export default function ContentCards ({id, name, image, price, bread, meat, meat_state, salads, cheese}) {
 
@@ -36,26 +38,26 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
     const card_button = () => {
         const actual_location = window.location.href
         if (actual_location == "http://localhost:5173/home/pedido") {
-            return <button className={styles.order_button} onClick={()=>removeOrder(id)}> Remover Pedido </button>
+            return <button className={styles.order_button} onClick={()=>removeOrder(id)}> <RiSubtractFill /> </button>
         }
         else {
-            return <button className={styles.order_button} onClick={sendOrder}> Adicionar ao Pedido </button>
+            return <button className={styles.order_button} onClick={sendOrder}> <IoMdAdd /> </button>
         }
     }
 
     return (
         <div className={styles.card} id={id}>
                 <img src={image} className={styles.card_image}></img>
-                <h3 className={styles.card_title}>{name} </h3>
                 <div className={styles.ingredients}>
+                    <h3 className={styles.card_title}>{name} </h3>
                     <p className={styles.card_p}>Pão: {bread}</p>
                     <p className={styles.card_p}>Carne: {meat}</p>
                     <p className={styles.card_p}>Ponto da Carne: {meat_state}</p>
                     <p className={styles.card_p}>Saladas: {salads}</p>
                     <p className={styles.card_p}>Queijo: {cheese}</p>
+                    <h3 className={styles.card_price}>Preço: R${price}</h3>
+                    {card_button()}
                 </div>
-                <h3 className={styles.card_price}>Preço: R${price}</h3>
-                {card_button()}
         </div>
     )
 }

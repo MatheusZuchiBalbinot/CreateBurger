@@ -12,9 +12,9 @@ export default function Header() {
 
     var loggedUsername = localStorage.getItem("logged_username")
 
-    if (loggedUsername == null || loggedUsername == undefined) {
-        return navigate("/");
-    }
+    // if (loggedUsername == null || loggedUsername == undefined) {
+    //     return navigate("/");
+    // }
 
     // const removeLogin = () => {
     //     localStorage.removeItem("logged_username")
@@ -23,7 +23,7 @@ export default function Header() {
         return (
             <div className={styles.header}>
                 <div className={styles.header_logo}>
-                    <img className={styles.logo_image} src="https://img.freepik.com/vetores-premium/arte-vetorial-de-hamburguer_650710-2.jpg"></img>
+                    <img className={styles.logo_image} src="http://localhost:5173/Imagens/hamburguer_logo.png"></img>
                     <Link to={"/home"} className={styles.label_logo_image}> CreateBurguer </Link>
                 </div>
                 <div className={styles.header_icons}>

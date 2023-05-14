@@ -6,7 +6,7 @@
     grid-template-columns: 0.7fr 2fr 2fr 0.7fr;
     grid-template-rows: auto;
     grid-template-areas: ". header_logo header_icons .";
-    background-image: linear-gradient(to right, #fedfb2 , #fae894);
+    background-image: linear-gradient(to right, #131313, #111214, #0d1213, #0a120e, #0e1007);
     font-family: 'Delius', cursive;
     font-weight: bold;
     font-size: 1.3vw;
@@ -15,6 +15,7 @@
 .header_logo {
     grid-area: header_logo;
     display: flex;
+    gap: 2vw;
     margin: auto;
     font-family: 'Delius', cursive;
     font-weight: bold;
@@ -32,14 +33,13 @@
     text-decoration: none;
     font-size: 1.2vw;
     margin: auto;
-    color: black;
+    color: rgb(221, 220, 220);
 }
 
 .header_navs_p {
     display: flex;
     margin: auto;
     font-size: 1.5vw;
-    color: black;
     font-family: 'Source Code Pro', monospace;
 }
 
@@ -47,7 +47,6 @@
     font-size: 1.5vw;
     margin: auto;
     display: flex;
-    color: black;
 }
 
 .header_navs_link:hover {
@@ -62,6 +61,7 @@
 
 .header_navs:hover {
     border-bottom: 2px solid rgb(68, 137, 228);
+    color: rgba(229,40,63,255);
 }
 
 .logo_image {
@@ -71,11 +71,12 @@
 .label_logo_image {
     margin: auto;
     text-decoration: none;
-    color: black;
+    color: rgb(221, 220, 220);
 }
 
 .label_logo_image:hover {
     border-bottom: 2px solid rgb(68, 137, 228);
+    color: rgba(229,40,63,255);
 }
 
 .profile {
@@ -83,6 +84,7 @@
     margin: auto;
     padding: 1vw;
     gap: 1vw;
+    color: rgb(221, 220, 220);
 }
 
 .profile svg {

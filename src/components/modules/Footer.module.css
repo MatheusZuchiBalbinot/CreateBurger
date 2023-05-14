@@ -7,7 +7,8 @@
     grid-template-areas: 
     ". footer_div footer_div .";
     border-top: 1px solid white;
-    background-image: linear-gradient(to left, #fedfb2 , #fae894);
+    color: white;
+    background-image: linear-gradient(to right, #131313, #111214, #0d1213, #0a120e, #0e1007);
     font-family: 'Roboto', sans-serif;
 
 }

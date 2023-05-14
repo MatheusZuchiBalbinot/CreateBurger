@@ -6,26 +6,58 @@
     grid-template-areas: 
     "content_logo content_logo content_logo"
     ". house_orders_title ."
-    ". house_ready_orders ."
-    ". characteristics ."
-    ". ou_title ."
-    ". content_button .";
+    ". house_ready_orders .";
+    background-image: linear-gradient(to right bottom, #252525, #1f1f1f, #1a1a1a, #151515, #0e0e0e, #0d0b10, #0d0811, #0f0412, #1a0416, #240416, #2e0212, #360006);    color: white;
 }
 
 .content_logo {
     grid-area: content_logo;
+    display: grid;
+    grid-template-columns: 5vw auto auto 5vw;
+    grid-template-rows: auto;
+    grid-template-areas: ". content_items content_image .";
 }
+
+.content_image {
+    grid-area: content_image;
+}
+
+.content_image img {
+    width: 50vw;
+    height: auto;
+}
+
+.content_items {
+    grid-area: content_items;
+    display: block;
+    margin: auto;
+}
+.content_introduction {
+    display: block;
+    padding: 1vw;
+}
+
+.content_introduction_title_changed {
+    font-family: 'Delius', cursive;
+    font-size: 3.5vw;
+    text-align: right;
+    color: rgba(229,40,63,255);
+}
+
+.content_introduction_title {
+    font-family: 'Delius', cursive;
+    font-size: 3.5vw;
+    text-align: right;
+}
+
+.content_button {
+    grid-area: content_button;
+    padding: 2vw;
+}
+
 .logo_image {
     width: 100%;
     height: 100%;
-}
-
-.ou_title {
-    grid-area: ou_title;
-    padding: 1vw;
-    font-family: 'Delius', cursive;
-    margin: auto;
-    font-size: 2vw;
 }
 
 .characteristics {
@@ -49,7 +81,7 @@
 
 .house_orders_title {
     grid-area: house_orders_title;
-    padding: 1vw 1vw 0 1vw;
+    padding: 2vw;
     font-family: 'Delius', cursive;
     margin: auto;
     font-size: 2vw;
@@ -78,35 +110,24 @@
     grid-area: price;
 }
 
-
-.content_button {
-    grid-area: content_button;
-    display: flex;
-    padding: 2vw;
-}
-
-.content_button button:hover{
-    background-color: rgb(219, 235, 194);
-    color: black;
-    cursor: pointer;
-}
-
-
 .content_button button {
     display: flex;
     margin: auto;
     justify-content: center;
     border: none;
-    background-color: white;
-    color: black;
+    background-color: rgba(229,40,63,255);
+    color: white;
     padding: 1vw;
-    border-radius: 2vw;
+    border-top-left-radius: 3vw;
+    border-bottom-left-radius: 3vw;
+    border-bottom-right-radius: 3vw;
     font-family: 'Delius', cursive;
 }
 
-.content_button svg {
-    color: bisque;
-    font-size: 3vw;
+.content_button button:hover{
+    background-color: rgb(211, 243, 97);
+    color: black;
+    cursor: pointer;
 }
 
 .content_button label {
