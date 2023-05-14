@@ -81,7 +81,6 @@
 
 .house_orders_title {
     grid-area: house_orders_title;
-    padding: 2vw;
     font-family: 'Delius', cursive;
     margin: auto;
     font-size: 2vw;
@@ -115,7 +114,7 @@
     margin: auto;
     justify-content: center;
     border: none;
-    background-color: rgba(229,40,63,255);
+    background-color: goldenrod;
     color: white;
     padding: 1vw;
     border-top-left-radius: 3vw;
@@ -125,8 +124,8 @@
 }
 
 .content_button button:hover{
-    background-color: rgb(211, 243, 97);
-    color: black;
+    color: white;
+    font-weight: bold;
     cursor: pointer;
 }
 

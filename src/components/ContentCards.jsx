@@ -56,7 +56,9 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
                     <p className={styles.card_p}>Saladas: {salads}</p>
                     <p className={styles.card_p}>Queijo: {cheese}</p>
                     <h3 className={styles.card_price}>Preço: R${price}</h3>
-                    {card_button()}
+                    <div className={styles.button_div}>
+                        {card_button()}
+                    </div>
                 </div>
         </div>
     )
