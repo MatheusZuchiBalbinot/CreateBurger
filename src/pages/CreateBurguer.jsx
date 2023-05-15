@@ -51,6 +51,8 @@ export default function CreateBurguer() {
     function redirect() {
         return navigate("/home/pedido")
     }
+
+
     
     const handleChoosedOptions = async () => {
 
@@ -103,13 +105,15 @@ export default function CreateBurguer() {
             var price_total = price_total + Number(sum_of_selected_elements[i])
         }
 
+        
+
         const location = document.getElementById("check_order")
         
         if(bread_option != '' && meat_option != '' && meat_state_option != '' && list_salads_name != '' && cheese_option != '') {
             location.style.display = "none";
 
             let name = 'montado';
-            let image = '../../../Imagens/montado_image.png';
+            let image = '../../../Imagens/hamburguer_logo.png';
             let price = price_total;
 
             const choosed_ingredients = {  
@@ -216,7 +220,7 @@ export default function CreateBurguer() {
             </div>
             <div className={styles.finalize_order}>
                 <span className={styles.check_order} id="check_order"> Selecione todos os ingredientes!! </span>
-                <h3 className={styles.total_price}> R$ </h3>
+                {/* <h3 className={styles.total_price}> R$ </h3> */}
                 <button type="button" className={styles.finalize_order_button} onClick={handleChoosedOptions}> Finalizar Pedido </button>
             </div>  
         </div>

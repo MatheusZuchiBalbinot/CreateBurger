@@ -3,8 +3,7 @@
 
 .card {
     display: grid;
-    margin: 1vw;
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    margin: 0 1vw 2vw 1vw;
     font-family: 'Delius', cursive;
     width: 15vw;
 }
@@ -72,7 +71,7 @@
 }
 
 .ingredients {
-    padding: 2vw 1vw 0 1vw;
+    padding: 1vw;
     border-radius: 2vw;
     cursor: pointer;
     background-image: linear-gradient(to right bottom, #434142, #39393b, #303133, #272a2a, #1f2221);

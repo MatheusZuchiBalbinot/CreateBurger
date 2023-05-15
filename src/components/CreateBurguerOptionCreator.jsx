@@ -10,7 +10,7 @@ export default function CreateBurguerOptionCreator ({all_options}) {
 
             }
 
-            return items_options_array.map((tipos) => (<option key={tipos[1]} id={tipos[1]} className={styles.checkbox_label} value={tipos[2]} > {tipos[1]}, R${tipos[2]} </option>))
+            return items_options_array.map((tipos) => (<option key={tipos[1]} id={tipos[1]} className={styles.option_label} value={tipos[2]} > {tipos[1]}, R${tipos[2]} </option>))
         }
     }
 

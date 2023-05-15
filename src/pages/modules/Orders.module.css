@@ -28,5 +28,5 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 1vw 2vw 1vw 2vw;
+    padding: 1vw 0 1vw 0;
 }

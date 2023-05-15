@@ -8,8 +8,15 @@
     font-weight: bold;
 }
 
-.checkbox_label {
+.option_label {
     color: black;
+    cursor: pointer;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+}
+
+.checkbox_label {
+    color: white;
     cursor: pointer;
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
@@ -21,4 +28,5 @@
 
 .checkbox_div {
     padding: 0.5vw;
+    color: white;
 }

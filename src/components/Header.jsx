@@ -12,13 +12,13 @@ export default function Header() {
 
     var loggedUsername = localStorage.getItem("logged_username")
 
-    // if (loggedUsername == null || loggedUsername == undefined) {
-    //     return navigate("/");
-    // }
+    if (loggedUsername == null || loggedUsername == undefined) {
+        return navigate("/");
+    }
 
-    // const removeLogin = () => {
-    //     localStorage.removeItem("logged_username")
-    // }
+    const removeLogin = () => {
+        localStorage.removeItem("logged_username")
+    }
 
         return (
             <div className={styles.header}>
