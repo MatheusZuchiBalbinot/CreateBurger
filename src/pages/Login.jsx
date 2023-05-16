@@ -10,6 +10,7 @@ function Login() {
 
     const [username, setUsername] = useState(['']);
     const [password, setPassword] = useState(['']);
+    const [confirmPassword, setConfirmPassword] = useState('')
 
     const navigate = useNavigate();
 
@@ -42,12 +43,15 @@ function Login() {
     }
 
     function  actual_page_buttons() {
-        if (actual_location == "http://localhost:5173/") {
-            return <input type="password" id="password_input" className={styles.user_password_input} placeholder="Digite a sua senha: " onChange={(e) => {setPassword(e.target.value)}}></input>
+        if (actual_location == "http://localhost:5173/register") {
+            return (
+            <div className={styles.input_with_icon}>
+                <BsFillLockFill />
+                <input type="password" id="password_input" className={styles.user_password_confirm_input} placeholder="Confirme sua senha: " onChange={(e) => {setConfirmPassword(e.target.value)}}></input>
+            </div>
+            )
         }
-        else {
-            return 
-        }
+
     }
 
     function redirect_to_register() {
@@ -68,15 +72,37 @@ function Login() {
     }
 
     const CheckLogin = () => {
-        for(var i = 0; i < Object.keys(login).length; i++) {
-            if(username === login[i].username && password === login[i].password) {
-                localStorage.setItem("logged_username", login[i].username)
-                return trade_page();
+        if(actual_location == "http://localhost:5173/") {
+            for(var i = 0; i < Object.keys(login).length; i++) {
+                if(username === login[i].username && password === login[i].password) {
+                    localStorage.setItem("logged_username", login[i].username)
+                    return trade_page();
+                }
+                if(username != login[i].username && password != login[i].password) {
+                    var form_field = document.getElementById("form_field")
+                    return form_field.style.border = "3px solid red" 
+                }
             }
-            if(username != login[i].username && password != login[i].password) {
+        }
+        if(actual_location == "http://localhost:5173/register") {
+            if(password == confirmPassword) {
+                const login_data = {username: username, password: password}
+                const add_login = async () => {
+                    try {
+                        const add_login = await axios.post("http://localhost:8800/register", login_data);
+                        return navigate("/");
+                    } 
+                    catch (err) {
+                        console.log(err) 
+                    }
+                }
+                add_login()
+            }
+            else {
                 var form_field = document.getElementById("form_field")
-                return form_field.style.border = "3px solid red" 
+                return form_field.style.border = "2px solid red" 
             }
+            
         }
     }
 
@@ -95,8 +121,9 @@ function Login() {
                     <label htmlFor="user_input" className={styles.titles_style}> Password: </label>
                     <div className={styles.input_with_icon}>
                         <BsFillLockFill />
-                        {actual_page_buttons()}
+                        <input type="password" id="password_input" className={styles.user_password_input} placeholder="Digite a sua senha: " onChange={(e) => {setPassword(e.target.value)}}></input>
                     </div>
+                    {actual_page_buttons()}
                 </div>
                 <div className={styles.buttons_div}>
                     <button type="button" className={styles.button_buttons} onClick={CheckLogin}> Enviar </button>

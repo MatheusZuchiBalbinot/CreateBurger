@@ -6,9 +6,11 @@
     grid-template-rows: 5vh 90vh 5vh;
     grid-template-areas:
     ". . . ." 
-    "login_form gif_image gif_image gif_image" 
+    "login_form login_form gif_image gif_image" 
     ". . . .";
     font-family: 'Roboto', sans-serif;
+    color: black;
+    background-image: linear-gradient(to right bottom, #252525, #1f1f1f, #1a1a1a, #151515, #0e0e0e, #0d0b10, #0d0811, #0f0412, #1a0416, #240416, #2e0212, #360006);    color: white;
 
 }
 
@@ -29,14 +31,13 @@
     padding: 1.5vw;
     height: auto;
     border-radius: 1vw;
-    background-color: #f6f1de;
-    opacity: 0.9;
-    
+    background-color: #f8ebbd;   
 }
 
 .form_title {
     margin: 0;
     padding: 1vw;
+    color: black;
     text-align: center;
 }
 
@@ -46,6 +47,7 @@
 }
 
 .titles_style {
+    color: black;
     font-weight: bolder;
 }
 
@@ -61,21 +63,24 @@
 
 .input_with_icon svg {
     margin: auto;
+    color: black;
     font-size: 2vw;
 }
 
-.user_password_input {
+.user_password_input, .user_password_confirm_input {
     width: 20vw;
     border: none;
     padding: 1vw;
     margin: 0 1vw 0 1vw;
-    background-color: #f6f1de;
+    background-color: #f8ebbd;
+    opacity: 0.5;
     color: black;
     outline: none;
 }
 
-.user_password_input:hover{
+.user_password_input:hover, .user_password_confirm_input:hover {
     border-bottom: 1px solid rgb(68, 137, 228);
+    opacity: 1;
 }
 
 input:focus::placeholder {
@@ -94,6 +99,7 @@ input:focus::placeholder {
 }
 
 .button_buttons {
+    cursor: pointer;
     border: none;
     color: white;
     background-color: #FF725E; 

@@ -33,12 +33,14 @@
     text-decoration: none;
     font-size: 1.2vw;
     margin: auto;
+    white-space: nowrap;
     color: rgb(221, 220, 220);
 }
 
 .header_navs_p {
     display: flex;
     margin: auto;
+    white-space: nowrap;
     font-size: 1.5vw;
     font-family: 'Source Code Pro', monospace;
 }

@@ -101,8 +101,8 @@ app_express.post("/options", (req, res) => {
 })
 
 app_express.post("/register", (req, res) => {
-    const q = "INSERT INTO login(`salads`,`cheese`) VALUES (?)"
-    const values = [req.body.login,req.body.password]
+    const q = "INSERT INTO login(`username`,`password`) VALUES (?)"
+    const values = [req.body.username, req.body.password]
     db.query(q, [values], (error,data) => {
         if(error) {
             return res.json("A inserção de elementos deu o seguinte erro: "+error)

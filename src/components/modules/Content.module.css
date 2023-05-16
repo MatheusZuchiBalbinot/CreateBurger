@@ -51,7 +51,6 @@
 }
 
 .content_button {
-    grid-area: content_button;
     padding: 2vw;
 }
 
@@ -74,7 +73,6 @@
 
 .house_ready_orders {
     grid-area: house_ready_orders;
-    display: flex;
     padding: 2vw;
     justify-content: center;
 }
