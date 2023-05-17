@@ -35,6 +35,26 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
         }
     }
 
+    const OpentheBurguerScreen = () => {
+        // return (
+        //     <div className={styles.card} id={id}>
+        //         <img src={image} className={styles.card_image}></img>
+        //         <div className={styles.ingredients}>
+        //             <h3 className={styles.card_title}>{name} </h3>
+        //             <p className={styles.card_p}>Pão: {bread}</p>
+        //             <p className={styles.card_p}>Carne: {meat}</p>
+        //             <p className={styles.card_p}>Ponto da Carne: {meat_state}</p>
+        //             <p className={styles.card_p}>Saladas: {salads}</p>
+        //             <p className={styles.card_p}>Queijo: {cheese}</p>
+        //             <h3 className={styles.card_price}>Preço: R${price} </h3>
+        //             <div className={styles.button_div}>
+        //                 {card_button()}
+        //             </div>
+        //         </div>
+        // </div>
+        // )
+    }
+
     const card_button = () => {
         const actual_location = window.location.href
         if (actual_location == "http://localhost:5173/home/pedido") {
@@ -46,16 +66,11 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
     }
 
     return (
-        <div className={styles.card} id={id}>
+        <div className={styles.card} id={id} onClick={OpentheBurguerScreen()}>
                 <img src={image} className={styles.card_image}></img>
-                <div className={styles.ingredients}>
-                    <h3 className={styles.card_title}>{name} </h3>
-                    <p className={styles.card_p}>Pão: {bread}</p>
-                    <p className={styles.card_p}>Carne: {meat}</p>
-                    <p className={styles.card_p}>Ponto da Carne: {meat_state}</p>
-                    <p className={styles.card_p}>Saladas: {salads}</p>
-                    <p className={styles.card_p}>Queijo: {cheese}</p>
-                    <h3 className={styles.card_price}>Preço: R${price} </h3>
+                <div className={styles.card_content_items}>
+                    <h3 className={styles.card_name}> {name} </h3>
+                    <h3 className={styles.card_price}>R${price} </h3>
                     <div className={styles.button_div}>
                         {card_button()}
                     </div>

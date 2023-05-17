@@ -73,14 +73,17 @@
 
 .house_ready_orders {
     grid-area: house_ready_orders;
+    display: flex;
+    flex-wrap: wrap;
     padding: 2vw;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .house_orders_title {
     grid-area: house_orders_title;
     font-family: 'Delius', cursive;
     margin: auto;
+    padding: 1vw 2vw 2vw 2vw;
     font-size: 2vw;
 }
 
