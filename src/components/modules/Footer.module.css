@@ -6,9 +6,8 @@
     grid-template-rows: auto;
     grid-template-areas: 
     ". footer_div footer_div .";
-    border-top: 1px solid white;
     color: white;
-    background-image: linear-gradient(to right, #131313, #111214, #0d1213, #0a120e, #0e1007);
+    background-image: linear-gradient(to right, #000000, #090909, #111111, #171717, #1c1c1c);
     font-family: 'Roboto', sans-serif;
 
 }

@@ -13,7 +13,7 @@ export default function Content() {
             meat_state: "Ao ponto",
             salads: "Tomate e Alface",
             cheese: "Cheddar",
-            image: "http://localhost:5173/Imagens/hamburguers/suino_do_pecado.png",
+            image: "http://localhost:5173/Imagens/hamburguers/la_fish.png",
             price: 29.99,
         },
         order_2: {
@@ -33,7 +33,7 @@ export default function Content() {
             meat_state: "Ao ponto",
             salads: "Alface",
             cheese: "Queijo de Cabra",
-            image: "http://localhost:5173/Imagens/hamburguers/suino_do_pecado.png",
+            image: "http://localhost:5173/Imagens/hamburguers/boi_angelical.png",
             price: 33.99,
         },
         order_4: {
@@ -43,7 +43,7 @@ export default function Content() {
             meat_state: "Ao ponto",
             salads: "Tomate e Alface",
             cheese: "Emmental",
-            image: "http://localhost:5173/Imagens/hamburguers/suino_do_pecado.png",
+            image: "http://localhost:5173/Imagens/hamburguers/frango_voador.png",
             price: 27.99,
         },
         

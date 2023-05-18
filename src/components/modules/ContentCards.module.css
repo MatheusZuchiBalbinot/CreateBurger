@@ -2,13 +2,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 
 .card {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "name_image_and_price_of_card ingredients";
     cursor: pointer;
-    margin: 0 1vw 2vw 1vw;
+    margin: 2vw;
+    padding: 1vw;
+    width: 30vw;
     font-family: 'Delius', cursive;
+    /* background-color: #1c1c1c; */
+    background-image: linear-gradient(to right bottom, #000000, #090909, #111111, #171717, #1c1c1c);
 }
 
-.card_image:hover ~ .card_content_items, .card_content_items:hover {
-    border-bottom: 2px solid goldenrod;
+.name_image_and_price_of_card {
+    grid-area: name_image_and_price_of_card;
+}
+
+.ingredients {
+    grid-area: ingredients;
+    cursor: pointer;
+    background-color: transparent;
+    opacity: 0.5;
+    padding: 1vw;
+}
+
+.card:hover {
+    border-bottom: 1px solid goldenrod;
 }
 
 .card_content_items {
@@ -35,8 +55,7 @@
     color: black;
     cursor: pointer;
     position: relative;
-    /* bottom: -2vw; */
-    right:0px;
+    bottom: -4vw;
 }
 
 .order_button svg {
@@ -61,13 +80,12 @@
     grid-area: card_image;
     margin: auto;
     position: relative;
-    width: auto;
+    width: 20vw;
     height: 20vh;
 }
 
 .card_p {
     padding: 0.2vw;
-    font-size: 1vw;
 }
 
 .card_price {
@@ -79,20 +97,10 @@
 
 .card_title {
     display: flex;
-    font-size: 1.5vw;
     text-transform:capitalize;
     padding: 0.5vw;
     justify-content: center;
     font-family: 'Delicious Handrawn', cursive;
-}
-
-.ingredients {
-    grid-area: ingredients;
-    border-radius: 2vw;
-    width: 100%;
-    cursor: pointer;
-    background-color: transparent;
-    opacity: 0.5;
 }
 
 .ingredients:hover {
