@@ -6,15 +6,15 @@
 
 #### O projeto consite basicamente em um site onde você pode criar os seus hambúrgueres a partir de vários ingredientes distintos, esse pedido será salvo em um banco de dados assim como os ingredientes e o preço total.
 
-## Página de Login:
+## Página de Login e Registro:
 
 ![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/login.png)
+![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/registro.png)
 
 ## Página Principal do Webiste:
 
 ![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/main(1).png)
 ![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/main(2).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/main(3).png)
 
 ## Página para criar o hambúrguer:
 
@@ -23,5 +23,6 @@
 
 ## Página de Pedidos:
 
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/pedidos.png)
+![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/pedidos(1).png)
+![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/pedidos(2).png)
 
