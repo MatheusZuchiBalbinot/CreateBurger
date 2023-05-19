@@ -7,6 +7,8 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
 
     const sendOrder = async () => {
 
+        var logged_idLogin = localStorage.getItem("logged_idLogin")
+
         const ready_order = {
             name: name,
             bread: bread,
@@ -15,8 +17,11 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
             salads: salads,
             cheese: cheese,
             price: price,
-            image: image
+            image: image,
+            idLogin: Number(logged_idLogin)
         };
+
+        console.log(ready_order)
 
         try {
             await axios.post("http://localhost:8800/options", ready_order)

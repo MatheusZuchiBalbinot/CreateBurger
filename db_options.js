@@ -70,7 +70,7 @@ app_express.get ("/options/cheese", (req, res) => {
 });
 
 app_express.get ("/login", (req, res) => {
-    const q = "SELECT username, password FROM login"
+    const q = "SELECT username, password, idLogin FROM login"
     db.query(q,(error,data)=> {
         if(error) {
             return res.json("A consulta deu o seguinte erro: "+error)
@@ -81,7 +81,7 @@ app_express.get ("/login", (req, res) => {
 
 app_express.get ("/options/values", (req, res) => {
     const q = "SELECT * FROM orders"
-    db.query(q,(error,data)=> {
+    db.query(q, (error,data)=> {
         if(error) {
             return res.json("A consulta deu o seguinte erro: "+error)
         }
@@ -90,8 +90,8 @@ app_express.get ("/options/values", (req, res) => {
 });
 
 app_express.post("/options", (req, res) => {
-    const q = "INSERT INTO orders(`name`,`price`,`image`,`bread`,`meat`,`meat_state`,`salads`,`cheese`) VALUES (?)"
-    const values = [req.body.name,req.body.price,req.body.image,req.body.bread,req.body.meat,req.body.meat_state,req.body.salads,req.body.cheese]
+    const q = "INSERT INTO orders(`name`,`price`,`image`,`bread`,`meat`,`meat_state`,`salads`,`cheese`,`idLogin`) VALUES (?)"
+    const values = [req.body.name,req.body.price,req.body.image,req.body.bread,req.body.meat,req.body.meat_state,req.body.salads,req.body.cheese,req.body.idLogin]
     db.query(q, [values], (error,data) => {
         if(error) {
             return res.json("A inserção de elementos deu o seguinte erro: "+error)

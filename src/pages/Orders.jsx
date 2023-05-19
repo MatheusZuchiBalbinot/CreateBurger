@@ -23,11 +23,17 @@ export default function Orders() {
     }, [])
 
     var options_array = []
+
     function recived_orders() {
+
+        var logged_idLogin = localStorage.getItem("logged_idLogin")
+
         for(var i = 0; i < data.length; i++) {
-            options_array.push(Object.values(data[i]))
+            if (data[i].idLogin == logged_idLogin) {
+                options_array.push(Object.values(data[i]))
+            }
         }
-        // console.log(options_array)
+        if (options_array)
         return options_array.map((options_array) => (<ContentCards id={options_array[0]} name={options_array[6]} image={options_array[7]} price={options_array[8]} bread={options_array[1]} meat={options_array[2]} meat_state={options_array[3]} salads={options_array[4]} cheese={options_array[5]} />))           
 
     }

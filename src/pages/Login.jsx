@@ -76,6 +76,8 @@ function Login() {
             for(var i = 0; i < Object.keys(login).length; i++) {
                 if(username === login[i].username && password === login[i].password) {
                     localStorage.setItem("logged_username", login[i].username)
+                    // console.log(login[i].idLogin)
+                    localStorage.setItem("logged_idLogin", login[i].idLogin)
                     return trade_page();
                 }
                 if(username != login[i].username && password != login[i].password) {
@@ -108,6 +110,7 @@ function Login() {
 
     return (
         <div className={styles.login_div}>
+            {/* {console.log(login)} */}
             <form className={styles.login_form} id="form_field">
                 {actual_title()}
                 <div className={styles.user_div}>

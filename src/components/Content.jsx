@@ -31,7 +31,7 @@ export default function Content() {
             bread: "Pão de azeite",
             meat: "Boi",
             meat_state: "Ao ponto",
-            salads: "Alface",
+            salads: "Alface e Cebola",
             cheese: "Queijo de Cabra",
             image: "http://localhost:5173/Imagens/hamburguers/boi_angelical.png",
             price: 33.99,

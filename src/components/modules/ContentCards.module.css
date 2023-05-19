@@ -9,9 +9,9 @@
     cursor: pointer;
     margin: 2vw;
     padding: 1vw;
-    width: 30vw;
+    width: auto;
+    max-width: 30vw;
     font-family: 'Delius', cursive;
-    /* background-color: #1c1c1c; */
     background-image: linear-gradient(to right bottom, #000000, #090909, #111111, #171717, #1c1c1c);
 }
 
