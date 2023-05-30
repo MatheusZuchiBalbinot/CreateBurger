@@ -9,8 +9,7 @@
     cursor: pointer;
     margin: 2vw;
     padding: 1vw;
-    width: auto;
-    max-width: 30vw;
+    width: 35vw;
     font-family: 'Delius', cursive;
     background-image: linear-gradient(to right bottom, #000000, #090909, #111111, #171717, #1c1c1c);
 }
@@ -22,6 +21,7 @@
 .ingredients {
     grid-area: ingredients;
     cursor: pointer;
+    margin: auto;
     background-color: transparent;
     opacity: 0.5;
     padding: 1vw;
@@ -32,12 +32,17 @@
 }
 
 .card_content_items {
+    display: flex;
+    flex-direction: column;
     padding: 1vw;
+    margin: auto;
     justify-content: space-between;
 }
 
 .card_name {
     display: flex;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
     justify-content: center;
     text-transform: uppercase;
     margin: auto;
@@ -46,6 +51,8 @@
 .button_div {
     display: flex;
     justify-content: right;
+    position: relative;
+    bottom: -4vw;
 }
 
 .order_button {
@@ -55,7 +62,6 @@
     color: black;
     cursor: pointer;
     position: relative;
-    bottom: -4vw;
 }
 
 .order_button svg {
@@ -86,18 +92,23 @@
 
 .card_p {
     padding: 0.2vw;
+    font-size: 1.2vw;
 }
 
 .card_price {
     color: rgb(96, 243, 96);
+    padding: 1vw;
     font-size: 1.5vw;
     text-align: center;
+    border: 2px solid;
+    border-radius: 1vw;
     margin: auto;
 }
 
 .card_title {
     display: flex;
     text-transform:capitalize;
+    font-size: 2vw;
     padding: 0.5vw;
     justify-content: center;
     font-family: 'Delicious Handrawn', cursive;
