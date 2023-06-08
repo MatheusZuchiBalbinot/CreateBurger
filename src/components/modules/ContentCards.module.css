@@ -9,13 +9,43 @@
     cursor: pointer;
     margin: 2vw;
     padding: 1vw;
-    width: 35vw;
+    width: 30vw;
     font-family: 'Delius', cursive;
     background-image: linear-gradient(to right bottom, #000000, #090909, #111111, #171717, #1c1c1c);
 }
 
 .name_image_and_price_of_card {
     grid-area: name_image_and_price_of_card;
+}
+
+@media only screen and (max-width: 648px) {
+    .card {
+        width: 60vw;
+        margin: 2vh;
+        padding: 1vh;
+    }
+    .card_title {
+        font-size: 1.5vh !important;
+    }
+    .card_price {
+        font-size: 1.5vh !important;
+    }
+    .card_p {
+        font-size: 1.1vh !important;
+    }
+    .card_name {
+        font-size: 1.5vh !important;
+    }
+    .order_button {
+        padding: 0.8vh !important;
+    }
+    .button_div {
+        bottom: -4vh !important;
+    }
+    .card_image {
+        width: 15vw !important;
+        height: 10vh !important;
+    }
 }
 
 .ingredients {
@@ -36,13 +66,14 @@
     flex-direction: column;
     padding: 1vw;
     margin: auto;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .card_name {
     display: flex;
     padding-top: 1vw;
     padding-bottom: 1vw;
+    font-size: 1.5vw;
     justify-content: center;
     text-transform: uppercase;
     margin: auto;
@@ -85,20 +116,21 @@
 .card_image {
     grid-area: card_image;
     margin: auto;
+    display: flex;
     position: relative;
-    width: 20vw;
-    height: 20vh;
+    width: 15vw;
+    height: 15vh;
 }
 
 .card_p {
     padding: 0.2vw;
-    font-size: 1.2vw;
+    font-size: 1vw;
 }
 
 .card_price {
     color: rgb(96, 243, 96);
     padding: 1vw;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     text-align: center;
     border: 2px solid;
     border-radius: 1vw;
@@ -108,7 +140,7 @@
 .card_title {
     display: flex;
     text-transform:capitalize;
-    font-size: 2vw;
+    font-size: 1.5vw;
     padding: 0.5vw;
     justify-content: center;
     font-family: 'Delicious Handrawn', cursive;

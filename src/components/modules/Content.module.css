@@ -71,6 +71,22 @@
     
 }
 
+@media only screen and (max-width: 648px) {
+    .characteristics_text {
+        font-size: 1.5vh !important;
+    }
+    .content_button {
+        font-size: 1.5vh !important;
+    }
+    .content_button_label {
+        font-size: 1.5vh !important;
+    }
+    .house_orders_title {
+        font-size: 1.5vh !important;
+    }
+}
+
+
 .house_ready_orders {
     grid-area: house_ready_orders;
     display: flex;
@@ -130,7 +146,7 @@
     cursor: pointer;
 }
 
-.content_button label {
+.content_button_label {
     display: flex;
     margin: auto;
     font-size: 1.5vw;

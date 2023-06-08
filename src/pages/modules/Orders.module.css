@@ -30,3 +30,13 @@
     justify-content: center;
     padding: 1vw 0 1vw 0;
 }
+
+@media only screen and (max-width: 648px) {
+    .cards_div {
+        display: block;
+        margin: auto;
+    }
+    .orders_main_div {
+        grid-template-rows: auto;
+    }
+}

@@ -4,12 +4,32 @@
 .header {
     display: grid;
     grid-template-columns: 0.7fr 2fr 2fr 0.7fr;
-    grid-template-rows: auto;
+    grid-template-rows: 10vh;
     grid-template-areas: ". header_logo header_icons .";
     background-image: linear-gradient(to right, #131313, #111214, #0d1213, #0a120e, #0e1007);
     font-family: 'Delius', cursive;
     font-weight: bold;
     font-size: 1.3vw;
+}
+
+@media (max-width: 800px) {
+    .header_navs {
+        font-size: 1.2vh !important;
+    }
+    
+    .header_navs_p {
+        font-size: 1.2vh !important;
+    }
+    .label_logo_image {
+        font-size: 1.2vh !important;
+        padding-right: 1vh;
+    }
+    .logo_image {
+        height: 7.5vh !important;
+    }
+    .profile svg {
+        font-size: 1.5vh !important;
+    }
 }
 
 .header_logo {
@@ -71,6 +91,7 @@
 }
 
 .label_logo_image {
+    font-size: 1.2vw;
     margin: auto;
     text-decoration: none;
     color: rgb(221, 220, 220);

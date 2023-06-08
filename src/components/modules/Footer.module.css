@@ -3,7 +3,7 @@
 .footer {
     display: grid;
     grid-template-columns: 0.7fr 2fr 2fr 0.7fr;
-    grid-template-rows: auto;
+    grid-template-rows: 8vh;
     grid-template-areas: 
     ". footer_div footer_div .";
     color: white;
@@ -12,10 +12,38 @@
 
 }
 
+@media (min-width: 1048px) {
+    .footer {
+        grid-template-rows: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer {
+        grid-template-rows: 5vh;
+    }
+    .footer_title {
+        font-size: 1.5vh !important;
+    }
+    
+    .footer_p {
+        font-size: 1vh !important;
+    }
+}
+
 .footer_div {
     grid-area: footer_div;
     margin: auto;
     display: flex;
     gap: 5vw;
     padding: 2vw;
+}
+
+.footer_title {
+    font-size: 1.5vw;
+}
+
+.footer_p {
+    font-size: 1.2vw;
+    margin: auto;
 }

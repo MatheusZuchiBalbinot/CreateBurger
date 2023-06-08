@@ -44,15 +44,9 @@ export default function CreateBurguer() {
         fetchalloptions();
     }, [])
 
-    const handleClick = (event) => {
-        // console.log(event.currentTarget.id)
-    }
-
     function redirect() {
         return navigate("/home/pedido")
     }
-
-
     
     const handleChoosedOptions = async () => {
 
@@ -105,8 +99,6 @@ export default function CreateBurguer() {
             var price_total = price_total + Number(sum_of_selected_elements[i])
         }
 
-        
-
         const location = document.getElementById("check_order")
         
         if(bread_option != '' && meat_option != '' && meat_state_option != '' && list_salads_name != '' && cheese_option != '') {
@@ -116,6 +108,8 @@ export default function CreateBurguer() {
             let image = '../../../Imagens/hamburguer_logo.png';
             let price = price_total;
 
+            var logged_idLogin = localStorage.getItem("logged_idLogin")
+
             const choosed_ingredients = {  
                 name: name,
                 bread: bread_option,
@@ -124,7 +118,8 @@ export default function CreateBurguer() {
                 salads: list_salads_name.toString(),
                 cheese: cheese_option,
                 price: price,
-                image: image
+                image: image,
+                idLogin: Number(logged_idLogin)
             };
 
             try {
@@ -146,7 +141,7 @@ export default function CreateBurguer() {
         <div className={styles.createBurguer_div}>
             <h3 className={styles.choose_title}>Escolha os ingredientes do seu Hambúrguer: </h3>
             <div className={styles.chooses}>
-                <div className={styles.choose_options_div} id="choose_bread" onClick={handleClick}>
+                <div className={styles.choose_options_div} id="choose_bread">
                     <p className={styles.choose_p}> Pão: </p>
 
                     <div className={styles.image_and_select_merge_div}>
@@ -161,7 +156,7 @@ export default function CreateBurguer() {
                     </div>
 
                 </div>
-                <div className={styles.choose_options_div} id="choose_meat" onClick={handleClick}>
+                <div className={styles.choose_options_div} id="choose_meat">
                     <p className={styles.choose_p}> Carne: </p>
 
                     <div className={styles.image_and_select_merge_div}>
@@ -175,7 +170,7 @@ export default function CreateBurguer() {
                         </div>
                     </div>
                 </div>
-                <div className={styles.choose_options_div} id="choose_meat_state" onClick={handleClick}>
+                <div className={styles.choose_options_div} id="choose_meat_state">
                     <p className={styles.choose_p}> Ponto da Carne: </p>
 
                     <div className={styles.image_and_select_merge_div}>
@@ -189,7 +184,7 @@ export default function CreateBurguer() {
                         </div>
                     </div>
                 </div>
-                <div className={styles.choose_options_div} id="choose_salads" onClick={handleClick}>
+                <div className={styles.choose_options_div} id="choose_salads">
                     <p className={styles.choose_p}> Saladas: </p>
                     <div className={styles.image_and_select_merge_div}>
                         <div className={styles.choose_input_div}>
@@ -199,7 +194,7 @@ export default function CreateBurguer() {
                         </div>
                     </div>
                 </div>
-                <div className={styles.choose_options_div} id="choose_cheese" onClick={handleClick}>
+                <div className={styles.choose_options_div} id="choose_cheese">
                     <p className={styles.choose_p}> Queijo: </p>
                     <div className={styles.image_and_select_merge_div}>
                         <div className={styles.choose_input_div}>
