@@ -167,9 +167,9 @@
     padding: 1.5vw;
     width: 15%;
     margin: 2vw;
-    border: none;
-    background-color: rgb(219, 241, 184);
-    color: rgb(56, 53, 53);
+    background-color: transparent;
+    color: white;
+    border: 1px solid;
     border-radius: 2vw;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;

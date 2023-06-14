@@ -18,6 +18,17 @@
     grid-area: name_image_and_price_of_card;
 }
 
+.card_screen {
+    background-color: white;
+    width: 50vw;
+    height: 70vh;
+    position: fixed;
+    z-index: 1;
+    top: 15%;
+    left: 25%;
+    display: none;
+}
+
 @media only screen and (max-width: 648px) {
     .card {
         width: 60vw;
