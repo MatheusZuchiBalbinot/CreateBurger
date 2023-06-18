@@ -9,7 +9,6 @@ export default function CardScreen ({id, name, image, price, bread, meat, meat_s
     return (
         <>
             <p style={{color:'black'}}> {name}, {price}, {bread}, {meat}, {image} </p>
-            <button type="button" onClick={skip_card_screen}> ASDAS </button>
         </>
         
     )

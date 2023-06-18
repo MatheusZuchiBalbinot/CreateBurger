@@ -1,5 +1,6 @@
 import styles from "./modules/ContentCards.module.css";
 import axios from 'axios';
+import { useState } from "react";
 import {IoMdAdd} from 'react-icons/io';
 import {RiSubtractFill} from 'react-icons/ri';
 import CardScreen from "./CardScreen";
@@ -51,18 +52,18 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
         }
     }
 
-    const card_screen = (div_id) => {
-        if (div_id == "card_area") {
-            var location = document.getElementById("card_area")
-            document.getElementById("card_screen").style.display="block"
-        }
-    }
+    const [screen, setScreen] = useState(false)
+
+    
 
     return (
-        <div className={styles.card} id="card_area" onClick={(e) => {card_screen(e.target.id)}}>
-            <div className={styles.card_screen} id="card_screen">
-                <CardScreen name={name} bread={bread} meat={meat} meat_state={meat_state} salads={salads} cheese={cheese} price={price} image ={image}/>
-            </div>
+        <div className={styles.card} id="card_area" onClick={() => setScreen(true)}>
+            {screen && (
+                <div className={styles.card_screen}>
+                    {console.log(name)}
+                    <CardScreen name={name} bread={bread} meat={meat} meat_state={meat_state} salads={salads} cheese={cheese} price={price} image={image}/>
+                </div>
+            )}
             <div className={styles.name_image_and_price_of_card} id="card_area">
                 <img src={image} className={styles.card_image} id="card_area"></img>
                 <div className={styles.card_content_items} id="card_area">
@@ -70,7 +71,7 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
                     <h3 className={styles.card_price} id="card_area">R${price} </h3>
                 </div>
             </div>
-            <div className={styles.ingredients} id="card_area">
+            {/* <div className={styles.ingredients} id="card_area">
                 <h3 className={styles.card_title} id="card_area"> Ingredientes: </h3>
                 <p className={styles.card_p} id="card_area">Pão: {bread}</p>
                 <p className={styles.card_p} id="card_area">Carne: {meat}</p>
@@ -80,7 +81,7 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
                 <div className={styles.button_div} id="card_area">
                     {card_button()}
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
