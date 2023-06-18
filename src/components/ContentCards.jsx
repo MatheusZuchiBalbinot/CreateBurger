@@ -1,9 +1,7 @@
 import styles from "./modules/ContentCards.module.css";
 import axios from 'axios';
-import { useState } from "react";
 import {IoMdAdd} from 'react-icons/io';
 import {RiSubtractFill} from 'react-icons/ri';
-import CardScreen from "./CardScreen";
 
 export default function ContentCards ({id, name, image, price, bread, meat, meat_state, salads, cheese}) {
 
@@ -52,36 +50,26 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
         }
     }
 
-    const [screen, setScreen] = useState(false)
-
-    
-
     return (
-        <div className={styles.card} id="card_area" onClick={() => setScreen(true)}>
-            {screen && (
-                <div className={styles.card_screen}>
-                    {console.log(name)}
-                    <CardScreen name={name} bread={bread} meat={meat} meat_state={meat_state} salads={salads} cheese={cheese} price={price} image={image}/>
-                </div>
-            )}
-            <div className={styles.name_image_and_price_of_card} id="card_area">
-                <img src={image} className={styles.card_image} id="card_area"></img>
-                <div className={styles.card_content_items} id="card_area">
-                    <h3 className={styles.card_name} id="card_area"> {name} </h3>
-                    <h3 className={styles.card_price} id="card_area">R${price} </h3>
+        <div className={styles.card}>
+            <div className={styles.name_image_and_price_of_card}>
+                <img src={image} className={styles.card_image}></img>
+                <div className={styles.card_content_items}>
+                    <h3 className={styles.card_name}> {name} </h3>
+                    <h3 className={styles.card_price}>R${price} </h3>
                 </div>
             </div>
-            {/* <div className={styles.ingredients} id="card_area">
-                <h3 className={styles.card_title} id="card_area"> Ingredientes: </h3>
-                <p className={styles.card_p} id="card_area">Pão: {bread}</p>
-                <p className={styles.card_p} id="card_area">Carne: {meat}</p>
-                <p className={styles.card_p} id="card_area">Ponto da Carne: {meat_state}</p>
-                <p className={styles.card_p} id="card_area"> Saladas: {salads}</p>
-                <p className={styles.card_p} id="card_area">Queijo: {cheese}</p>
-                <div className={styles.button_div} id="card_area">
+            <div className={styles.ingredients}>
+                <h3 className={styles.card_title}> Ingredientes: </h3>
+                <p className={styles.card_p}>Pão: {bread}</p>
+                <p className={styles.card_p}>Carne: {meat}</p>
+                <p className={styles.card_p}>Ponto da Carne: {meat_state}</p>
+                <p className={styles.card_p}> Saladas: {salads}</p>
+                <p className={styles.card_p}>Queijo: {cheese}</p>
+                <div className={styles.button_div}>
                     {card_button()}
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 }
