@@ -1,8 +1,14 @@
 # CreateBurguer
 
-## Breve descrição do projeto:
-
-####  Para esse trabalho estou aprendendo Node, especialmente Express - usado para criar a API a ser utlizada -, e melhorando as minhas habilidades em MySQL, React, consumo de API(axios) Javascript, HTML e CSS.
+####  Para criar esse trabalho estou aprendendo Node, especialmente Express, que usei para criar a API a ser consumida.
+* Node
+* Express
+* MySQL
+* React
+* Axios 
+* Javascript 
+* HTML  
+* CSS
 
 #### O projeto consite basicamente em um site onde você pode criar os seus hambúrgueres a partir de vários ingredientes distintos, esse pedido será salvo em um banco de dados assim como os ingredientes e o preço total.
 
