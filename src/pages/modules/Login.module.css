@@ -11,7 +11,7 @@
     font-family: 'Roboto', sans-serif;
     color: black;
     background-image: linear-gradient(to right bottom, #252525, #1f1f1f, #1a1a1a, #151515, #0e0e0e, #0d0b10, #0d0811, #0f0412, #1a0416, #240416, #2e0212, #360006);    color: white;
-
+    justify-content: space-around;
 }
 
 .gif_image {
@@ -31,13 +31,13 @@
     padding: 1.5vw;
     height: auto;
     border-radius: 1vw;
-    background-color: #f8ebbd;   
+    background:rgba(72, 80, 73, 0.1)
 }
 
 .form_title {
     margin: 0;
     padding: 1vw;
-    color: black;
+    color: white;
     text-align: center;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .titles_style {
-    color: black;
+    color: white;
     font-weight: bolder;
 }
 
@@ -63,7 +63,7 @@
 
 .input_with_icon svg {
     margin: auto;
-    color: black;
+    color: white;
     font-size: 2vw;
 }
 
@@ -72,7 +72,7 @@
     border: none;
     padding: 1vw;
     margin: 0 1vw 0 1vw;
-    background-color: #f8ebbd;
+    background-color: transparent;
     opacity: 0.5;
     color: black;
     outline: none;
@@ -84,11 +84,11 @@
 }
 
 input:focus::placeholder {
-    color: transparent;
+    color: whitesmoke;
   }
 
 ::placeholder {
-    color: black;
+    color: whitesmoke;
 }
 
 
@@ -102,14 +102,15 @@ input:focus::placeholder {
     cursor: pointer;
     border: none;
     color: white;
-    background-color: #FF725E; 
+    border: 1px solid; 
+    background-color: rgb(39, 35, 35);
     padding: 1vw;
     margin: 1vw;
     border-radius: 2vw;
 }
 
 .button_buttons:hover {
-    background-color: #ff5254;
+    background-color: #524343;
     color: white;
     font-weight: bold;
 }
