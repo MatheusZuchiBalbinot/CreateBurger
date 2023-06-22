@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+.options {
+    padding: 1vw;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.option_label {
+    color: black;
+    cursor: pointer;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    font-size: 1.2vw;
+}
+
+.checkbox_label {
+    color: white;
+    cursor: pointer;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    font-size: 1.2vw;
+}
+
+.checkbox_input {
+    transform: scale(1.5);
+}
+
+@media (max-width: 1048px) {
+    .checkbox_input {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 728px) {
+    .checkbox_input {
+        transform: scale(0.7);
+    }
+}
+
+@media only screen and (max-width: 648px) {
+    .checkbox_label {
+        font-size: 1.5vh !important;
+    }
+    .option_label {
+        font-size: 1.5vh !important;
+    }
+    .options {
+        padding: 1vh;
+    }
+}
+
+.checkbox_div {
+    display: flex;
+    padding: 0.5vw;
+    color: white;
+}
+
+.checkbox_label_div {
+    display: flex;
+    margin: auto;
+    padding-left: 1vw;
+}

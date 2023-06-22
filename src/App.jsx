@@ -1,10 +1,10 @@
 import {useRoutes } from 'react-router-dom';
-import Login from "./pages/Login";
-import Register from './pages/Register'
-import Home from "./pages/Home";
-import Orders from './pages/Orders';
-import CreateBurguer from './pages/CreateBurguer';
-import Cart from "./pages/Cart"
+import Login from "./pages/Login_&_Register/Login";
+import Register from './pages/Login_&_Register/Register'
+import Home from "./pages/Home/Home";
+import Orders from './pages/Orders/Orders';
+import CreateBurguer from './pages/CreateBurguer/CreateBurguer';
+import Cart from "./pages/Cart/Cart"
 
 function App() {
 

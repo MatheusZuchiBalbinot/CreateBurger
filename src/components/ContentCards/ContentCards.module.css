@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
+.card {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "name_image_and_price_of_card ingredients";
+    cursor: pointer;
+    margin: 2vw;
+    padding: 1vw;
+    width: 30vw;
+    font-family: 'Delius', cursive;
+    background-image: linear-gradient(to right bottom, #000000, #090909, #111111, #171717, #1c1c1c);
+}
+
+.name_image_and_price_of_card {
+    grid-area: name_image_and_price_of_card;
+}
+
+.card_screen {
+    background-color: white;
+    width: 50vw;
+    height: 70vh;
+    position: fixed;
+    z-index: 1;
+    top: 15%;
+    left: 25%;
+    display: block;
+}
+
+@media only screen and (max-width: 648px) {
+    .card {
+        width: 60vw;
+        margin: 2vh;
+        padding: 1vh;
+    }
+    .card_title {
+        font-size: 1.5vh !important;
+    }
+    .card_price {
+        font-size: 1.5vh !important;
+    }
+    .card_p {
+        font-size: 1.1vh !important;
+    }
+    .card_name {
+        font-size: 1.5vh !important;
+    }
+    .order_button {
+        padding: 0.8vh !important;
+    }
+    .button_div {
+        bottom: -4vh !important;
+    }
+    .card_image {
+        width: 15vw !important;
+        height: 10vh !important;
+    }
+}
+
+.ingredients {
+    grid-area: ingredients;
+    cursor: pointer;
+    margin: auto;
+    background-color: transparent;
+    opacity: 0.5;
+    padding: 1vw;
+}
+
+.card:hover {
+    border-bottom: 1px solid goldenrod;
+}
+
+.card_content_items {
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.card_name {
+    display: flex;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    font-size: 1.5vw;
+    justify-content: center;
+    text-transform: uppercase;
+    margin: auto;
+}
+
+.button_div {
+    display: flex;
+    justify-content: right;
+    position: relative;
+    bottom: -4vw;
+}
+
+.order_button {
+    background-color: rgba(229,40,63,255);
+    border: none;   
+    border-radius: 1vw;
+    color: black;
+    cursor: pointer;
+    position: relative;
+}
+
+.order_button svg {
+    display: flex;
+    margin: auto;
+    color: white;
+    padding: 1vw;
+    font-size: 2vw;
+}
+
+.order_button svg:hover {
+    color: black;
+}
+
+.order_button:hover {
+    background-color: #ece9ac;
+    color: black;
+    font-weight: bold;
+}
+
+.card_image {
+    grid-area: card_image;
+    margin: auto;
+    display: flex;
+    position: relative;
+    width: 15vw;
+    height: 15vh;
+}
+
+.card_p {
+    padding: 0.2vw;
+    font-size: 1vw;
+}
+
+.card_price {
+    color: rgb(96, 243, 96);
+    padding: 1vw;
+    font-size: 1.2vw;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 1vw;
+    margin: auto;
+}
+
+.card_title {
+    display: flex;
+    text-transform:capitalize;
+    font-size: 1.5vw;
+    padding: 0.5vw;
+    justify-content: center;
+    font-family: 'Delicious Handrawn', cursive;
+}
+
+.ingredients:hover {
+    opacity: 1;
+}

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.login_div {
+    display: grid;
+    grid-template-columns: 40vw 10vw 10vw 40vw;
+    grid-template-rows: 5vh 90vh 5vh;
+    grid-template-areas:
+    ". . . ." 
+    "login_form login_form gif_image gif_image" 
+    ". . . .";
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    background-image: linear-gradient(to right bottom, #252525, #1f1f1f, #1a1a1a, #151515, #0e0e0e, #0d0b10, #0d0811, #0f0412, #1a0416, #240416, #2e0212, #360006);    color: white;
+    justify-content: space-around;
+}
+
+.gif_image {
+    grid-area: gif_image;
+    display: flex;
+    justify-content: center;
+
+}
+
+.image_gif {
+    background-color: red;
+}
+
+.login_form {
+    grid-area: login_form;
+    margin: auto;
+    padding: 1.5vw;
+    height: auto;
+    border-radius: 1vw;
+    background:rgba(72, 80, 73, 0.1)
+}
+
+.form_title {
+    margin: 0;
+    padding: 1vw;
+    color: white;
+    text-align: center;
+}
+
+.user_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.titles_style {
+    color: white;
+    font-weight: bolder;
+}
+
+.password_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.input_with_icon {
+    padding: 1vw;
+    display: flex;
+}
+
+.input_with_icon svg {
+    margin: auto;
+    color: white;
+    font-size: 2vw;
+}
+
+.user_password_input, .user_password_confirm_input {
+    width: 20vw;
+    border: none;
+    padding: 1vw;
+    margin: 0 1vw 0 1vw;
+    background-color: transparent;
+    opacity: 0.5;
+    color: black;
+    outline: none;
+}
+
+.user_password_input:hover, .user_password_confirm_input:hover {
+    border-bottom: 1px solid rgb(68, 137, 228);
+    opacity: 1;
+}
+
+input:focus::placeholder {
+    color: whitesmoke;
+  }
+
+::placeholder {
+    color: whitesmoke;
+}
+
+
+.buttons_div {
+    display: flex;
+    padding: 1vw;
+    flex-direction: column;
+}
+
+.button_buttons {
+    cursor: pointer;
+    border: none;
+    color: white;
+    border: 1px solid; 
+    background-color: rgb(39, 35, 35);
+    padding: 1vw;
+    margin: 1vw;
+    border-radius: 2vw;
+}
+
+.button_buttons:hover {
+    background-color: #524343;
+    color: white;
+    font-weight: bold;
+}
