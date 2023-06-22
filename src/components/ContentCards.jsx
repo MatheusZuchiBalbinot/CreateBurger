@@ -5,6 +5,8 @@ import {RiSubtractFill} from 'react-icons/ri';
 
 export default function ContentCards ({id, name, image, price, bread, meat, meat_state, salads, cheese}) {
 
+    var order_to_cart = []
+
     const sendOrder = async () => {
 
         var logged_idLogin = localStorage.getItem("logged_idLogin")
@@ -21,13 +23,26 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
             idLogin: Number(logged_idLogin)
         };
 
-        console.log(ready_order)
+        // console.log(ready_order)
 
-        try {
-            await axios.post("http://localhost:8800/options", ready_order)
-        }catch(error) {
-            console.log(error)
+        // try {
+        //     await axios.post("http://localhost:8800/options", ready_order)
+        // }catch(error) {
+        //     console.log(error)
+        // }
+
+        function addCart(){
+            if(localStorage.getItem('order_to_cart')){
+                order_to_cart = JSON.parse(localStorage.getItem('order_to_cart'));
+            }
+            order_to_cart.push(ready_order);
+            localStorage.setItem('order_to_cart', JSON.stringify(order_to_cart));
         }
+
+        addCart()
+    
+        console.log(JSON.parse(localStorage.getItem("order_to_cart")))
+        
 
     }
 
@@ -42,7 +57,7 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
 
     const card_button = () => {
         const actual_location = window.location.href
-        if (actual_location == "http://localhost:5173/home/pedido") {
+        if (actual_location == "http://localhost:5173/home/createburguer/pedido") {
             return <button className={styles.order_button} onClick={()=>removeOrder(id)}> <RiSubtractFill /> </button>
         }
         else {

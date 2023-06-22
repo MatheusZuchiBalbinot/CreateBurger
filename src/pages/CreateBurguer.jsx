@@ -45,7 +45,7 @@ export default function CreateBurguer() {
     }, [])
 
     function redirect() {
-        return navigate("/home/pedido")
+        return navigate("/home/createburguer/pedido")
     }
     
     const handleChoosedOptions = async () => {

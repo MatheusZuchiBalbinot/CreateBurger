@@ -4,6 +4,7 @@ import Register from './pages/Register'
 import Home from "./pages/Home";
 import Orders from './pages/Orders';
 import CreateBurguer from './pages/CreateBurguer';
+import Cart from "./pages/Cart"
 
 function App() {
 
@@ -21,12 +22,16 @@ function App() {
       element: <CreateBurguer />
     },
     {
-      path: '/home/pedido',
+      path: '/home/createburguer/pedido',
       element: <Orders />
     },
     {
       path: '/register',
       element: <Register />
+    },
+    {
+      path: '/home/createburguer/carrinho',
+      element: <Cart />
     }
 
   ])

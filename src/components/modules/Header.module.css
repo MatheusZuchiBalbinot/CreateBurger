@@ -32,6 +32,17 @@
     }
 }
 
+.cartDiv {
+    display: flex;
+    gap: 0.5vw;
+    margin: auto;
+}
+
+.cartDiv svg {
+    color: white;
+    font-size: 2vw;
+}
+
 .header_logo {
     grid-area: header_logo;
     display: flex;

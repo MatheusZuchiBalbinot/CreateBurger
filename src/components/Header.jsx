@@ -1,10 +1,8 @@
 import styles from "./modules/Header.module.css";
 import {Link, useNavigate} from "react-router-dom";
-import CreateBurguer from "../pages/CreateBurguer";
-import { useState} from "react";
+import {AiOutlineShoppingCart} from 'react-icons/ai'
 
 import {CgProfile} from 'react-icons/Cg';
-import {FiLogOut} from 'react-icons/Fi';
 
 export default function Header() {
 
@@ -28,7 +26,11 @@ export default function Header() {
                 </div>
                 <div className={styles.header_icons}>
                     <Link to={"/home/CreateBurguer"} className={styles.header_navs}> Monte o seu </Link>
-                    <Link to={"/home/pedido"} className={styles.header_navs}> Seus pedidos </Link>
+                    <div className={styles.cartDiv}>
+                        <AiOutlineShoppingCart />
+                        <Link to={"/home/createburguer/carrinho"} className={styles.header_navs}>  Carrinho </Link>
+                    </div>
+                    <Link to={"/home/createburguer/pedido"} className={styles.header_navs}> Seus pedidos </Link>
                     <div className={styles.profile}>
                         <CgProfile />
                         <p className={styles.header_navs_p}> {loggedUsername} </p>
