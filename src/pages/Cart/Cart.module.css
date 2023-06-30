@@ -1,0 +1,6 @@
+.cartDiv {
+    display: flex;
+    flex-wrap: wrap;
+    background-image: linear-gradient(to right bottom, #252525, #1f1f1f, #1a1a1a, #151515, #0e0e0e, #0d0b10, #0d0811, #0f0412, #1a0416, #240416, #2e0212, #360006);    color: white;
+    justify-content:center;
+}

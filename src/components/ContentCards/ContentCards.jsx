@@ -20,6 +20,7 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
             cheese: cheese,
             price: price,
             image: image,
+            quantity: 1,
             idLogin: Number(logged_idLogin)
         };
 
@@ -32,16 +33,26 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
         // }
 
         function addCart(){
+            var notFound = 0
             if(localStorage.getItem('order_to_cart')){
                 order_to_cart = JSON.parse(localStorage.getItem('order_to_cart'));
             }
-            order_to_cart.push(ready_order);
+            for(var i = 0; i < order_to_cart.length; i++) {
+                if (order_to_cart[i].name == ready_order.name) {
+                    notFound++
+                    order_to_cart[i].quantity++
+                    
+                }
+            }
+            if(notFound == 0) {
+                order_to_cart.push(ready_order);
+            }
             localStorage.setItem('order_to_cart', JSON.stringify(order_to_cart));
         }
 
         addCart()
     
-        console.log(JSON.parse(localStorage.getItem("order_to_cart")))
+        // console.log(JSON.parse(localStorage.getItem("order_to_cart")))
         
 
     }
@@ -75,7 +86,7 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
                 </div>
             </div>
             <div className={styles.ingredients}>
-                <h3 className={styles.card_title}> Ingredientes: </h3>
+                <h3 className={styles.card_title}> Composição: </h3>
                 <p className={styles.card_p}>Pão: {bread}</p>
                 <p className={styles.card_p}>Carne: {meat}</p>
                 <p className={styles.card_p}>Ponto da Carne: {meat_state}</p>
@@ -84,7 +95,9 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
                 <div className={styles.button_div}>
                     {card_button()}
                 </div>
+
             </div>
+            <div className={styles.addCartItemIndicator}> O item foi adicionado ao carrinho!!</div>
         </div>
     )
 }
