@@ -18,15 +18,30 @@
     grid-area: name_image_and_price_of_card;
 }
 
-.card_screen {
-    background-color: white;
-    width: 50vw;
-    height: 70vh;
-    position: fixed;
-    z-index: 1;
-    top: 15%;
-    left: 25%;
-    display: block;
+.RemoveOrAddQuantity {
+    display: flex;
+    justify-content: center;
+}
+
+.quantityValue {
+    width: 50%;
+    color: white;
+    display: flex;
+}
+.quantityValue p {
+    margin: auto;
+}
+
+.addQuantity, .removeQuantity {
+    color: white;
+    padding: 0.8vw;
+    display: flex;
+    font-size: 1.5vw;
+    
+}
+
+.addQuantity:hover, .removeQuantity:hover {
+    background-color: rgb(92, 87, 87);
 }
 
 @media only screen and (max-width: 648px) {
@@ -78,6 +93,7 @@
 .addCartItemIndicator {
     font-size: 1vw;
     position: fixed;
+    display: none;
     bottom: 5vh;
     left: 40%;
     background-color: white;

@@ -1,9 +1,11 @@
 import styles from "./ContentCards.module.css";
 import axios from 'axios';
 import {IoMdAdd} from 'react-icons/io';
+import {MdAdd} from 'react-icons/md'
 import {RiSubtractFill} from 'react-icons/ri';
+import {IoIosRemove} from 'react-icons/io'
 
-export default function ContentCards ({id, name, image, price, bread, meat, meat_state, salads, cheese}) {
+export default function ContentCards ({id, name, image, price, bread, meat, meat_state, salads, cheese, quantity}) {
 
     var order_to_cart = []
 
@@ -32,6 +34,15 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
         //     console.log(error)
         // }
 
+        function ItemAddPopUp () {
+            setTimeout(() => {
+                document.getElementById("itemAddictPopUp").style.display = "block"
+            }, "100")
+            setTimeout(() => {
+                document.getElementById("itemAddictPopUp").style.display = "none"
+              }, "2500");
+        }
+
         function addCart(){
             var notFound = 0
             if(localStorage.getItem('order_to_cart')){
@@ -41,7 +52,7 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
                 if (order_to_cart[i].name == ready_order.name) {
                     notFound++
                     order_to_cart[i].quantity++
-                    
+                    ItemAddPopUp()
                 }
             }
             if(notFound == 0) {
@@ -57,22 +68,49 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
 
     }
 
-    const removeOrder = async (id) => {
-        try {
-            await axios.delete("http://localhost:8800/orders/" + id)
-            window.location.reload()
-        }catch(error) {
-            console.log(error)
-        }
-    }
+    // const removeOrder = async (id) => {
+    //     try {
+    //         await axios.delete("http://localhost:8800/orders/" + id)
+    //         window.location.reload()
+    //     }catch(error) {
+    //         console.log(error)
+    //     }
+    // }
 
     const card_button = () => {
         const actual_location = window.location.href
-        if (actual_location == "http://localhost:5173/home/createburguer/pedido") {
-            return <button className={styles.order_button} onClick={()=>removeOrder(id)}> <RiSubtractFill /> </button>
+        switch (actual_location) {
+            case "http://localhost:5173/home":
+                return <button className={styles.order_button} onClick={sendOrder}> <IoMdAdd /> </button>
+                // return <button className={styles.order_button} onClick={()=>removeOrder(id)}> <RiSubtractFill /> </button>
         }
-        else {
-            return <button className={styles.order_button} onClick={sendOrder}> <IoMdAdd /> </button>
+    }
+
+    const addOrRemoveQuantity = () => {
+        const actual_location = window.location.href
+
+        function addQuantity() {
+            quantity++
+        }
+    
+        function removeQuantity() {
+            quantity--
+        }
+
+        if (actual_location == "http://localhost:5173/home/createburguer/carrinho") {
+            return (
+                <div className={styles.RemoveOrAddQuantity}>
+                    <div className={styles.addQuantity} onClick={addQuantity}>
+                        <MdAdd />
+                    </div>
+                    <div className={styles.quantityValue}>
+                        <p>{quantity}</p>
+                    </div>
+                    <div className={styles.removeQuantity} onClick={removeQuantity}>
+                        <IoIosRemove />
+                    </div>
+                </div>
+            )
         }
     }
 
@@ -95,9 +133,9 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
                 <div className={styles.button_div}>
                     {card_button()}
                 </div>
-
             </div>
-            <div className={styles.addCartItemIndicator}> O item foi adicionado ao carrinho!!</div>
+            {addOrRemoveQuantity()}
+            <div className={styles.addCartItemIndicator} id="itemAddictPopUp"> O item foi adicionado ao carrinho!!</div>
         </div>
     )
 }
