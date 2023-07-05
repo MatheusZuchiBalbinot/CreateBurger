@@ -124,7 +124,7 @@
 
 .button_div {
     display: flex;
-    justify-content: right;
+    justify-content: center;
     position: relative;
     margin: auto 0;
 }

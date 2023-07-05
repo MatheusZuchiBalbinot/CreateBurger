@@ -1,14 +1,17 @@
 import styles from "./Cards.module.css";
+
 import {IoMdAdd} from 'react-icons/io';
 import {MdAdd} from 'react-icons/md'
-import {RiSubtractFill} from 'react-icons/ri';
 import {IoIosRemove} from 'react-icons/io';
+import {AiOutlineInfoCircle} from 'react-icons/ai'
+
+import {useState} from 'react';
 
 export default function Cards ({id, name, image, price, bread, meat, meat_state, salads, cheese, quantity}) {
 
     var order_to_cart = []
 
-    const sendOrder = async (remove_or_add) => {
+    const sendOrder = async () => {
 
         var logged_idLogin = localStorage.getItem("logged_idLogin")
 
@@ -24,48 +27,19 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
             quantity: 1,
             idLogin: Number(logged_idLogin)
         };
-
-        // console.log(ready_order)
-
-        // try {
-        //     await axios.post("http://localhost:8800/options", ready_order)
-        // }catch(error) {
-        //     console.log(error)
-        // }
-
-        addCart(ready_order, remove_or_add)
-    
-        // console.log(JSON.parse(localStorage.getItem("order_to_cart")))
-        
-
+        addCart(ready_order)
     }
 
-    // const removeOrder = async (id) => {
-    //     try {
-    //         await axios.delete("http://localhost:8800/orders/" + id)
-    //         window.location.reload()
-    //     }catch(error) {
-    //         console.log(error)
-    //     }
-    // }
-
-    function addCart(ready_order, remove_or_add){
+    function addCart(ready_order){
         var Found = 0
         if(localStorage.getItem('order_to_cart')){
             order_to_cart = JSON.parse(localStorage.getItem('order_to_cart'));
         }
         for(var i = 0; i < order_to_cart.length; i++) {
             if (order_to_cart[i].name == ready_order.name) {
-                if(remove_or_add == "Add") {
-                    Found++
-                    order_to_cart[i].quantity++
-                    ItemAddPopUp()
-                }
-                if(remove_or_add == "Remove") {
-                    Found++
-                    order_to_cart[i].quantity--
-                    ItemAddPopUp() 
-                }
+                Found++
+                order_to_cart[i].quantity++
+                ItemAddPopUp()
             }
         }
         if(Found == 0) {
@@ -83,13 +57,24 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
           }, "2500");
     }
 
-    const addQuantity = () => {
-        quantity++
+    const addQuantity = (name) => {
+        var quantityOrder = JSON.parse(localStorage.getItem('order_to_cart'));
+        for (let i = 0; i < quantityOrder.length; i++) {
+            if(quantityOrder[i].name == name) {
+                quantityOrder[i].quantity++
+                localStorage.setItem('order_to_cart', JSON.stringify(quantityOrder));
+            }
+        }
     }
 
-    const removeQuantity = () => {
-        quantity--
-        console.log(quantity)
+    const removeQuantity = (name) => {
+        var quantityOrder = JSON.parse(localStorage.getItem('order_to_cart'));
+        for (let i = 0; i < quantityOrder.length; i++) {
+            if(quantityOrder[i].name == name) {
+                quantityOrder[i].quantity--
+                localStorage.setItem('order_to_cart', JSON.stringify(quantityOrder));
+            }
+        }
     }
 
     const card_button = () => {
@@ -97,17 +82,16 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
         switch (actual_location) {
             case "http://localhost:5173/home":
                 return <button className={styles.order_button} onClick={sendOrder}> <IoMdAdd /> </button>
-                // return <button className={styles.order_button} onClick={()=>removeOrder(id)}> <RiSubtractFill /> </button>
             case "http://localhost:5173/home/createburguer/carrinho":
                 return (
                     <div className={styles.RemoveOrAddQuantity}>
-                        <div className={styles.addQuantity} id={name} onClick={(e) => (console.log(e.target.id))}>
+                        <div className={styles.addQuantity} id={name} onClick={(e) => addQuantity(e.target.id)}>
                             <MdAdd />
                         </div>
                         <div className={styles.quantityValue}>
                             <p>{quantity}</p>
                         </div>
-                        <div className={styles.removeQuantity} onClick={removeQuantity}>
+                        <div className={styles.removeQuantity} id={name} onClick={(e) => removeQuantity(e.target.id)}>
                             <IoIosRemove />
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import styles from "./Header.module.css";
 import {Link, useNavigate} from "react-router-dom";
-import {AiOutlineShoppingCart} from 'react-icons/ai'
 
+import {AiOutlineShoppingCart} from 'react-icons/ai';
 import {CgProfile} from 'react-icons/Cg';
 
 export default function Header() {

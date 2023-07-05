@@ -1,7 +1,29 @@
 .cartDiv {
+    background-image: linear-gradient(to right bottom, #252525, #1f1f1f, #1a1a1a, #151515, #0e0e0e, #0d0b10, #0d0811, #0f0412, #1a0416, #240416, #2e0212, #360006);
+    color: white;
+    padding: 2vw;
+}
+
+.cardsCartDiv {
     display: flex;
     flex-wrap: wrap;
-    background-image: linear-gradient(to right bottom, #252525, #1f1f1f, #1a1a1a, #151515, #0e0e0e, #0d0b10, #0d0811, #0f0412, #1a0416, #240416, #2e0212, #360006);    color: white;
     justify-content: space-evenly;
-    padding: 2vw;
+}
+
+.finalizeOrder {
+    display: flex;
+    justify-content: center;
+}
+
+.finalizeOrder button {
+    padding: 1vw 3vw 1vw 3vw;
+    background-color: transparent;
+    border: 1px solid;
+    color: white;
+    border-radius: 2vw;
+}
+
+.finalizeOrder button:hover {
+    background-color: rgb(97, 95, 95);
+    cursor: pointer;
 }

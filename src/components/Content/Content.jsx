@@ -1,7 +1,7 @@
 import styles from "./Content.module.css";  
-import { useNavigate } from "react-router-dom";
-
 import Cards from "../Cards/Cards";
+
+import { useNavigate } from "react-router-dom";
 
 export default function Content() {
 

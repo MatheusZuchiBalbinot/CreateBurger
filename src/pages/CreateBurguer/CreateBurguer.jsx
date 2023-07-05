@@ -1,7 +1,7 @@
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import OptionsElement from '../../components/Selects_Options_&_Checkbox_Options/OptionsElement';
-import CheckboxElement from '../../components/Selects_Options_&_Checkbox_Options/CheckboxElement';
+import OptionsElement from '../../components/SelectAndCheckbox/OptionsElement';
+import CheckboxElement from '../../components/SelectAndCheckbox/CheckboxElement';
 import styles from './CreateBurguer.module.css';
 import Orders from '../Orders/Orders';
 
