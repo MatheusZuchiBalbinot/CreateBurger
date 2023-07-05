@@ -33,8 +33,8 @@
 ![](https://raw.githubusercontent.com/MatheusZuchiBalbinot/CreateBurger/main/Imagens/github_images/criar_hamburguer(1).png)
 ![](https://raw.githubusercontent.com/MatheusZuchiBalbinot/CreateBurger/main/Imagens/github_images/criar_hamburguer(2).png)
 
-### Página de Pedidos:
+### Página de Carrinho:
 
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/pedidos(1).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/pedidos(2).png)
+![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/carrinho(1).png)
+![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/carrinho(2).png)
 
