@@ -1,7 +1,7 @@
 import styles from "./Content.module.css";  
 import { useNavigate } from "react-router-dom";
 
-import ContentCards from "../ContentCards/ContentCards";
+import Cards from "../Cards/Cards";
 
 export default function Content() {
 
@@ -94,10 +94,10 @@ export default function Content() {
             <h3 className={styles.house_orders_title}> Hambúrgueres da Casa: </h3>
 
             <div className={styles.house_ready_orders}>
-                <ContentCards name={house_ready_orders_itens[0].order_1.name} image={house_ready_orders_itens[0].order_1.image} price={house_ready_orders_itens[0].order_1.price} bread={house_ready_orders_itens[0].order_1.bread} meat={house_ready_orders_itens[0].order_1.meat} meat_state={house_ready_orders_itens[0].order_1.meat_state} salads={house_ready_orders_itens[0].order_1.salads} cheese={house_ready_orders_itens[0].order_1.cheese} quantity={house_ready_orders_itens[0].order_1.quantity}/>
-                <ContentCards name={house_ready_orders_itens[0].order_2.name} image={house_ready_orders_itens[0].order_2.image} price={house_ready_orders_itens[0].order_2.price} bread={house_ready_orders_itens[0].order_2.bread} meat={house_ready_orders_itens[0].order_2.meat} meat_state={house_ready_orders_itens[0].order_2.meat_state} salads={house_ready_orders_itens[0].order_2.salads} cheese={house_ready_orders_itens[0].order_2.cheese} quantity={house_ready_orders_itens[0].order_2.quantity}/>
-                <ContentCards name={house_ready_orders_itens[0].order_3.name} image={house_ready_orders_itens[0].order_3.image} price={house_ready_orders_itens[0].order_3.price} bread={house_ready_orders_itens[0].order_3.bread} meat={house_ready_orders_itens[0].order_3.meat} meat_state={house_ready_orders_itens[0].order_3.meat_state} salads={house_ready_orders_itens[0].order_3.salads} cheese={house_ready_orders_itens[0].order_3.cheese} quantity={house_ready_orders_itens[0].order_3.quantity}/>
-                <ContentCards name={house_ready_orders_itens[0].order_4.name} image={house_ready_orders_itens[0].order_4.image} price={house_ready_orders_itens[0].order_4.price} bread={house_ready_orders_itens[0].order_4.bread} meat={house_ready_orders_itens[0].order_4.meat} meat_state={house_ready_orders_itens[0].order_4.meat_state} salads={house_ready_orders_itens[0].order_4.salads} cheese={house_ready_orders_itens[0].order_4.cheese} quantity={house_ready_orders_itens[0].order_4.quantity}/>
+                <Cards name={house_ready_orders_itens[0].order_1.name} image={house_ready_orders_itens[0].order_1.image} price={house_ready_orders_itens[0].order_1.price} bread={house_ready_orders_itens[0].order_1.bread} meat={house_ready_orders_itens[0].order_1.meat} meat_state={house_ready_orders_itens[0].order_1.meat_state} salads={house_ready_orders_itens[0].order_1.salads} cheese={house_ready_orders_itens[0].order_1.cheese} quantity={house_ready_orders_itens[0].order_1.quantity}/>
+                <Cards name={house_ready_orders_itens[0].order_2.name} image={house_ready_orders_itens[0].order_2.image} price={house_ready_orders_itens[0].order_2.price} bread={house_ready_orders_itens[0].order_2.bread} meat={house_ready_orders_itens[0].order_2.meat} meat_state={house_ready_orders_itens[0].order_2.meat_state} salads={house_ready_orders_itens[0].order_2.salads} cheese={house_ready_orders_itens[0].order_2.cheese} quantity={house_ready_orders_itens[0].order_2.quantity}/>
+                <Cards name={house_ready_orders_itens[0].order_3.name} image={house_ready_orders_itens[0].order_3.image} price={house_ready_orders_itens[0].order_3.price} bread={house_ready_orders_itens[0].order_3.bread} meat={house_ready_orders_itens[0].order_3.meat} meat_state={house_ready_orders_itens[0].order_3.meat_state} salads={house_ready_orders_itens[0].order_3.salads} cheese={house_ready_orders_itens[0].order_3.cheese} quantity={house_ready_orders_itens[0].order_3.quantity}/>
+                <Cards name={house_ready_orders_itens[0].order_4.name} image={house_ready_orders_itens[0].order_4.image} price={house_ready_orders_itens[0].order_4.price} bread={house_ready_orders_itens[0].order_4.bread} meat={house_ready_orders_itens[0].order_4.meat} meat_state={house_ready_orders_itens[0].order_4.meat_state} salads={house_ready_orders_itens[0].order_4.salads} cheese={house_ready_orders_itens[0].order_4.cheese} quantity={house_ready_orders_itens[0].order_4.quantity}/>
             </div>
         </div>
     )

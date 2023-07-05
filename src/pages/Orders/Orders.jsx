@@ -1,6 +1,6 @@
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import ContentCards from '../../components/ContentCards/ContentCards';
+import Cards from '../../components/Cards/Cards';
 import axios from 'axios'
 import styles from './Orders.module.css';
 import { useEffect, useState } from 'react';
@@ -34,7 +34,7 @@ export default function Orders() {
             }
         }
         if (options_array)
-        return options_array.map((options_array) => (<ContentCards id={options_array[0]} name={options_array[6]} image={options_array[7]} price={options_array[8]} bread={options_array[1]} meat={options_array[2]} meat_state={options_array[3]} salads={options_array[4]} cheese={options_array[5]} />))           
+        return options_array.map((options_array) => (<Cards id={options_array[0]} name={options_array[6]} image={options_array[7]} price={options_array[8]} bread={options_array[1]} meat={options_array[2]} meat_state={options_array[3]} salads={options_array[4]} cheese={options_array[5]} />))           
 
     }
 

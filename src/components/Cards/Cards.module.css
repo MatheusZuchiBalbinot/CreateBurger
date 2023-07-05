@@ -21,6 +21,8 @@
 .RemoveOrAddQuantity {
     display: flex;
     justify-content: center;
+    margin: auto;
+    gap: 2vw;
 }
 
 .quantityValue {

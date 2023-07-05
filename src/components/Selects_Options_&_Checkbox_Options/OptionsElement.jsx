@@ -1,4 +1,4 @@
-import styles from './CreateBurguerOptionCreator.module.css';
+import styles from './Option_&_Checkbox.module.css';
 
 export default function CreateBurguerOptionCreator ({all_options}) {
 

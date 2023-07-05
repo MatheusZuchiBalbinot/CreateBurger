@@ -1,8 +1,8 @@
-import styles from './CreateBurguerOptionCreator.module.css';
+import styles from './Option_&_Checkbox.module.css';
 
 export default function CreateBurguerCheckbox ({all_options}) {
 
-    function CheckBoxElements() {
+    function CheckboxElement() {
         
         if(all_options) {
             const options_array = []
@@ -21,9 +21,5 @@ export default function CreateBurguerCheckbox ({all_options}) {
         
     }
 
-    return (
-        <>
-            {CheckBoxElements()}
-        </>
-    )
+    return (CheckboxElement()) 
 }

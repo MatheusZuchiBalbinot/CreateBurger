@@ -1,7 +1,7 @@
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import CreateBurguerOptionCreator from '../../components/CreateBurguerSelect/CreateBurguerOptionCreator';
-import CreateBurguerCheckbox from '../../components/CreateBurguerSelect/CreateBurguerCheckbox';
+import OptionsElement from '../../components/Selects_Options_&_Checkbox_Options/OptionsElement';
+import CheckboxElement from '../../components/Selects_Options_&_Checkbox_Options/CheckboxElement';
 import styles from './CreateBurguer.module.css';
 import Orders from '../Orders/Orders';
 
@@ -33,9 +33,6 @@ export default function CreateBurguer() {
                 setMeat_state(fetch_meat_state.data)
                 setSalads(fetch_salads.data)
                 setCheese(fetch_cheese.data)
-
-
-                // Só estou pegando a primeira coluna e não a segunda, onde tem o preço
             } 
             catch (err) {
                 console.log(err) 
@@ -149,7 +146,7 @@ export default function CreateBurguer() {
                             <div className={styles.choose_specific_div}>
                                 <select className={styles.choose_dropdown_input} id="bread">
                                 <option></option>
-                                {bread[0] ? <CreateBurguerOptionCreator all_options={bread}/> : null}
+                                {bread[0] ? <OptionsElement all_options={bread}/> : null}
                                 </select>
                             </div>
                         </div>
@@ -164,7 +161,7 @@ export default function CreateBurguer() {
                             <div className={styles.choose_specific_div}>
                                 <select className={styles.choose_dropdown_input} id="meat">
                                 <option></option>
-                                {meat[0] ? <CreateBurguerOptionCreator all_options={meat}/> : null}
+                                {meat[0] ? <OptionsElement all_options={meat}/> : null}
                                 </select> 
                             </div>
                         </div>
@@ -178,7 +175,7 @@ export default function CreateBurguer() {
                             <div className={styles.choose_specific_div}>
                                 <select className={styles.choose_dropdown_input} id="meat_state">
                                 <option></option>
-                                {meat_state[0] ? <CreateBurguerOptionCreator all_options={meat_state}/> : null}
+                                {meat_state[0] ? <OptionsElement all_options={meat_state}/> : null}
                                 </select> 
                             </div>
                         </div>
@@ -189,7 +186,7 @@ export default function CreateBurguer() {
                     <div className={styles.image_and_select_merge_div}>
                         <div className={styles.choose_input_div}>
                             <div className={styles.choose_specific_div} id="salads">
-                                {salads[0] ? <CreateBurguerCheckbox all_options={salads}/> : null}
+                                {salads[0] ? <CheckboxElement all_options={salads}/> : null}
                             </div>
                         </div>
                     </div>
@@ -201,7 +198,7 @@ export default function CreateBurguer() {
                             <div className={styles.choose_specific_div}>
                                 <select className={styles.choose_dropdown_input} id="cheese">
                                     <option></option>
-                                    {cheese[0] && <CreateBurguerOptionCreator all_options={cheese}/>}
+                                    {cheese[0] && <OptionsElement all_options={cheese}/>}
                                 </select> 
                             </div>
                         </div>

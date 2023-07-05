@@ -1,15 +1,14 @@
-import styles from "./ContentCards.module.css";
-import axios from 'axios';
+import styles from "./Cards.module.css";
 import {IoMdAdd} from 'react-icons/io';
 import {MdAdd} from 'react-icons/md'
 import {RiSubtractFill} from 'react-icons/ri';
-import {IoIosRemove} from 'react-icons/io'
+import {IoIosRemove} from 'react-icons/io';
 
-export default function ContentCards ({id, name, image, price, bread, meat, meat_state, salads, cheese, quantity}) {
+export default function Cards ({id, name, image, price, bread, meat, meat_state, salads, cheese, quantity}) {
 
     var order_to_cart = []
 
-    const sendOrder = async () => {
+    const sendOrder = async (remove_or_add) => {
 
         var logged_idLogin = localStorage.getItem("logged_idLogin")
 
@@ -34,34 +33,7 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
         //     console.log(error)
         // }
 
-        function ItemAddPopUp () {
-            setTimeout(() => {
-                document.getElementById("itemAddictPopUp").style.display = "block"
-            }, "100")
-            setTimeout(() => {
-                document.getElementById("itemAddictPopUp").style.display = "none"
-              }, "2500");
-        }
-
-        function addCart(){
-            var notFound = 0
-            if(localStorage.getItem('order_to_cart')){
-                order_to_cart = JSON.parse(localStorage.getItem('order_to_cart'));
-            }
-            for(var i = 0; i < order_to_cart.length; i++) {
-                if (order_to_cart[i].name == ready_order.name) {
-                    notFound++
-                    order_to_cart[i].quantity++
-                    ItemAddPopUp()
-                }
-            }
-            if(notFound == 0) {
-                order_to_cart.push(ready_order);
-            }
-            localStorage.setItem('order_to_cart', JSON.stringify(order_to_cart));
-        }
-
-        addCart()
+        addCart(ready_order, remove_or_add)
     
         // console.log(JSON.parse(localStorage.getItem("order_to_cart")))
         
@@ -77,41 +49,71 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
     //     }
     // }
 
+    function addCart(ready_order, remove_or_add){
+        var Found = 0
+        if(localStorage.getItem('order_to_cart')){
+            order_to_cart = JSON.parse(localStorage.getItem('order_to_cart'));
+        }
+        for(var i = 0; i < order_to_cart.length; i++) {
+            if (order_to_cart[i].name == ready_order.name) {
+                if(remove_or_add == "Add") {
+                    Found++
+                    order_to_cart[i].quantity++
+                    ItemAddPopUp()
+                }
+                if(remove_or_add == "Remove") {
+                    Found++
+                    order_to_cart[i].quantity--
+                    ItemAddPopUp() 
+                }
+            }
+        }
+        if(Found == 0) {
+            order_to_cart.push(ready_order);
+        }
+        localStorage.setItem('order_to_cart', JSON.stringify(order_to_cart));
+    }
+
+    function ItemAddPopUp () {
+        setTimeout(() => {
+            document.getElementById("itemAddictPopUp").style.display = "block"
+        }, "100")
+        setTimeout(() => {
+            document.getElementById("itemAddictPopUp").style.display = "none"
+          }, "2500");
+    }
+
+    const addQuantity = () => {
+        quantity++
+    }
+
+    const removeQuantity = () => {
+        quantity--
+        console.log(quantity)
+    }
+
     const card_button = () => {
         const actual_location = window.location.href
         switch (actual_location) {
             case "http://localhost:5173/home":
                 return <button className={styles.order_button} onClick={sendOrder}> <IoMdAdd /> </button>
                 // return <button className={styles.order_button} onClick={()=>removeOrder(id)}> <RiSubtractFill /> </button>
-        }
-    }
-
-    const addOrRemoveQuantity = () => {
-        const actual_location = window.location.href
-
-        function addQuantity() {
-            quantity++
-        }
-    
-        function removeQuantity() {
-            quantity--
-        }
-
-        if (actual_location == "http://localhost:5173/home/createburguer/carrinho") {
-            return (
-                <div className={styles.RemoveOrAddQuantity}>
-                    <div className={styles.addQuantity} onClick={addQuantity}>
-                        <MdAdd />
+            case "http://localhost:5173/home/createburguer/carrinho":
+                return (
+                    <div className={styles.RemoveOrAddQuantity}>
+                        <div className={styles.addQuantity} id={name} onClick={(e) => (console.log(e.target.id))}>
+                            <MdAdd />
+                        </div>
+                        <div className={styles.quantityValue}>
+                            <p>{quantity}</p>
+                        </div>
+                        <div className={styles.removeQuantity} onClick={removeQuantity}>
+                            <IoIosRemove />
+                        </div>
                     </div>
-                    <div className={styles.quantityValue}>
-                        <p>{quantity}</p>
-                    </div>
-                    <div className={styles.removeQuantity} onClick={removeQuantity}>
-                        <IoIosRemove />
-                    </div>
-                </div>
-            )
-        }
+                )
+                
+            }
     }
 
     return (
@@ -134,7 +136,6 @@ export default function ContentCards ({id, name, image, price, bread, meat, meat
                     {card_button()}
                 </div>
             </div>
-            {addOrRemoveQuantity()}
             <div className={styles.addCartItemIndicator} id="itemAddictPopUp"> O item foi adicionado ao carrinho!!</div>
         </div>
     )
