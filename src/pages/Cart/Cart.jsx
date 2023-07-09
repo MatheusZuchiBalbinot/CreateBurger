@@ -1,32 +1,75 @@
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Cards from '../../components/Cards/Cards';
-import styles from './Cart.module.css'
+import styles from './Cart.module.css';
+
+import { useEffect } from 'react';
 
 export default function Cart() {
 
     const cart_orders = JSON.parse(localStorage.getItem('order_to_cart'))
-    // console.log(cart_orders)
 
     function cardItems() {
-        var orders_array = []
-        for(var i = 0; i < cart_orders.length; i++) {
-            orders_array.push(Object.values(cart_orders[i]))
+        if (cart_orders) {
+            const ordersArray = cart_orders.map((order) => {
+                const { 0: name, 1: bread, 2: meat, 3: meat_state, 4: salads, 5: cheese, 6: price, 7: image, 8: quantity, 9: id } = Object.values(order);
+                
+                return (
+                  <Cards 
+                    id={id} 
+                    quantity={quantity} 
+                    name={name} 
+                    image={image} 
+                    price={price} 
+                    bread={bread} 
+                    meat={meat} 
+                    meat_state={meat_state} 
+                    salads={salads} 
+                    cheese={cheese} 
+                  />
+                );
+              });
+            return ordersArray;
         }
-        // console.log(orders_array)
-        return orders_array.map((orders_array) => (<Cards id={orders_array[9]} quantity={orders_array[8]} name={orders_array[0]} image={orders_array[7]} price={orders_array[6]} bread={orders_array[1]} meat={orders_array[2]} meat_state={orders_array[3]} salads={orders_array[4]} cheese={orders_array[5]} />))
+        else {
+            return (
+            <div>
+                <div className={styles.customLoader}></div>
+                <p className={styles.loaderText}> Nenhum item adicionado!!</p>
+            </div>
+            )
+        }
+          
+    }
+
+    const showOrderValue = () => {
+        var cartSum = 0 
+        for(var i = 0; i < cart_orders.length; i++) {
+            if(cart_orders[i].quantity != 0) {
+                cartSum += cart_orders[i].quantity * cart_orders[i].price
+            }
+        }
+        return cartSum.toFixed(2)
+        }
+
+    const addOrderToDatabase = () => {
+
     }
 
     return (
         <>
             <Header />
                 <div className={styles.cartDiv}>
+                    <h1 className={styles.cartTitle}> Items no carrinho: </h1>
                     <div className={styles.cardsCartDiv}>
                         {cardItems()}
                     </div>
-                    <div className={styles.finalizeOrder}>
-                        <button> Finalizar Pedido </button>
-                    </div>
+
+                    {cart_orders && 
+                        <div className={styles.finalizeOrder}>
+                            <button onClick={addOrderToDatabase}> Finalizar Pedido por: R${showOrderValue()} </button>
+                        </div>
+                    }
                 </div>
             <Footer />
         </>

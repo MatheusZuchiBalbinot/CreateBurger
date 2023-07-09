@@ -3,17 +3,30 @@ import styles from "./Cards.module.css";
 import {IoMdAdd} from 'react-icons/io';
 import {MdAdd} from 'react-icons/md'
 import {IoIosRemove} from 'react-icons/io';
-import {AiOutlineInfoCircle} from 'react-icons/ai'
 
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 export default function Cards ({id, name, image, price, bread, meat, meat_state, salads, cheese, quantity}) {
 
     var order_to_cart = []
+    
+    var logged_idLogin = localStorage.getItem("logged_idLogin")
+    
+    const [newQuantity, setNewQuantity] = useState(quantity)
 
-    const sendOrder = async () => {
+    var orderToCart = JSON.parse(localStorage.getItem('order_to_cart')); 
 
-        var logged_idLogin = localStorage.getItem("logged_idLogin")
+    useEffect(() => {
+        for(var i = 0; i < orderToCart.length; i++) {
+            if(orderToCart[i].name == name) {
+                orderToCart[i].quantity = newQuantity
+                localStorage.setItem('order_to_cart', JSON.stringify(orderToCart));
+            }
+        }
+    }, [newQuantity])
+
+
+    const sendOrder = () => {
 
         const ready_order = {
             name: name,
@@ -38,7 +51,7 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
         for(var i = 0; i < order_to_cart.length; i++) {
             if (order_to_cart[i].name == ready_order.name) {
                 Found++
-                order_to_cart[i].quantity++
+                setNewQuantity(newQuantity + 1)
                 ItemAddPopUp()
             }
         }
@@ -57,23 +70,9 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
           }, "2500");
     }
 
-    const addQuantity = (name) => {
-        var quantityOrder = JSON.parse(localStorage.getItem('order_to_cart'));
-        for (let i = 0; i < quantityOrder.length; i++) {
-            if(quantityOrder[i].name == name) {
-                quantityOrder[i].quantity++
-                localStorage.setItem('order_to_cart', JSON.stringify(quantityOrder));
-            }
-        }
-    }
-
-    const removeQuantity = (name) => {
-        var quantityOrder = JSON.parse(localStorage.getItem('order_to_cart'));
-        for (let i = 0; i < quantityOrder.length; i++) {
-            if(quantityOrder[i].name == name) {
-                quantityOrder[i].quantity--
-                localStorage.setItem('order_to_cart', JSON.stringify(quantityOrder));
-            }
+    const checkQuantity = () => {
+        if (newQuantity != 0) {
+            setNewQuantity((newQuantity) => newQuantity - 1)
         }
     }
 
@@ -85,13 +84,13 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
             case "http://localhost:5173/home/createburguer/carrinho":
                 return (
                     <div className={styles.RemoveOrAddQuantity}>
-                        <div className={styles.addQuantity} id={name} onClick={(e) => addQuantity(e.target.id)}>
+                        <div className={styles.addQuantity} id={name} onClick={() => setNewQuantity((newQuantity) => newQuantity + 1)}>
                             <MdAdd />
                         </div>
                         <div className={styles.quantityValue}>
-                            <p>{quantity}</p>
+                            <p>{newQuantity}</p>
                         </div>
-                        <div className={styles.removeQuantity} id={name} onClick={(e) => removeQuantity(e.target.id)}>
+                        <div className={styles.removeQuantity} id={name} onClick={checkQuantity}>
                             <IoIosRemove />
                         </div>
                     </div>
