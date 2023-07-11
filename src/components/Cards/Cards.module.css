@@ -18,6 +18,10 @@
     grid-area: name_image_and_price_of_card;
 }
 
+.showQuantityOrTotal {
+    display: block;
+}
+
 .RemoveOrAddQuantity {
     display: flex;
     justify-content: center;
@@ -85,7 +89,6 @@
     margin: auto;
     background-color: transparent;
     opacity: 0.5;
-    padding: 1vw;
 }
 
 .card:hover {
@@ -122,8 +125,18 @@
     margin: auto;
 }
 
-.button_div {
+.totalPrice {
     display: flex;
+    justify-content: center;
+}
+
+.totalPriceText {
+    color: goldenrod;
+    font-weight: bolder;
+    padding: 0.5vw;
+}
+
+.button_div {
     justify-content: center;
     position: relative;
     margin: auto 0;
@@ -179,12 +192,15 @@
     border-radius: 1vw;
     margin: auto;
 }
+.homeCardButtonDiv {
+    display: flex;
+    justify-content: center;
+}
 
 .card_title {
     display: flex;
     text-transform:capitalize;
     font-size: 1.5vw;
-    padding: 0.5vw;
     justify-content: center;
     font-family: 'Delicious Handrawn', cursive;
 }

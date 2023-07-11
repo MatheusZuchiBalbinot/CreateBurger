@@ -3,7 +3,7 @@
 .footer {
     display: grid;
     grid-template-columns: 0.7fr 2fr 2fr 0.7fr;
-    grid-template-rows: auto;
+    grid-template-rows: 10vh;
     grid-template-areas: 
     ". footer_div footer_div .";
     color: white;
@@ -20,7 +20,7 @@
 
 @media (max-width: 500px) {
     .footer {
-        grid-template-rows: 5vh;
+        grid-template-rows: 10vh;
     }
     .footer_title {
         font-size: 1.5vh !important;

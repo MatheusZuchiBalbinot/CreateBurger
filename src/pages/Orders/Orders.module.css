@@ -4,6 +4,7 @@
 .orders {
     background-image: linear-gradient(to right bottom, #252525, #1f1f1f, #1a1a1a, #151515, #0e0e0e, #0d0b10, #0d0811, #0f0412, #1a0416, #240416, #2e0212, #360006);
     color: white; 
+    min-height: 80vh;
 }
 
 .orders_title {
@@ -41,6 +42,7 @@
     grid-template-rows: auto;
     grid-template-areas: 
     ". cards_div .";
+    min-height: 80vh;
 }
 
 .cards_div {

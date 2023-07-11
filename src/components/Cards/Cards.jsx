@@ -6,21 +6,35 @@ import {IoIosRemove} from 'react-icons/io';
 
 import {useState, useEffect} from 'react';
 
+import Cart from '../../pages/Cart/Cart'
+
 export default function Cards ({id, name, image, price, bread, meat, meat_state, salads, cheese, quantity}) {
 
     var order_to_cart = []
-    
-    var logged_idLogin = localStorage.getItem("logged_idLogin")
+    var cartSum = 0
     
     const [newQuantity, setNewQuantity] = useState(quantity)
 
+    var logged_idLogin = localStorage.getItem("logged_idLogin")
     var orderToCart = JSON.parse(localStorage.getItem('order_to_cart')); 
 
-    useEffect(() => {
+    const showOrderAllValue = () => {
         for(var i = 0; i < orderToCart.length; i++) {
-            if(orderToCart[i].name == name) {
-                orderToCart[i].quantity = newQuantity
-                localStorage.setItem('order_to_cart', JSON.stringify(orderToCart));
+            if(orderToCart[i].quantity != 0) {
+                cartSum += orderToCart[i].quantity * orderToCart[i].price
+            }
+        }
+        localStorage.setItem('orderValue', JSON.stringify(cartSum.toFixed(2)))
+    }
+
+    useEffect(() => {
+        if (orderToCart) {
+            for(var i = 0; i < orderToCart.length; i++) {
+                if(orderToCart[i].name == name) {
+                    orderToCart[i].quantity = newQuantity
+                    localStorage.setItem('order_to_cart', JSON.stringify(orderToCart))
+                    showOrderAllValue()
+                }
             }
         }
     }, [newQuantity])
@@ -80,18 +94,28 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
         const actual_location = window.location.href
         switch (actual_location) {
             case "http://localhost:5173/home":
-                return <button className={styles.order_button} onClick={sendOrder}> <IoMdAdd /> </button>
+                return (
+                    <div className={styles.homeCardButtonDiv}>
+                        <button className={styles.order_button} onClick={sendOrder}> <IoMdAdd /> </button>
+                    </div>
+                )
+                
             case "http://localhost:5173/home/createburguer/carrinho":
                 return (
-                    <div className={styles.RemoveOrAddQuantity}>
-                        <div className={styles.addQuantity} id={name} onClick={() => setNewQuantity((newQuantity) => newQuantity + 1)}>
-                            <MdAdd />
+                    <div className={styles.showQuantityOrTotal}>
+                        <div className={styles.RemoveOrAddQuantity}>
+                            <div className={styles.addQuantity} id={name} onClick={() => setNewQuantity((newQuantity) => newQuantity + 1)}>
+                                <MdAdd />
+                            </div>
+                            <div className={styles.quantityValue}>
+                                <p>{newQuantity}</p>
+                            </div>
+                            <div className={styles.removeQuantity} id={name} onClick={checkQuantity}>
+                                <IoIosRemove />
+                            </div>
                         </div>
-                        <div className={styles.quantityValue}>
-                            <p>{newQuantity}</p>
-                        </div>
-                        <div className={styles.removeQuantity} id={name} onClick={checkQuantity}>
-                            <IoIosRemove />
+                        <div className={styles.totalPrice}>
+                            <p className={styles.totalPriceText}> Total: R$ {(newQuantity * price).toFixed(2)} </p>
                         </div>
                     </div>
                 )
