@@ -3,7 +3,7 @@ import Footer from '../../components/Footer/Footer';
 import OptionsElement from '../../components/SelectAndCheckbox/OptionsElement';
 import CheckboxElement from '../../components/SelectAndCheckbox/CheckboxElement';
 import styles from './CreateBurguer.module.css';
-import Orders from '../Orders/Orders';
+import Orders from '../OrderHistory/OrderHistory';
 
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'

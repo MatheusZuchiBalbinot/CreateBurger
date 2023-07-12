@@ -3,16 +3,22 @@ import Footer from '../../components/Footer/Footer';
 import Cards from '../../components/Cards/Cards';
 import styles from './Cart.module.css';
 
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
+import {useNavigate} from 'react-router-dom'
 
 export default function Cart() {
 
-    const cartOrders = JSON.parse(localStorage.getItem('order_to_cart'))
-    const ordersValue = JSON.parse(localStorage.getItem('orderValue'))
+    const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     console.log(ordersValue)
-    // }, [cartOrders])
+    const cartOrders = JSON.parse(localStorage.getItem('order_to_cart'))
+
+    const [isOpen, setIsOpen] = useState(false)
+
+    useEffect(() => {
+        if (isOpen == true) {
+            return navigate("/home/createburguer/carrinho/confirmOrder");
+        }
+    }, [isOpen])
 
     function cardItems() {
         if (cartOrders) {
@@ -52,14 +58,14 @@ export default function Cart() {
             <Header />
                 <div className={styles.cartDiv}>
                     {/* {showOrderValue()} */}
-                    <h1 className={styles.cartTitle}> Total do Carrinho: R$ {ordersValue}</h1>
+                    <h1 className={styles.cartTitle}> Elementos do Carrinho: </h1>
                     <div className={styles.cardsCartDiv}>
                         {cardItems()}
                     </div>
 
                     {cartOrders && 
                         <div className={styles.finalizeOrder}>
-                            <button id='finalizeOrderButton'> Finalizar Pedido </button>
+                            <button id='finalizeOrderButton' onClick={() => setIsOpen(true)}> Finalizar Pedido </button>
                         </div>
                     }
                 </div>

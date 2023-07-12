@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
+.confirmOrderMainDiv {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "orderInfos";
+    min-height: 80vh;
+    background-image: linear-gradient(to right bottom, #252525, #1f1f1f, #1a1a1a, #151515, #0e0e0e, #0d0b10, #0d0811, #0f0412, #1a0416, #240416, #2e0212, #360006)  ;
+}
+
+.orderInfos {
+    grid-area: orderInfos;
+    display: grid;
+    grid-template-columns: 5vw 50vw 5vw 30vw 5vw;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    ". orderResume . infoAboutPerson .";
+}
+
+.infoAboutPerson {
+    grid-area: infoAboutPerson;
+    display: grid;
+    grid-template-columns: 0 auto 0;
+    grid-template-rows: 3vw auto 3vw;
+    grid-template-areas: 
+    ". . ."
+    ". generalInputDiv ."
+    ". . .";
+}
+
+.generalTitle {
+    font-family: 'Delius', cursive;
+    color: white;
+    text-align: center;
+}
+
+.generalInputDiv {
+    grid-area: generalInputDiv;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(72, 80, 73, 0.1);
+    padding: 1.5vw;
+    border-radius: 1vw;
+}
+
+.orderResume {
+    grid-area: orderResume;
+    display: grid;
+    grid-template-columns: 3vw auto 3vw;
+    grid-template-rows: 3vw auto 3vw;
+    grid-template-areas: 
+    ". . ."
+    ". allCardBoxx ."
+    ". . .";
+}
+
+.allCardBoxx {
+    grid-area: allCardBoxx;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(72, 80, 73, 0.1);
+    padding: 1.5vw;
+    border-radius: 1vw;
+}
+
+.inputField {
+    display: flex;
+    margin: auto;
+    gap: 1vw;
+}
+
+.inputField svg {
+    font-size: 3vw;
+}
+
+.infosInput {
+    width: 100%;
+    font-size: 1vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+    padding: 0.7vw;
+    border: none;
+    background-color: transparent;
+    opacity: 0.5;
+}
+
+.infosInput:hover {
+    border-bottom: 1px solid blue;
+    opacity: 1;
+}
+
+.mainInputDiv {
+    padding: 0.5vw;
+}
+
+.iconInputSVG {
+    margin: auto;
+    color: white;
+}
+
+.inputTitleText {
+    display: flex;
+    font-family: 'Delius', cursive;
+    color: white;
+    font-size: 1.2vw;
+    padding: 0.5vw 0.5vw 0.5vw 0;
+    justify-content: left;
+}
+
+.buttonsDiv {
+    margin: auto;
+    padding: 1vw 1vw 3vw 1vw;
+}
+
+.buttonElement {
+    cursor: pointer;
+    color: white;
+    border: 1px solid;
+    margin-inline: 1.5vw;
+    background-color: rgb(39, 35, 35);
+    padding: 1.5vw;
+    border-radius: 2vw;
+}

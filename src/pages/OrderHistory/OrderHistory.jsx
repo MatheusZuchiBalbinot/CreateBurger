@@ -2,7 +2,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Cards from '../../components/Cards/Cards';
 import axios from 'axios'
-import styles from './Orders.module.css';
+import styles from './OrderHistory.module.css';
 import { useEffect, useState } from 'react';
 
 export default function Orders() {

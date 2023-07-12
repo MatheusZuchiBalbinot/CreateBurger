@@ -1,0 +1,11 @@
+.cardContent {
+    overflow: auto;
+}
+
+.shortCard {
+    display: flex;
+    background-color: white;
+    border-radius: 2vw;
+    width: 100%;
+
+}

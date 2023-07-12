@@ -6,8 +6,6 @@ import {IoIosRemove} from 'react-icons/io';
 
 import {useState, useEffect} from 'react';
 
-import Cart from '../../pages/Cart/Cart'
-
 export default function Cards ({id, name, image, price, bread, meat, meat_state, salads, cheese, quantity}) {
 
     var order_to_cart = []

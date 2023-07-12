@@ -1,10 +1,13 @@
 import {useRoutes } from 'react-router-dom';
+
 import Login from "./pages/Login_&_Register/Login";
 import Register from './pages/Login_&_Register/Register'
 import Home from "./pages/Home/Home";
-import Orders from './pages/Orders/Orders';
+import Orders from './pages/OrderHistory/OrderHistory';
 import CreateBurguer from './pages/CreateBurguer/CreateBurguer';
 import Cart from "./pages/Cart/Cart"
+import ConfirmOrder from './pages/ConfirmOrder/ConfirmOrder';
+
 
 function App() {
 
@@ -12,6 +15,10 @@ function App() {
     {
       path: '/',
       element: <Login />
+    },
+    {
+      path: '/register',
+      element: <Register />
     },
     {
       path: '/home',
@@ -26,13 +33,13 @@ function App() {
       element: <Orders />
     },
     {
-      path: '/register',
-      element: <Register />
-    },
-    {
       path: '/home/createburguer/carrinho',
       element: <Cart />
-    }
+    },
+    {
+      path: '/home/createburguer/carrinho/confirmOrder',
+      element: <ConfirmOrder />
+    },
 
   ])
 

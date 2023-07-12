@@ -85,7 +85,7 @@
 
 input:focus::placeholder {
     color: whitesmoke;
-  }
+}
 
 ::placeholder {
     color: whitesmoke;
