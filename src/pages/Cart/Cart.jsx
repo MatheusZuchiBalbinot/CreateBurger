@@ -3,35 +3,38 @@ import Footer from '../../components/Footer/Footer';
 import Cards from '../../components/Cards/Cards';
 import styles from './Cart.module.css';
 
-import {useEffect, useState, useCallback} from 'react';
+import {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom'
+
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 export default function Cart() {
 
     const navigate = useNavigate();
 
-    const [data, setData] = useState([])
+    const {data} = useContext(CartContext)
+    const {cartValue} = useContext(CartContext)
+
+    const [items, setItems] = useState(data)
 
     useEffect(() => {
-        const cartOrders = JSON.parse(localStorage.getItem('order_to_cart'));
-        if (data) {
-            setData(cartOrders);
-        }
-    }, [])
+        setItems(data)
+    }, [data])
 
     const tradePage = () => {
-        if (data.length != 0) {
+        if (cartValue != 0) {
             return navigate("/home/createburguer/carrinho/confirmOrder");
         }
     }
 
     function cardItems() {
-        if (data) {
-            const ordersArray = data.map((order) => {
+        if (items.length != 0) {
+            const ordersArray = items.map((order) => {
                 const { 0: name, 1: bread, 2: meat, 3: meat_state, 4: salads, 5: cheese, 6: price, 7: image, 8: quantity, 9: id } = Object.values(order);
                 
                 return (
-                  <Cards 
+                  <Cards
                     id={id} 
                     quantity={quantity} 
                     name={name} 
@@ -49,30 +52,45 @@ export default function Cart() {
         }
         else {
             return (
-            <div>
-                <div className={styles.customLoader}></div>
-                <p className={styles.loaderText}> Nenhum item adicionado!!</p>
-            </div>
+                <div>
+                    <div className={styles.customLoader}></div>
+                </div>
             )
         }
-          
+    }
+
+    function cartButton() {
+        if(data != 0) {
+            return (
+                <div className={styles.finalizeOrder}>
+                    <button className={styles.finalizeOrderButton} id='finalizeOrderButton' onClick={tradePage}> Continuar Pedido </button>
+                </div>
+        )
+        }
+    }
+
+    function showCartValue() {
+        if (cartValue) {
+            return (
+                <h1 className={styles.cartTitle}> Valor do Carrinho: R$ {cartValue.toFixed(2)}  </h1>
+            )
+        }
+        else {
+            return (
+                <h1 className={styles.cartTitle}> Nenhum item adicionado!!</h1>
+            )
+        }
     }
 
     return (
         <>
             <Header />
-                <div className={styles.cartDiv}>
-                    {/* {showOrderValue()} */}
-                    <h1 className={styles.cartTitle}> Elementos do Carrinho: </h1>
+                <div className={styles.cartDiv} id='teste'>
+                    {showCartValue()}
                     <div className={styles.cardsCartDiv}>
                         {cardItems()}
                     </div>
-
-                    {data && 
-                        <div className={styles.finalizeOrder}>
-                            <button id='finalizeOrderButton' onClick={tradePage}> Continuar Pedido </button>
-                        </div>
-                    }
+                    {cartButton()}
                 </div>
             <Footer />
         </>

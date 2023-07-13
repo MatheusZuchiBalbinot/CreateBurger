@@ -3,44 +3,42 @@ import styles from "./Cards.module.css";
 import {IoMdAdd} from 'react-icons/io';
 import {MdAdd} from 'react-icons/md'
 import {IoIosRemove} from 'react-icons/io';
-import {TiDeleteOutline} from 'react-icons/ti'
 
 import {useState, useEffect} from 'react';
 
-import ReactDOM from 'react-dom/client';
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 export default function Cards ({id, name, image, price, bread, meat, meat_state, salads, cheese, quantity}) {
 
-    var order_to_cart = []
     var cartSum = 0
-    
-    const [newQuantity, setNewQuantity] = useState(quantity)
 
     var logged_idLogin = localStorage.getItem("logged_idLogin")
-    var orderToCart = JSON.parse(localStorage.getItem('order_to_cart')); 
-    
 
-    const showOrderAllValue = () => {
-        for(var i = 0; i < orderToCart.length; i++) {
-            if(orderToCart[i].quantity != 0) {
-                cartSum += orderToCart[i].quantity * orderToCart[i].price
-            }
-        }
-        localStorage.setItem('orderValue', JSON.stringify(cartSum.toFixed(2)))
-    }
+    const {data, setData} = useContext(CartContext)
+    const {cartValue, setCartValue} = useContext(CartContext)
+
+    const [newQuantity, setNewQuantity] = useState(quantity)
 
     useEffect(() => {
-        if (orderToCart) {
-            for(var i = 0; i < orderToCart.length; i++) {
-                if(orderToCart[i].name == name) {
-                    orderToCart[i].quantity = newQuantity
-                    localStorage.setItem('order_to_cart', JSON.stringify(orderToCart))
-                    showOrderAllValue()
+        if (data) {
+            for(var i = 0; i < data.length; i++) {
+                if(data[i].name == name) {
+                    data[i].quantity = newQuantity
                 }
             }
         }
-    }, [newQuantity])
+        showOrderAllValue()
+    }, [newQuantity, cartSum])
 
+    const showOrderAllValue = () => {
+        for(var i = 0; i < data.length; i++) {
+            if(data[i].quantity != 0) {
+                cartSum += (data[i].quantity * data[i].price)
+            }
+        }
+        setCartValue(cartSum)
+    }
 
     const sendOrder = () => {
 
@@ -61,20 +59,23 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
 
     function addCart(ready_order){
         var Found = 0
-        if(localStorage.getItem('order_to_cart')){
-            order_to_cart = JSON.parse(localStorage.getItem('order_to_cart'));
-        }
-        for(var i = 0; i < order_to_cart.length; i++) {
-            if (order_to_cart[i].name == ready_order.name) {
+        for(var i = 0; i < data.length; i++) {
+            if (data[i].name == ready_order.name) {
                 Found++
                 setNewQuantity(newQuantity + 1)
                 ItemAddPopUp()
             }
         }
         if(Found == 0) {
-            order_to_cart.push(ready_order);
+            setData([...data, ready_order])
         }
-        localStorage.setItem('order_to_cart', JSON.stringify(order_to_cart));
+        else {
+            for(var i = 0; i < data.length; i++) {
+                if(data[i].name == ready_order.name) {
+                    setNewQuantity(newQuantity + 1)
+                }
+            }
+        }
     }
 
     function ItemAddPopUp () {
@@ -86,19 +87,23 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
           }, "2500");
     }
 
-    const checkQuantity = () => {
+    const removeQuantity = () => {
         if (newQuantity != 0) {
             setNewQuantity((newQuantity) => newQuantity - 1)
+            setData(data)
         }
         else {
-            for(var i = 0; i < orderToCart.length; i++) {
-                if(orderToCart[i].name == name) {
-                    orderToCart.splice(i, 1)
-                    localStorage.setItem('order_to_cart', JSON.stringify(orderToCart))
-                    console.log(orderToCart)
+            for(var i = 0; i < data.length; i++) {
+                if(data[i].name == name) {
+                    data.splice(i, 1)
                 }
             }
         }
+    }
+
+    const addQuantity = () => {
+        setNewQuantity((newQuantity) => newQuantity + 1)
+        setData(data)
     }
 
     const card_button = () => {
@@ -115,19 +120,16 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
                 return (
                     <div className={styles.showQuantityOrTotal}>
                         <div className={styles.RemoveOrAddQuantity}>
-                            <div className={styles.addQuantity} id='addQuantity' onClick={() => setNewQuantity((newQuantity) => newQuantity + 1)}>
+                            <div className={styles.addQuantity} id='addQuantity' onClick={addQuantity}>
                                 <MdAdd />
                             </div>
                             <div className={styles.quantityValue}>
                                 <p>{newQuantity}</p>
                             </div>
-                            <div className={styles.removeQuantity} id={name} onClick={checkQuantity}>
+                            <div className={styles.removeQuantity} id={name} onClick={removeQuantity}>
                                 <IoIosRemove />
                             </div>
-                        </div>
-                        {/* <div className={styles.totalPrice}>
-                            <p className={styles.totalPriceText}> Total: R$ {(newQuantity * price).toFixed(2)} </p>
-                        </div> */}
+                        </div>  
                     </div>
                 )
                 

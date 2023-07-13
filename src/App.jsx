@@ -8,8 +8,14 @@ import CreateBurguer from './pages/CreateBurguer/CreateBurguer';
 import Cart from "./pages/Cart/Cart"
 import ConfirmOrder from './pages/ConfirmOrder/ConfirmOrder';
 
+import {CartContext} from '../src/context/CartContext';
+import { useState } from 'react';
+
 
 function App() {
+
+  const [data, setData] = useState([])  
+  const [cartValue, setCartValue] = useState(0)
 
   const routes = useRoutes ([
     {
@@ -44,9 +50,9 @@ function App() {
   ])
 
   return (
-      <div className="App">
+      <CartContext.Provider value={{data, setData, cartValue, setCartValue}} className="App">
         {routes}
-      </div>
+      </CartContext.Provider>
   )
 }
 

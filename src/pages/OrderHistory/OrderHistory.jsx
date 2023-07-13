@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 export default function Orders() {
 
-    const [data, setData] = useState([])
+    const [orders, setOrders] = useState([])
 
     // useEffect(() => {
     //     const fetch_orders = async () => {
@@ -28,7 +28,7 @@ export default function Orders() {
 
         var logged_idLogin = localStorage.getItem("logged_idLogin")
 
-        if(data.length != 0) {
+        if(orders.length != 0) {
 
             // for(var i = 0; i < data.length; i++) {
             //     if (data[i].idLogin == logged_idLogin) {
@@ -52,22 +52,35 @@ export default function Orders() {
             // ))           
         }
         else {
-
             return (
-                <div>
+                <div className={styles.LoaderDiv}>
                     <div className={styles.customLoader}></div>
-                    <p className={styles.loaderText}> Nenhum pedido ainda foi feito!! </p>
                 </div>
                 )
         }
 
     }
 
+    function showOrderHistoryTitle() {
+        if (orders.length != 0) {
+            return (
+                <h3 className={styles.orders_title}> Pedidos já feitos: </h3>
+            )
+        }
+        else {
+            return (
+                <div>
+                    <p className={styles.loaderText}> Nenhum pedido ainda foi feito!! </p>
+                </div>
+                )
+        }
+    }
+
     return (
         <>
             <Header />
                 <div className={styles.orders}>
-                <h3 className={styles.orders_title}> Pedidos já feitos: </h3>
+                {showOrderHistoryTitle()}
                 <div className={styles.orders_main_div}>
                     <div className={styles.cards_div} id='cards_div'>
                         {recived_orders()}

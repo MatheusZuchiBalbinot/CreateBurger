@@ -1,9 +1,11 @@
 import styles from './ShortOrder.module.css'
 
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+
 export default function ShortOrder({id, name, image, price, bread, meat, meat_state, salads, cheese, quantity}) {
 
-    const cartOrders = JSON.parse(localStorage.getItem('order_to_cart'))
-
+    const {cartValue} = useContext(CartContext)
     const createShortOrder = () => {
         
         return (

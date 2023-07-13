@@ -9,13 +9,15 @@ import {MdPayment} from 'react-icons/md';
 
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 import styles from './ConfirmOrder.module.css';
 
 export default function ConfirmOrder() {
 
-    const cartOrders = JSON.parse(localStorage.getItem('order_to_cart'))
-    const orderValue = JSON.parse(localStorage.getItem('orderValue'))
+    const {data, setData} = useContext(CartContext)
+    const {cartValue} = useContext(CartContext)
 
     const navigate = useNavigate();
 
@@ -26,17 +28,23 @@ export default function ConfirmOrder() {
     const [observations, setObservations] = useState('')
     const [payment, setPayment] = useState('')
 
+    // useEffect(() => {
+    //     console.log(responsible, CPF, localization, phone, observations, payment)
+    // },[responsible, CPF, localization, phone, observations, payment])
+
     useEffect(() => {
-        console.log(responsible, CPF, localization, phone, observations, payment)
-    },[responsible, CPF, localization, phone, observations, payment])
+        if (cartValue == 0) {
+            return navigate(-1);
+        }
+    }, [cartValue])
 
     function tradePage() {
         return navigate(-1);
     }
 
     function ShowShortOrder() {
-        if (cartOrders) {
-            const ordersArray = cartOrders.map((order) => {
+        if (data) {
+            const ordersArray = data.map((order) => {
                 const { 0: name, 1: bread, 2: meat, 3: meat_state, 4: salads, 5: cheese, 6: price, 7: image, 8: quantity, 9: id } = Object.values(order);
                 
                 if(quantity != 0) {
@@ -71,7 +79,7 @@ export default function ConfirmOrder() {
                                     {ShowShortOrder()}
                                 </div>
                                 <div className={styles.adasd}>
-                                    <h3 className={styles.orderValueTitle}> Valor do Carrinho: R${orderValue}</h3>
+                                    <h3 className={styles.orderValueTitle}> Valor do Carrinho: R${cartValue.toFixed(2)}</h3>
                                 </div>
                             </div>
                         </div>
