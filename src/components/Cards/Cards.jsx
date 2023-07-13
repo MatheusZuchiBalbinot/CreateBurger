@@ -3,8 +3,11 @@ import styles from "./Cards.module.css";
 import {IoMdAdd} from 'react-icons/io';
 import {MdAdd} from 'react-icons/md'
 import {IoIosRemove} from 'react-icons/io';
+import {TiDeleteOutline} from 'react-icons/ti'
 
 import {useState, useEffect} from 'react';
+
+import ReactDOM from 'react-dom/client';
 
 export default function Cards ({id, name, image, price, bread, meat, meat_state, salads, cheese, quantity}) {
 
@@ -15,6 +18,7 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
 
     var logged_idLogin = localStorage.getItem("logged_idLogin")
     var orderToCart = JSON.parse(localStorage.getItem('order_to_cart')); 
+    
 
     const showOrderAllValue = () => {
         for(var i = 0; i < orderToCart.length; i++) {
@@ -86,6 +90,15 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
         if (newQuantity != 0) {
             setNewQuantity((newQuantity) => newQuantity - 1)
         }
+        else {
+            for(var i = 0; i < orderToCart.length; i++) {
+                if(orderToCart[i].name == name) {
+                    orderToCart.splice(i, 1)
+                    localStorage.setItem('order_to_cart', JSON.stringify(orderToCart))
+                    console.log(orderToCart)
+                }
+            }
+        }
     }
 
     const card_button = () => {
@@ -102,7 +115,7 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
                 return (
                     <div className={styles.showQuantityOrTotal}>
                         <div className={styles.RemoveOrAddQuantity}>
-                            <div className={styles.addQuantity} id={name} onClick={() => setNewQuantity((newQuantity) => newQuantity + 1)}>
+                            <div className={styles.addQuantity} id='addQuantity' onClick={() => setNewQuantity((newQuantity) => newQuantity + 1)}>
                                 <MdAdd />
                             </div>
                             <div className={styles.quantityValue}>

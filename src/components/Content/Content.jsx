@@ -86,7 +86,7 @@ export default function Content() {
                     </div>
                     <div className={styles.content_button}>
                         <button type="button" className={styles.content_button_button} onClick={move_to_create}>
-                        <label for="content_button_button" className={styles.content_button_label}> Monte seu Hambúrguer</label></button>
+                        <label htmlFor="content_button_button" className={styles.content_button_label}> Monte seu Hambúrguer</label></button>
                     </div>
                 </div>
             </div>

@@ -22,7 +22,6 @@
     }
     .label_logo_image {
         font-size: 1.2vh !important;
-        padding-right: 1vh;
     }
     .logo_image {
         height: 7.5vh !important;
@@ -102,7 +101,6 @@
 }
 
 .label_logo_image {
-    font-size: 1.2vw;
     margin: auto;
     text-decoration: none;
     color: rgb(221, 220, 220);

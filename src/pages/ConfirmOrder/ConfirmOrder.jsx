@@ -39,20 +39,22 @@ export default function ConfirmOrder() {
             const ordersArray = cartOrders.map((order) => {
                 const { 0: name, 1: bread, 2: meat, 3: meat_state, 4: salads, 5: cheese, 6: price, 7: image, 8: quantity, 9: id } = Object.values(order);
                 
-                return (
-                  <ShortOrder 
-                    id={id} 
-                    quantity={quantity} 
-                    name={name} 
-                    image={image} 
-                    price={price} 
-                    bread={bread} 
-                    meat={meat} 
-                    meat_state={meat_state} 
-                    salads={salads} 
-                    cheese={cheese} 
-                  />
-                );
+                if(quantity != 0) {
+                    return (
+                        <ShortOrder 
+                          id={id} 
+                          quantity={quantity} 
+                          name={name} 
+                          image={image} 
+                          price={price} 
+                          bread={bread} 
+                          meat={meat} 
+                          meat_state={meat_state} 
+                          salads={salads} 
+                          cheese={cheese} 
+                        />
+                      );
+                }
               });
             return ordersArray;
         }

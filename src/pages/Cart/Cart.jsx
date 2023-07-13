@@ -3,22 +3,31 @@ import Footer from '../../components/Footer/Footer';
 import Cards from '../../components/Cards/Cards';
 import styles from './Cart.module.css';
 
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useCallback} from 'react';
 import {useNavigate} from 'react-router-dom'
 
 export default function Cart() {
 
     const navigate = useNavigate();
 
-    const cartOrders = JSON.parse(localStorage.getItem('order_to_cart'))
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        const cartOrders = JSON.parse(localStorage.getItem('order_to_cart'));
+        if (data) {
+            setData(cartOrders);
+        }
+    }, [])
 
     const tradePage = () => {
-        return navigate("/home/createburguer/carrinho/confirmOrder");
+        if (data.length != 0) {
+            return navigate("/home/createburguer/carrinho/confirmOrder");
+        }
     }
 
     function cardItems() {
-        if (cartOrders) {
-            const ordersArray = cartOrders.map((order) => {
+        if (data) {
+            const ordersArray = data.map((order) => {
                 const { 0: name, 1: bread, 2: meat, 3: meat_state, 4: salads, 5: cheese, 6: price, 7: image, 8: quantity, 9: id } = Object.values(order);
                 
                 return (
@@ -59,7 +68,7 @@ export default function Cart() {
                         {cardItems()}
                     </div>
 
-                    {cartOrders && 
+                    {data && 
                         <div className={styles.finalizeOrder}>
                             <button id='finalizeOrderButton' onClick={tradePage}> Continuar Pedido </button>
                         </div>
