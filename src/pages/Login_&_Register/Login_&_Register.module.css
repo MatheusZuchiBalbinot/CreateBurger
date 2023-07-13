@@ -21,8 +21,9 @@
 
 }
 
-.image_gif {
-    background-color: red;
+.loginGifImage {
+    width: 50vw;
+    height: auto;
 }
 
 .login_form {
@@ -106,11 +107,11 @@ input:focus::placeholder {
     background-color: rgb(39, 35, 35);
     padding: 1vw;
     margin: 1vw;
-    border-radius: 2vw;
+    border-radius: 1vw;
 }
 
 .button_buttons:hover {
-    background-color: #524343;
-    color: white;
-    font-weight: bold;
+    background-color: rgb(157, 228, 128);
+    color: black;
+    cursor: pointer;
 }

@@ -50,6 +50,11 @@
     background-color: rgb(92, 87, 87);
 }
 
+.ingredientTextSeparatorDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
 @media only screen and (max-width: 648px) {
     .card {
         width: 60vw;
@@ -199,7 +204,8 @@
 
 .card_title {
     display: flex;
-    text-transform:capitalize;
+    text-transform: capitalize;
+    padding: 1vw;
     font-size: 1.5vw;
     justify-content: center;
     font-family: 'Delicious Handrawn', cursive;

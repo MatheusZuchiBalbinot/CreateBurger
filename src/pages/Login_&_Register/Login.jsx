@@ -30,7 +30,7 @@ function Login() {
 
     const actual_location = window.location.href
 
-    function trade_page() {
+    function tradePage() {
         return navigate("/home");
     }
 
@@ -77,9 +77,8 @@ function Login() {
             for(var i = 0; i < Object.keys(login).length; i++) {
                 if(username === login[i].username && password === login[i].password) {
                     localStorage.setItem("logged_username", login[i].username)
-                    // console.log(login[i].idLogin)
                     localStorage.setItem("logged_idLogin", login[i].idLogin)
-                    return trade_page();
+                    return tradePage();
                 }
                 if(username != login[i].username && password != login[i].password) {
                     var form_field = document.getElementById("form_field")
@@ -135,7 +134,7 @@ function Login() {
                 </div>
             </form>
             <div className={styles.gif_image}>
-                <img src="../../../Imagens/hamburger-animate (2).svg" alt="" />
+                <img src="../../../Imagens/hamburger-animate (2).svg" className={styles.loginGifImage} />
             </div> 
         </div>
     )

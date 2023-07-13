@@ -112,9 +112,9 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
                                 <IoIosRemove />
                             </div>
                         </div>
-                        <div className={styles.totalPrice}>
+                        {/* <div className={styles.totalPrice}>
                             <p className={styles.totalPriceText}> Total: R$ {(newQuantity * price).toFixed(2)} </p>
-                        </div>
+                        </div> */}
                     </div>
                 )
                 
@@ -132,11 +132,26 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
             </div>
             <div className={styles.ingredients}>
                 <h3 className={styles.card_title}> Composição: </h3>
-                <p className={styles.card_p}>Pão: {bread}</p>
-                <p className={styles.card_p}>Carne: {meat}</p>
-                <p className={styles.card_p}>Ponto da Carne: {meat_state}</p>
-                <p className={styles.card_p}> Saladas: {salads}</p>
-                <p className={styles.card_p}>Queijo: {cheese}</p>
+                <div className={styles.ingredientTextSeparatorDiv}>
+                    <p className={styles.card_p}>Pão:</p>
+                    <p className={styles.card_p}>{bread}</p>
+                </div>
+                <div className={styles.ingredientTextSeparatorDiv}>
+                    <p className={styles.card_p}>Carne:</p>
+                    <p className={styles.card_p}>{meat}</p>
+                </div>
+                <div className={styles.ingredientTextSeparatorDiv}>
+                    <p className={styles.card_p}>Ponto:</p>
+                    <p className={styles.card_p}>{meat_state}</p>
+                </div>
+                <div className={styles.ingredientTextSeparatorDiv}>
+                    <p className={styles.card_p}>Saladas:</p>
+                    <p className={styles.card_p}>{salads}</p>
+                </div>
+                <div className={styles.ingredientTextSeparatorDiv}>
+                    <p className={styles.card_p}>Queijo:</p>
+                    <p className={styles.card_p}>{cheese}</p>
+                </div>
                 <div className={styles.button_div}>
                     {card_button()}
                 </div>

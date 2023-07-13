@@ -1,11 +1,87 @@
-.cardContent {
-    overflow: auto;
-}
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 
 .shortCard {
-    display: flex;
     background-color: white;
     border-radius: 2vw;
-    width: 100%;
+    width: 85%;
+    margin: 2vw;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto ; 
+    grid-template-areas: "shortCardTitles infoAboutProduct";
+    padding: 1vw 1vw 0 1vw;
+    background-color: rgba(72, 80, 73, 0.1);
+    color: rgb(201, 201, 201);
+    font-weight: 100;
+    
+}
 
+.infoAboutProduct {
+    grid-area: infoAboutProduct;
+}
+
+.shortCardTitles {
+    grid-area: shortCardTitles;
+    text-align: center;
+    color: white;
+}
+
+.nameTitle {
+    font-size: 2vw;
+    font-family: 'Delius', cursive;
+    margin: 1vw 1vw 0.5vw 1vw;   
+    border-bottom: 2px solid rgb(96, 243, 96);
+    color: white;
+}
+
+.productNamePriceQuantity {
+    font-size: 1.5vw;
+    font-family: 'Delius', cursive;
+    font-weight: bolder;
+}
+
+.shortCardImage {
+    width: 15vw;
+    height: 10vw;
+    padding: 0.5vw;
+}
+
+.shortCardIngredients {
+    font-size: 1.2vw;
+    padding: 1vw;
+}
+
+.ingredientTextSeparatorDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ingredientsTitle {
+    /* padding: 1vw;
+    font-size: 1.5vw;
+    font-family: 'Delius', cursive;
+    text-align: center;
+    font-weight: bolder;
+    color: white; */
+    font-size: 2vw;
+    font-family: 'Delius', cursive;
+    margin: 1vw 1vw 0.5vw 1vw;
+    border-bottom: 2px solid rgb(96, 243, 96);
+    color: white;
+    text-align: center;
+}
+
+.priceInfo {
+    display: flex;
+}
+
+.priceTitle {
+    font-family: 'Delius', cursive;
+    color: rgb(96, 243, 96);
+    padding: 1vw;
+    font-size: 1.5vw;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 1vw;
+    margin: auto;
 }

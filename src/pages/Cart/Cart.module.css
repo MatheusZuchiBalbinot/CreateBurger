@@ -49,26 +49,18 @@
 }
 
 .finalizeOrder button {
-    padding: 1vw 3vw 1vw 3vw;
-    background-color: transparent;
-    border: 1px solid;
-    color: white;
-    border-radius: 2vw;
+    background-color: rgba(72, 80, 73, 0.1);
+    padding: 1.5vw;
+    font-family: 'Delius', cursive;
+    color: goldenrod;
+    font-size: 1.5vw;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 1vw
 }
 
 .finalizeOrder button:hover {
-    background-color: rgb(97, 95, 95);
+    background-color: rgb(157, 228, 128);
+    color: black;
     cursor: pointer;
-}
-
-.confirmScreen {
-    display: block;
-    position: absolute;
-    z-index: 10;
-    opacity: 1;
-    left: 30vw;
-    top: 20vh;
-    background-color: red;
-    width: 60vw;
-    height: 60vh;
 }

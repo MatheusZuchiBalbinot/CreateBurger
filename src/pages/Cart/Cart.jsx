@@ -12,13 +12,9 @@ export default function Cart() {
 
     const cartOrders = JSON.parse(localStorage.getItem('order_to_cart'))
 
-    const [isOpen, setIsOpen] = useState(false)
-
-    useEffect(() => {
-        if (isOpen == true) {
-            return navigate("/home/createburguer/carrinho/confirmOrder");
-        }
-    }, [isOpen])
+    const tradePage = () => {
+        return navigate("/home/createburguer/carrinho/confirmOrder");
+    }
 
     function cardItems() {
         if (cartOrders) {
@@ -65,7 +61,7 @@ export default function Cart() {
 
                     {cartOrders && 
                         <div className={styles.finalizeOrder}>
-                            <button id='finalizeOrderButton' onClick={() => setIsOpen(true)}> Finalizar Pedido </button>
+                            <button id='finalizeOrderButton' onClick={tradePage}> Continuar Pedido </button>
                         </div>
                     }
                 </div>

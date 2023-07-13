@@ -164,16 +164,15 @@
 }
 
 .finalize_order_button {
+    margin-inline: 1.5vw;
+    background-color: rgba(72, 80, 73, 0.1);
     padding: 1.5vw;
-    width: 15%;
-    margin: 2vw;
-    background-color: transparent;
-    color: white;
-    border: 1px solid;
-    border-radius: 2vw;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2vw;
+    font-family: 'Delius', cursive;
+    color: goldenrod;
+    font-size: 1.5vw;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 1vw  
 }
 
 .finalize_order_button:hover {

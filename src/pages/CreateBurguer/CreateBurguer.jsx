@@ -211,7 +211,7 @@ export default function CreateBurguer() {
             <div className={styles.finalize_order}>
                 <span className={styles.check_order} id="check_order"> Selecione todos os ingredientes!! </span>
                 {/* <h3 className={styles.total_price}> R$ </h3> */}
-                <button type="button" className={styles.finalize_order_button} onClick={handleChoosedOptions}> Finalizar Pedido </button>
+                <button type="button" className={styles.finalize_order_button} onClick={handleChoosedOptions}> Adicionar Pedido </button>
             </div>  
         </div>
         <Footer />

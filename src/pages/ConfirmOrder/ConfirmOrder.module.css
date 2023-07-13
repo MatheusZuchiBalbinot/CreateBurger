@@ -22,8 +22,8 @@
 .infoAboutPerson {
     grid-area: infoAboutPerson;
     display: grid;
-    grid-template-columns: 0 auto 0;
-    grid-template-rows: 3vw auto 3vw;
+    grid-template-columns: 0 auto 0 ;
+    grid-template-rows: 5vh 92vh 5vh;
     grid-template-areas: 
     ". . ."
     ". generalInputDiv ."
@@ -49,20 +49,40 @@
     grid-area: orderResume;
     display: grid;
     grid-template-columns: 3vw auto 3vw;
-    grid-template-rows: 3vw auto 3vw;
+    grid-template-rows: 5vh 92vh 5vh;
     grid-template-areas: 
     ". . ."
-    ". allCardBoxx ."
+    ". allCardBox ."
     ". . .";
 }
 
-.allCardBoxx {
-    grid-area: allCardBoxx;
+.allCardBox {
+    grid-area: allCardBox;
     display: flex;
     flex-direction: column;
     background-color: rgba(72, 80, 73, 0.1);
-    padding: 1.5vw;
+    padding: 0.7vw;
     border-radius: 1vw;
+}
+
+.boxOverflow {
+    overflow: auto;
+}
+
+
+.boxOverflow::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+
+.boxOverflow::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+
+.boxOverflow::-webkit-scrollbar-thumb {
+  background-color: goldenrod;
+  border-radius: 2vw;
 }
 
 .inputField {
@@ -84,6 +104,8 @@
     border: none;
     background-color: transparent;
     opacity: 0.5;
+    outline: none;
+    color: white;
 }
 
 .infosInput:hover {
@@ -91,7 +113,7 @@
     opacity: 1;
 }
 
-.mainInputDiv {
+.mainInputDiv, .paymentForm {
     padding: 0.5vw;
 }
 
@@ -109,17 +131,57 @@
     justify-content: left;
 }
 
+.orderValueTitle {
+    font-family: 'Delius', cursive;
+    color: rgb(96, 243, 96);
+    margin: 1.5vw;
+    padding: 1vw;
+    font-size: 1.5vw;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 1vw;
+}
+
+.selectPaymentForm {
+    width: 100%;
+    background-color: transparent;
+    font-size: 1vw;
+    outline: none;
+    border: none;
+    color: white;
+    opacity: 0.5;
+    border-radius: none;
+}
+
+.selectPaymentForm:hover {
+    opacity: 1;
+}
+
+.selectPaymentForm option {
+    color: white;
+    background-color: #302222;
+    padding: 3vw;
+}
+
 .buttonsDiv {
     margin: auto;
     padding: 1vw 1vw 3vw 1vw;
 }
 
 .buttonElement {
-    cursor: pointer;
-    color: white;
-    border: 1px solid;
     margin-inline: 1.5vw;
-    background-color: rgb(39, 35, 35);
+    background-color: rgba(72, 80, 73, 0.1);
     padding: 1.5vw;
-    border-radius: 2vw;
+    font-family: 'Delius', cursive;
+    color: goldenrod;
+    font-size: 1.5vw;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 1vw
+}
+
+.buttonElement:hover {
+    background-color: rgb(157, 228, 128);
+    color: black;
+    cursor: pointer;
 }
