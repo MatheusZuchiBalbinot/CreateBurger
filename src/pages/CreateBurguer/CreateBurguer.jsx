@@ -5,10 +5,12 @@ import CheckboxElement from '../../components/SelectAndCheckbox/CheckboxElement'
 import styles from './CreateBurguer.module.css';
 import Orders from '../OrderHistory/OrderHistory';
 
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 export default function CreateBurguer() {
 
@@ -18,6 +20,8 @@ export default function CreateBurguer() {
     const [salads, setSalads] = useState([]);
     const [cheese, setCheese] = useState([]);
     const navigate = useNavigate();
+
+    const {data, setData} = useContext(CartContext)
 
     useEffect(() => {
         const fetchalloptions = async () => {
@@ -42,7 +46,7 @@ export default function CreateBurguer() {
     }, [])
 
     function redirect() {
-        return navigate("/home/createburguer/pedido")
+        return navigate("/home/createburguer/carrinho")
     }
     
     const handleChoosedOptions = async () => {
@@ -116,13 +120,17 @@ export default function CreateBurguer() {
                 cheese: cheese_option,
                 price: price,
                 image: image,
+                quantity: 1,
                 idLogin: Number(logged_idLogin)
             };
 
             try {
-                await axios.post("http://localhost:8800/options", choosed_ingredients)
+                // await axios.post("http://localhost:8800/options", choosed_ingredients)
+                setData([...data, choosed_ingredients])
+                console.log(choosed_ingredients)
+                console.log(data)
             }catch(error) {
-                console.log(error)
+                console.log('deu pau: ', error)
             }
             redirect()
         }

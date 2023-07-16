@@ -92,6 +92,8 @@ function Login() {
                 const add_login = async () => {
                     try {
                         const add_login = await axios.post("http://localhost:8800/register", login_data);
+                        console.log(add_login)
+                        console.log(login_data)
                         return navigate("/");
                     } 
                     catch (err) {

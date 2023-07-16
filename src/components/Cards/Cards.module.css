@@ -9,7 +9,7 @@
     cursor: pointer;
     margin: 2vw;
     padding: 1vw;
-    width: 30vw;
+    min-width: 30vw;
     font-family: 'Delius', cursive;
     background-image: linear-gradient(to right bottom, #000000, #090909, #111111, #171717, #1c1c1c);
 }
@@ -53,6 +53,10 @@
 .ingredientTextSeparatorDiv {
     display: flex;
     justify-content: space-between;
+}
+
+.ingredientTextSeparatorDivSalads {
+    display: block;
 }
 
 @media only screen and (max-width: 648px) {

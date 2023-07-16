@@ -1,5 +1,5 @@
 import express from "express"
-import mysql from "mysql"
+import mysql from "mysql2"
 import cors from "cors"
 
 const app_express = express()
@@ -7,10 +7,18 @@ const app_express = express()
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "",
+    password: "1234",
     database: "createb"
-
 })
+
+db.connect(function(err) {
+
+    if (err) {
+        return console.error('error: ' + err.message);
+    }
+
+    console.log('Connected to the MySQL server.');
+});
 
 app_express.use(express.json())
 app_express.use(cors())

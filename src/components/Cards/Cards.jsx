@@ -159,7 +159,7 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
                     <p className={styles.card_p}>Ponto:</p>
                     <p className={styles.card_p}>{meat_state}</p>
                 </div>
-                <div className={styles.ingredientTextSeparatorDiv}>
+                <div className={styles.ingredientTextSeparatorDivSalads}>
                     <p className={styles.card_p}>Saladas:</p>
                     <p className={styles.card_p}>{salads}</p>
                 </div>
