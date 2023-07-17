@@ -9,11 +9,28 @@
 .cartTitle {
     font-size: 2vw;
     color: rgb(182, 180, 180);
-    padding: 1.5vw;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
     opacity: 0.8;
     font-weight: bolder;
     font-family: 'Delius', cursive;
-    text-align: center;
+}
+
+.cartTitlePrice {
+    margin-top: 1.5vw;
+    margin-bottom: 1.5vw;
+    font-size: 2vw;
+    color: rgb(96, 243, 96);
+    opacity: 0.8;
+    font-weight: bolder;
+    font-family: 'Delius', cursive;
+    border-bottom: 2px solid;
+}
+
+.cartTitleDiv {
+    gap: 1vw;
+    justify-content: center;
+    display: flex;
 }
 
 .customLoader {

@@ -185,3 +185,19 @@
     color: black;
     cursor: pointer;
 }
+
+.missingFilledFields {
+    font-size: 1vw;
+    font-size: 1.5vw;
+    font-family: 'Delius', cursive;
+    font-weight: bolder;
+    position: fixed;
+    display: none;
+    bottom: 5vh;
+    margin: auto;
+    left: 35%;
+    background-color: white;
+    padding: 1vw;
+    color: black;
+    border-left: 1vw solid rgb(165, 48, 48);
+}

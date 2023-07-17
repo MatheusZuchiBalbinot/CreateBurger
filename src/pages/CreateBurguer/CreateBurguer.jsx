@@ -109,8 +109,6 @@ export default function CreateBurguer() {
             let image = '../../../Imagens/hamburguer_logo.png';
             let price = price_total;
 
-            var logged_idLogin = localStorage.getItem("logged_idLogin")
-
             const choosed_ingredients = {  
                 name: name,
                 bread: bread_option,
@@ -121,16 +119,15 @@ export default function CreateBurguer() {
                 price: price,
                 image: image,
                 quantity: 1,
-                idLogin: Number(logged_idLogin)
             };
 
             try {
                 // await axios.post("http://localhost:8800/options", choosed_ingredients)
                 setData([...data, choosed_ingredients])
-                console.log(choosed_ingredients)
-                console.log(data)
+                // console.log(choosed_ingredients)
+                // console.log(data)
             }catch(error) {
-                console.log('deu pau: ', error)
+                console.log(error)
             }
             redirect()
         }

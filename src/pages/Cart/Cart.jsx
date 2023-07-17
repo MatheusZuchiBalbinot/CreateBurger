@@ -31,11 +31,10 @@ export default function Cart() {
     function cardItems() {
         if (items.length != 0) {
             const ordersArray = items.map((order) => {
-                const { 0: name, 1: bread, 2: meat, 3: meat_state, 4: salads, 5: cheese, 6: price, 7: image, 8: quantity, 9: id } = Object.values(order);
+                const { 0: name, 1: bread, 2: meat, 3: meat_state, 4: salads, 5: cheese, 6: price, 7: image, 8: quantity} = Object.values(order);
                 
                 return (
                   <Cards
-                    id={id} 
                     quantity={quantity} 
                     name={name} 
                     image={image} 
@@ -72,7 +71,10 @@ export default function Cart() {
     function showCartValue() {
         if (cartValue) {
             return (
-                <h1 className={styles.cartTitle}> Valor do Carrinho: R$ {cartValue.toFixed(2)}  </h1>
+                <div className={styles.cartTitleDiv}>
+                    <h1 className={styles.cartTitle}> Valor do Carrinho:  </h1>
+                    <h1 className={styles.cartTitlePrice}> R$ {cartValue.toFixed(2)}</h1>
+                </div>
             )
         }
         else {

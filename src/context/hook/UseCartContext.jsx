@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from '../CartContext'
 
 export default function UseCartContext() {
+
     const context = useContext(CartContext)
 
     if (context === undefined) {

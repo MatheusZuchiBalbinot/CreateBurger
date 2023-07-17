@@ -9,11 +9,9 @@ import {useState, useEffect} from 'react';
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 
-export default function Cards ({id, name, image, price, bread, meat, meat_state, salads, cheese, quantity}) {
+export default function Cards ({name, image, price, bread, meat, meat_state, salads, cheese, quantity}) {
 
     var cartSum = 0
-
-    var logged_idLogin = localStorage.getItem("logged_idLogin")
 
     const {data, setData} = useContext(CartContext)
     const {cartValue, setCartValue} = useContext(CartContext)
@@ -52,7 +50,6 @@ export default function Cards ({id, name, image, price, bread, meat, meat_state,
             price: price,
             image: image,
             quantity: 1,
-            idLogin: Number(logged_idLogin)
         };
         addCart(ready_order)
     }
