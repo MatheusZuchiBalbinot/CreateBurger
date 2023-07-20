@@ -55,7 +55,7 @@ export default function ConfirmOrder() {
           }, "2500");
     }
 
-    const sendToDatabase = async () => {
+    const sendToDatabase = async (event) => {
 
         const infoAboutPerson = {  
             responsible: responsible,
@@ -75,9 +75,11 @@ export default function ConfirmOrder() {
                     idCustomInformation: addPersonInfo.data.insertId,
                 }
 
-                const addOrderStack = await axios.post("http://localhost:8800/addOrderStack", toAddOrderStack)
+                const addOrderStack = await axios.post("http://localhost:8800/addstack", toAddOrderStack)
 
                 const orderStackId = addOrderStack.data.insertId
+
+                localStorage.setItem('orderStackId', orderStackId)
 
                 // console.log(addOrderStack)
 
@@ -94,10 +96,14 @@ export default function ConfirmOrder() {
                             price: price,
                             image: image,
                             quantity: quantity,
-                            orderStack: orderStackId,
+                            OrderStack: orderStackId,
                         }
                         try {
-                            console.log(oneOrderToDataBase)
+                            const database = axios.post("http://localhost:8800/orders", oneOrderToDataBase)
+                            // console.log(database)
+                            // if (database.status == 200) {
+                            //     return navigate('http://localhost:5173/home/createburguer/pedido')
+                            // }
                         } catch(error) {
                             console.log(error)
                         }
@@ -111,10 +117,6 @@ export default function ConfirmOrder() {
         else {
             missingFilledFields()
         }
-    }
-
-    const sendOrdertoDatabase = async () => {
-
     }
 
     function ShowShortOrder() {
@@ -198,6 +200,7 @@ export default function ConfirmOrder() {
                                     <div className={styles.inputField}>
                                         <MdPayment className={styles.iconInputSVG}/>
                                         <select className={styles.selectPaymentForm} id="selectPaymentForm" onChange={(e) => setPaymentForm(e.target.value)}>
+                                            <option></option>
                                             <option value="Dinheiro em espécie" className={styles.optionElement}> Dinheiro em espécie </option>
                                             <option value="Cartão" className={styles.optionElement}> Cartão</option>
                                             <option value="Pix" className={styles.optionElement}> Pix</option>
@@ -209,7 +212,7 @@ export default function ConfirmOrder() {
                     </div>
                     <div className={styles.buttonsDiv}>
                         <button className={styles.buttonElement} onClick={tradePage}> Retornar ao Carrinho </button>
-                        <button type="submit" className={styles.buttonElement} onClick={sendToDatabase}> Finalizar Pedido </button>
+                        <button type="submit" className={styles.buttonElement} onClick={(e) => sendToDatabase(e)}> Finalizar Pedido </button>
                     </div>
                 </div>
                 <div className={styles.missingFilledFields} id="missingFilledFields"> Preencha todos os campos!!</div>

@@ -64,6 +64,7 @@ export default function Cards ({name, image, price, bread, meat, meat_state, sal
             }
         }
         if(Found == 0) {
+            ItemAddPopUp()
             setData([...data, ready_order])
         }
         else {
@@ -156,7 +157,7 @@ export default function Cards ({name, image, price, bread, meat, meat_state, sal
                     <p className={styles.card_p}>Ponto:</p>
                     <p className={styles.card_p}>{meat_state}</p>
                 </div>
-                <div className={styles.ingredientTextSeparatorDivSalads}>
+                <div className={styles.ingredientTextSeparatorDiv}>
                     <p className={styles.card_p}>Saladas:</p>
                     <p className={styles.card_p}>{salads}</p>
                 </div>

@@ -55,13 +55,9 @@
     justify-content: space-between;
 }
 
-.ingredientTextSeparatorDivSalads {
-    display: block;
-}
-
 @media only screen and (max-width: 648px) {
     .card {
-        width: 60vw;
+        width: 40vw;
         margin: 2vh;
         padding: 1vh;
     }
@@ -147,7 +143,6 @@
 
 .button_div {
     justify-content: center;
-    position: relative;
     margin: auto 0;
 }
 
@@ -157,7 +152,6 @@
     border-radius: 1vw;
     color: black;
     cursor: pointer;
-    position: relative;
 }
 
 .order_button svg {

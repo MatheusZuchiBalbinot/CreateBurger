@@ -79,7 +79,9 @@ export default function Cart() {
         }
         else {
             return (
-                <h1 className={styles.cartTitle}> Nenhum item adicionado!!</h1>
+                <div className={styles.cartTitleDiv}>
+                    <h1 className={styles.cartTitle}> Nenhum item adicionado! </h1>
+                </div>
             )
         }
     }

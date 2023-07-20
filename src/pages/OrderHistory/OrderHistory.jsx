@@ -1,55 +1,54 @@
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import Cards from '../../components/Cards/Cards';
-import axios from 'axios'
+import CreatingStackCards from '../../components/CreatingStackCards/CreatingStackCards';
+
 import styles from './OrderHistory.module.css';
+
+import axios from 'axios'
 import { useEffect, useState } from 'react';
 
 export default function Orders() {
 
     const [orders, setOrders] = useState([])
 
-    // useEffect(() => {
-    //     const fetch_orders = async () => {
-    //         try {
-    //             const ready_order = await axios.get("http://localhost:8800/options/values")
-    //             setData(ready_order.data)
-    //         } 
-    //         catch (err) {
-    //             console.log(err) 
-    //         }
-    //     }
-    //     fetch_orders()
-    // }, [])
+    useEffect(() => {
 
-    // var options_array = []
+        const idLogged = localStorage.getItem("logged_idLogin")
 
-    function recived_orders() {
+        const fetch_orders = async () => {
+            try {
+                const ready_order = await axios.get(`http://localhost:8800/stackPerOrder/${idLogged}`)
+                setOrders(ready_order.data)
+            } 
+            catch (err) {
+                console.log(err) 
+            }
+        }
+        
+        fetch_orders()
+    }, [])
 
-        var logged_idLogin = localStorage.getItem("logged_idLogin")
+    function recivedOrders() {
 
-        if(orders.length != 0) {
+        if(orders.length > 0) {
+            const stack = {};
+            
+            orders.forEach(obj => {
+                const id = obj.OrderStack;
+                if (!stack[id]) {
+                    stack[id] = [];
+                }
+                stack[id].push(obj);
+            });
+            
+            const groupedStack = Object.values(stack);
+            
+            // console.log(groupedStack);
 
-            // for(var i = 0; i < data.length; i++) {
-            //     if (data[i].idLogin == logged_idLogin) {
-            //         options_array.push(Object.values(data[i]))
-            //     }
-            // }
-    
-            // return options_array.map((options_array) => 
-            // (
-            // <Cards 
-            //     id={options_array[0]} 
-            //     name={options_array[6]} 
-            //     image={options_array[7]} 
-            //     price={options_array[8]}
-            //     bread={options_array[1]} 
-            //     meat={options_array[2]} 
-            //     meat_state={options_array[3]} 
-            //     salads={options_array[4]} 
-            //     cheese={options_array[5]} 
-            // />
-            // ))           
+            return groupedStack.map((oneStack) => {
+                // console.log(oneStack);
+                return <CreatingStackCards oneStack={oneStack} />
+            })
         }
         else {
             return (
@@ -70,7 +69,7 @@ export default function Orders() {
         else {
             return (
                 <div>
-                    <p className={styles.loaderText}> Nenhum pedido ainda foi feito!! </p>
+                    <p className={styles.loaderText}> Nenhum pedido ainda foi feito! </p>
                 </div>
                 )
         }
@@ -83,7 +82,7 @@ export default function Orders() {
                 {showOrderHistoryTitle()}
                 <div className={styles.orders_main_div}>
                     <div className={styles.cards_div} id='cards_div'>
-                        {recived_orders()}
+                        {recivedOrders()}
                     </div>
                 </div>
             </div>

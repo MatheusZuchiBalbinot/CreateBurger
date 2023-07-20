@@ -94,16 +94,6 @@ app_express.get ("/login", (req, res) => {
     })
 });
 
-app_express.get ("/options/values", (req, res) => {
-    const q = "SELECT * FROM orders"
-    db.query(q, (error,data)=> {
-        if(error) {
-            return res.json("A consulta deu o seguinte erro: "+error)
-        }
-        return res.json(data)
-    })
-});
-
 app_express.get ("/ordersID", (req, res) => {
     const q = "SELECT MAX(id) FROM orders"
     db.query(q, (error,data)=> {
@@ -114,8 +104,19 @@ app_express.get ("/ordersID", (req, res) => {
     })
 });
 
-app_express.post("/addOrderStack", (req, res) => {
-    const q = "INSERT INTO orderstack(`idLogin`,`idCustomInformation`) VALUES (?)"
+app_express.get ("/stackPerOrder/:idLogged", (req, res) => {
+    const idLogged = req.params.idLogged
+    const q = "select orders.id, orders.bread, orders.meat, orders.meat_state, orders.salads, orders.cheese, orders.name, orders.image, orders.price, orders.quantity, orders.OrderStack, login.idLogin, customerinformation.responsible, customerinformation.cpf, customerinformation.localization, customerinformation.phoneNumber, customerinformation.observations, customerinformation.paymentForm from orders INNER JOIN stack ON orders.OrderStack = stack.idStack INNER JOIN login ON stack.idLogin = login.idLogin INNER JOIN customerinformation ON stack.idCustomInformation = customerinformation.idCustomerInformation WHERE login.idLogin = ?";
+    db.query(q, [idLogged], (error, data) => {
+        if (error) {
+          return res.json("A consulta deu o seguinte erro: " + error);
+        }
+        return res.json(data);
+      });
+});
+
+app_express.post("/addstack", (req, res) => {
+    const q = "INSERT INTO stack(`idLogin`,`idCustomInformation`) VALUES (?)"
     const values = [req.body.idLogin,req.body.idCustomInformation]
     db.query(q, [values], (error,data) => {
         if(error) {
@@ -129,6 +130,18 @@ app_express.post("/addOrderStack", (req, res) => {
 app_express.post("/customerinformation", (req, res) => {
     const q = "INSERT INTO customerinformation(`responsible`,`cpf`,`localization`,`phoneNumber`,`observations`,`paymentForm`) VALUES (?)"
     const values = [req.body.responsible,req.body.cpf, req.body.localization,req.body.phoneNumber,req.body.observations,req.body.paymentForm]
+    db.query(q, [values], (error,data) => {
+        if(error) {
+            return res.json("A inserção de elementos deu o seguinte erro: "+error)
+        }
+        console.log(data)
+        return res.json(data)
+    })
+})
+
+app_express.post("/orders", (req, res) => {
+    const q = "INSERT INTO orders(`bread`,`meat`,`meat_state`,`salads`,`cheese`,`name`,`image`,`price`, `quantity`,`OrderStack`) VALUES (?)"
+    const values = [req.body.bread,req.body.meat,req.body.meat_state,req.body.salads,req.body.cheese,req.body.name,req.body.image,req.body.price,req.body.quantity,req.body.OrderStack]
     db.query(q, [values], (error,data) => {
         if(error) {
             return res.json("A inserção de elementos deu o seguinte erro: "+error)
