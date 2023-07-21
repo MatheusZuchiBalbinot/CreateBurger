@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
-import axios from 'axios'
-import {BsFillPersonFill, BsFillLockFill} from 'react-icons/bs';
 import { useNavigate } from "react-router-dom";
 
 import styles from './Login_&_Register.module.css';
+
+import axios from 'axios'
+
+import {BsFillPersonFill, BsFillLockFill} from 'react-icons/bs';
+
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 function Login() {
 
@@ -14,6 +19,8 @@ function Login() {
     const [confirmPassword, setConfirmPassword] = useState('')
 
     const navigate = useNavigate();
+
+    const {setIsLogged} = useContext(CartContext)
 
     useEffect(() => {
         const fetchPassword = async () => {
@@ -78,13 +85,12 @@ function Login() {
                 if(username === login[i].username && password === login[i].password) {
                     localStorage.setItem("logged_username", login[i].username)
                     localStorage.setItem("logged_idLogin", login[i].idLogin)
+                    setIsLogged(true)
                     return tradePage();
                 }
-                if(username != login[i].username && password != login[i].password) {
-                    var form_field = document.getElementById("form_field")
-                    return form_field.style.border = "3px solid red" 
-                }
             }
+            var form_field = document.getElementById("form_field")
+            return form_field.style.border = "3px solid red" 
         }
         if(actual_location == "http://localhost:5173/register") {
             if(password == confirmPassword) {

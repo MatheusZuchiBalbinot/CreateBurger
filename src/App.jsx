@@ -16,6 +16,8 @@ function App() {
 
   const [data, setData] = useState([])  
   const [cartValue, setCartValue] = useState(0)
+  const [orderValue, setOrderValue] = useState(0)
+  const [isLogged, setIsLogged] = useState(false)
 
   const routes = useRoutes ([
     {
@@ -50,7 +52,7 @@ function App() {
   ])
 
   return (
-      <CartContext.Provider value={{data, setData, cartValue, setCartValue}} className="App">
+      <CartContext.Provider value={{data, setData, cartValue, setCartValue, orderValue, setOrderValue, isLogged, setIsLogged}} className="App">
         {routes}
       </CartContext.Provider>
   )

@@ -198,6 +198,7 @@
 .homeCardButtonDiv {
     display: flex;
     justify-content: center;
+    padding: 1vw;
 }
 
 .card_title {

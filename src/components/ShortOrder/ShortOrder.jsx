@@ -32,7 +32,7 @@ export default function ShortOrder({id, name, image, price, bread, meat, meat_st
                                 <p>Ponto:</p>
                                 <p>{meat_state}</p>
                             </div>
-                            <div className={styles.ingredientTextSeparatorDiv}>
+                            <div className={styles.ingredientTextSeparatorDivSalads}>
                                 <p>Saladas:</p>
                                 <p>{salads}</p>
                             </div>

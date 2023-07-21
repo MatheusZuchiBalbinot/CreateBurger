@@ -32,10 +32,6 @@ export default function ConfirmOrder() {
     const [observations, setObservations] = useState('')
     const [paymentForm, setPaymentForm] = useState('')
 
-    // useEffect(() => {
-    //     console.log(responsible, CPF, localization, phone, observations, payment)
-    // },[responsible, CPF, localization, phone, observations, payment])
-
     useEffect(() => {
         if (cartValue == 0) {
             return navigate(-1);

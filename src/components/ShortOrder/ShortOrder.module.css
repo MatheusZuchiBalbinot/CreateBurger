@@ -3,7 +3,6 @@
 .shortCard {
     background-color: white;
     border-radius: 2vw;
-    width: 85%;
     margin: 2vw;
     display: grid;
     grid-template-columns: auto;
@@ -56,6 +55,10 @@
     justify-content: space-between;
 }
 
+.ingredientTextSeparatorDivSalads {
+    display: block;
+}
+
 .ingredientsTitle {
     /* padding: 1vw;
     font-size: 1.5vw;
@@ -73,6 +76,7 @@
 
 .priceInfo {
     display: flex;
+    padding: 0 0 1.5vw 0;
 }
 
 .priceTitle {

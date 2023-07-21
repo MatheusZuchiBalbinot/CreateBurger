@@ -1,10 +1,12 @@
-import styles from "./Header.module.css";
 import {Link, useNavigate} from "react-router-dom";
-
 import { useEffect } from "react";
+import styles from "./Header.module.css";
 
 import {AiOutlineShoppingCart} from 'react-icons/ai';
 import {CgProfile} from 'react-icons/Cg';
+
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 export default function Header() {
 
@@ -12,14 +14,16 @@ export default function Header() {
 
     var loggedUsername = localStorage.getItem("logged_username")
 
-    // if (loggedUsername == null || loggedUsername == undefined) {
-    //     return navigate("/");
-    // }
+    const {isLogged} = useContext(CartContext)
 
     const actualpage = window.location.href
 
     useEffect(() => {
         checkActualPage()
+        // Independente de onde esteja vai voltar para a página inicial, que é o Login
+        if(isLogged == false) {
+            return navigate(-1)
+        }
     },[actualpage] )
 
     const checkActualPage = () => {
