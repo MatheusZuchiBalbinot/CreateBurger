@@ -5,6 +5,9 @@
     color: white;
     min-height: 80vh;
     padding: 2vw 1vw 2vw 1vw;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
 }
 
 .cartTitle {
@@ -59,6 +62,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin: auto;
 }
 
 .finalizeOrder {
@@ -82,4 +86,14 @@
     background-color: rgb(157, 228, 128);
     color: black;
     cursor: pointer;
+}
+
+@media (max-width: 940px) {
+    .footer_title {
+        font-size: 1.8vh !important;
+    }
+    
+    .footer_p {
+        font-size: 1.8vh !important;
+    }
 }

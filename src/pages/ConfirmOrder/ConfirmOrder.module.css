@@ -202,3 +202,19 @@
     color: black;
     border-left: 1vw solid rgb(165, 48, 48);
 }
+
+@media only screen and (max-width: 800px) {
+    .orderInfos {
+        display: block;
+    }
+    .infoAboutPerson {
+        grid-template-rows: auto;
+        grid-template-columns: 3vw auto 3vw;
+    }
+    .infosInput {
+        font-size: 2vh;
+    }
+    .generalInputDiv {
+        margin-bottom: 1vh;
+    }
+}

@@ -17,6 +17,7 @@
 
 .infoAboutProduct {
     grid-area: infoAboutProduct;
+    font-size: 1.2vw;
 }
 
 .shortCardTitles {
@@ -88,4 +89,14 @@
     border: 2px solid;
     border-radius: 1vw;
     margin: auto;
+}
+
+@media only screen and (max-width: 800px) {
+    .shortCardIngredients {
+        font-size: 2vh;
+    }
+    .shortCardImage {
+        width: 22vw;
+        height: auto;
+    }
 }

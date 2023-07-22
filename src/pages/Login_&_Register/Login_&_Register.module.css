@@ -63,7 +63,7 @@
 }
 
 .input_with_icon svg {
-    margin: auto;
+    margin: auto 0;
     color: white;
     font-size: 2vw;
 }
@@ -114,4 +114,49 @@ input:focus::placeholder {
     background-color: rgb(157, 228, 128);
     color: black;
     cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .login_div {
+        display: flex;
+        height: 100vh;
+    }
+
+    .login_form {
+        width: 40vw;
+    }
+
+    .gif_image {
+        display: none;
+    }
+
+    .user_password_confirm_input, .user_password_input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .login_form {
+        width: 60vw;
+    }
+
+    .form_title {
+        padding: 1vh;
+    }
+
+    .titles_style {
+        padding: 1.5vh;
+    }
+
+    .input_with_icon svg {
+        font-size: 3vh;
+    }
+
+    .input_with_icon {
+        padding: 1.5vh;
+    }
+
+    .button_buttons {
+        padding: 1.2vh;
+    }
 }

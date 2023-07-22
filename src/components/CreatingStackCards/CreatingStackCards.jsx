@@ -9,6 +9,7 @@ import {BsInfoCircle} from 'react-icons/bs'
 
 export default function CreatingStackCards({oneStack}) {
 
+
     const creatingStack = () => {
     
         // Ps pedidos de uma mesma pilha tem todos as mesmas informações sobre o pedido(localização, 
@@ -17,6 +18,14 @@ export default function CreatingStackCards({oneStack}) {
         console.log(oneStack)
 
         const idStack = oneStack[0].OrderStack
+
+        var value = 0
+
+        console.log()
+        
+        for (var i = 0; i < oneStack.length; i++) {
+            value += oneStack[i].price * oneStack[i].quantity
+        }
 
         const {responsible: responsible, phoneNumber: phoneNumber, cpf: cpf, paymentForm: paymentForm, localization = localization, observations = observations, } = oneStack[0]
 
@@ -75,7 +84,7 @@ export default function CreatingStackCards({oneStack}) {
                 </div>
                 <div className={styles.orderHistoryTotal}>
                     <h1 className={styles.orderStatus}>Total:</h1>
-                    {/* <h1 className={styles.orderStatus}>R$ {orderValue} </h1> */}
+                    <h1 className={styles.orderStatus}>R$ {value} </h1>
                 </div>
             </div>
             </>
@@ -83,13 +92,6 @@ export default function CreatingStackCards({oneStack}) {
     }
 
     const creatingCards = () => {
-
-        var value = 0
-        
-        for (var i = 0; i < oneStack.length; i++) {
-            value += oneStack[i].price * oneStack[i].quantity
-        }
-        console.log(value)
 
         return oneStack.map((acessingstack) => {
 

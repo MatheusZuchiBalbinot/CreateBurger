@@ -51,7 +51,7 @@ export default function ConfirmOrder() {
           }, "2500");
     }
 
-    const sendToDatabase = async (event) => {
+    const sendToDatabase = async () => {
 
         const infoAboutPerson = {  
             responsible: responsible,
@@ -96,10 +96,7 @@ export default function ConfirmOrder() {
                         }
                         try {
                             const database = axios.post("http://localhost:8800/orders", oneOrderToDataBase)
-                            // console.log(database)
-                            // if (database.status == 200) {
-                            //     return navigate('http://localhost:5173/home/createburguer/pedido')
-                            // }
+                            return navigate("/home/createburguer/pedido")
                         } catch(error) {
                             console.log(error)
                         }

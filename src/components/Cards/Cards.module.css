@@ -57,7 +57,7 @@
 
 @media only screen and (max-width: 648px) {
     .card {
-        width: 40vw;
+        width: 60vw;
         margin: 2vh;
         padding: 1vh;
     }
@@ -76,12 +76,12 @@
     .order_button {
         padding: 0.8vh !important;
     }
-    .button_div {
-        bottom: -4vh !important;
-    }
     .card_image {
         width: 15vw !important;
         height: 10vh !important;
+    }
+    .addQuantity svg, .removeQuantity svg {
+        font-size: 3vh;
     }
 }
 
