@@ -39,11 +39,10 @@
 
 ![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/carrinho(1).png)
 ![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/carrinho(2).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/carrinho(3).png)
 
 ### Confirmar Pedido:
 
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/makedOrder(1).png)
+![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/confirmOrder(1).png)
 ![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/confirmOrder(2).png)
 ![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/confirmOrder(3).png)
 
