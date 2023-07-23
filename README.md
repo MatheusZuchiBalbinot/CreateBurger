@@ -16,7 +16,7 @@
 
 ####  Para criar esse trabalho estou aprendendo Node, especialmente Express, que usei para criar e gerenciar a API.
 
-#### Algumas das funcionalidades;
+#### Algumas das funcionalidades do Website:
 
 * Código Responsivo;
 * Registro e Login de usuário;
@@ -35,7 +35,8 @@
 * Validação de Formulário Vazio do usuário responsável pelo pedido
 * Redirecionamento automático para a aba de pedidos
 * Banco de Dados:
-    **
+  -> Cada pedido(hambúrguer) tem como colunas: id, bread, meat, meat_state, salads, cheese, name, image, price, quantity e uma Foreign Key chamada OrderStack que dirá a qual pilha o pedido pertece;
+  -> OrderStack é uma tabela que possui um id e duas outras Foreign Key, a idLogin, que se refer ao usuário logado e o idCostumerInformation que se refere as informações de localização do usuário. Esse dados são recuperados posteriormente usando INNER JOINS.
 
 
 ## 🔖 Layout
