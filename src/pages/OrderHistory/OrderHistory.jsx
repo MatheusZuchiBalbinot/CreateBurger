@@ -43,10 +43,8 @@ export default function Orders() {
             
             const groupedStack = Object.values(stack);
             
-            // console.log(groupedStack);
 
             return groupedStack.map((oneStack) => {
-                // console.log(oneStack);
                 return <CreatingStackCards oneStack={oneStack} />
             })
         }

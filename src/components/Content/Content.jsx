@@ -5,8 +5,9 @@ import { useNavigate } from "react-router-dom";
 
 export default function Content() {
 
-    const house_ready_orders_itens = [{
-        order_1: {
+    const house_ready_orders_itens = [
+        {
+          order_1: {
             name: "La fish",
             bread: "Brioche",
             meat: "Peixe",
@@ -15,20 +16,20 @@ export default function Content() {
             cheese: "Cheddar",
             image: "http://localhost:5173/Imagens/hamburguers/la_fish.png",
             price: 29.99,
-            quantity: 1
-        },
-        order_2: {
+            quantity: 1,
+          },
+          order_2: {
             name: "Suíno do Pecado",
             bread: "Pão italiano",
             meat: "Porco",
             meat_state: "Ao ponto",
             salads: "Tomate e Pepino",
             cheese: "Mussarela",
-            image: "http://localhost:5173/Imagens/hamburguers/suino_do_pecado.png",           
+            image: "http://localhost:5173/Imagens/hamburguers/suino_do_pecado.png",
             price: 30.99,
-            quantity: 1
-        },
-        order_3: {
+            quantity: 1,
+          },
+          order_3: {
             name: "Boi Angelical",
             bread: "Pão de azeite",
             meat: "Boi",
@@ -37,9 +38,9 @@ export default function Content() {
             cheese: "Queijo de Cabra",
             image: "http://localhost:5173/Imagens/hamburguers/boi_angelical.png",
             price: 33.99,
-            quantity: 1
-        },
-        order_4: {
+            quantity: 1,
+          },
+          order_4: {
             name: "Frango Voador",
             bread: "Pão australiano",
             meat: "Frango",
@@ -48,16 +49,39 @@ export default function Content() {
             cheese: "Emmental",
             image: "http://localhost:5173/Imagens/hamburguers/frango_voador.png",
             price: 27.99,
-            quantity: 1
+            quantity: 1,
+          },
         },
-        
-    }]
+      ];
 
     const navigate = useNavigate();
 
     function move_to_create() {
         return navigate("/home/createburguer");
     }
+
+    function OrderCards(orders) {
+        return (
+          <div>
+            {Object.values(orders).map((order, index) => (
+              <Cards
+                key={index}
+                name={order.name}
+                image={order.image}
+                price={order.price}
+                bread={order.bread}
+                meat={order.meat}
+                meat_state={order.meat_state}
+                salads={order.salads}
+                cheese={order.cheese}
+                quantity={order.quantity}
+              />
+            ))}
+          </div>
+        );
+      }
+
+
     return (
         <div className={styles.content_div}>
             <div className={styles.content_logo}>
@@ -94,10 +118,7 @@ export default function Content() {
             <h3 className={styles.house_orders_title}> Hambúrgueres da Casa: </h3>
 
             <div className={styles.house_ready_orders}>
-                <Cards name={house_ready_orders_itens[0].order_1.name} image={house_ready_orders_itens[0].order_1.image} price={house_ready_orders_itens[0].order_1.price} bread={house_ready_orders_itens[0].order_1.bread} meat={house_ready_orders_itens[0].order_1.meat} meat_state={house_ready_orders_itens[0].order_1.meat_state} salads={house_ready_orders_itens[0].order_1.salads} cheese={house_ready_orders_itens[0].order_1.cheese} quantity={house_ready_orders_itens[0].order_1.quantity}/>
-                <Cards name={house_ready_orders_itens[0].order_2.name} image={house_ready_orders_itens[0].order_2.image} price={house_ready_orders_itens[0].order_2.price} bread={house_ready_orders_itens[0].order_2.bread} meat={house_ready_orders_itens[0].order_2.meat} meat_state={house_ready_orders_itens[0].order_2.meat_state} salads={house_ready_orders_itens[0].order_2.salads} cheese={house_ready_orders_itens[0].order_2.cheese} quantity={house_ready_orders_itens[0].order_2.quantity}/>
-                <Cards name={house_ready_orders_itens[0].order_3.name} image={house_ready_orders_itens[0].order_3.image} price={house_ready_orders_itens[0].order_3.price} bread={house_ready_orders_itens[0].order_3.bread} meat={house_ready_orders_itens[0].order_3.meat} meat_state={house_ready_orders_itens[0].order_3.meat_state} salads={house_ready_orders_itens[0].order_3.salads} cheese={house_ready_orders_itens[0].order_3.cheese} quantity={house_ready_orders_itens[0].order_3.quantity}/>
-                <Cards name={house_ready_orders_itens[0].order_4.name} image={house_ready_orders_itens[0].order_4.image} price={house_ready_orders_itens[0].order_4.price} bread={house_ready_orders_itens[0].order_4.bread} meat={house_ready_orders_itens[0].order_4.meat} meat_state={house_ready_orders_itens[0].order_4.meat_state} salads={house_ready_orders_itens[0].order_4.salads} cheese={house_ready_orders_itens[0].order_4.cheese} quantity={house_ready_orders_itens[0].order_4.quantity}/>
+                {OrderCards(house_ready_orders_itens[0])}
             </div>
         </div>
     )

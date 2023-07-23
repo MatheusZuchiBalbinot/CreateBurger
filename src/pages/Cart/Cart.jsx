@@ -89,7 +89,7 @@ export default function Cart() {
     return (
         <>
             <Header />
-                <div className={styles.cartDiv} id='teste'>
+                <div className={styles.cartDiv}>
                     {showCartValue()}
                     <div className={styles.cardsCartDiv}>
                         {cardItems()}

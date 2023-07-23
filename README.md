@@ -16,6 +16,27 @@
 
 ####  Para criar esse trabalho estou aprendendo Node, especialmente Express, que usei para criar e gerenciar a API.
 
+#### Algumas das funcionalidades;
+
+* Código Responsivo;
+* Registro e Login de usuário;
+* Validação de Erro no Login;
+* Validação de Formulário Vazio no Login;
+* Adição de Telas de carregamento caso o carrinho e a página de Pedido estejam vazias;
+* Impossibilidade de entrar em outras páginas caso não esteja logado;
+* Quando um item é adicionado ao carrinho na página principal aparece um Pop-up avisando;
+* Se um item é clicado n vezes na página principal ele é adicionado n vezes ao carrinho;
+* Dependendo da página do usuário o Header irá colocar um border-bottom green avisando a página atual;
+* Possibilidade de aumentar ou diminuir a quantidade de elementos no carrinho;
+* Quando um elemento chega a 0 no carrinho e é clicado novamente no botão de diminuir ele é apagado;
+* Cálculo e atualização de estado instântanea do preço total do carrinho;
+* Caso o carrinho esteja vazio não aparece nenhum botam para prosseguir com o pedido
+* Caso o carrinho teja algum elemento é possível continuar o pedido, que irá mostrar novamente cada elemento e pedirá informações sobre o usuário
+* Validação de Formulário Vazio do usuário responsável pelo pedido
+* Redirecionamento automático para a aba de pedidos
+* Banco de Dados:
+    **
+
 
 ## 🔖 Layout
 ### Página de Login e Registro:

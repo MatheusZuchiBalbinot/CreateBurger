@@ -77,8 +77,6 @@ export default function ConfirmOrder() {
 
                 localStorage.setItem('orderStackId', orderStackId)
 
-                // console.log(addOrderStack)
-
                 if (addPersonInfo.status == 200) {
                     const cartItems = data.map((order) => {
                         const { 0: name, 1: bread, 2: meat, 3: meat_state, 4: salads, 5: cheese, 6: price, 7: image, 8: quantity} = Object.values(order)

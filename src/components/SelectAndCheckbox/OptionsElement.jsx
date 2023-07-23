@@ -1,22 +1,24 @@
 import styles from './Option_&_Checkbox.module.css';
 
-export default function OptionsElement ({all_options}) {
+export default function OptionsElement ({options}) {
 
-    function options_add() {
-        if(all_options) {
-            const items_options_array = []
-            for(var i = 0; i < all_options.length; i++) {
-                items_options_array.push(Object.values(all_options[i]))
+    function optionsAdd() {
+        if(options) {
 
-            }
-
-            return items_options_array.map((tipos) => (<option key={tipos[1]} id={tipos[1]} className={styles.option_label} value={tipos[2]} > {tipos[1]}, R${tipos[2]} </option>))
+            return options.map((order) => {
+                const {0: id, 1: element, 2: price} = Object.values(order);
+                return (
+                    <option 
+                    key={id} 
+                    id={element} 
+                    className={styles.option_label} 
+                    value={price}> 
+                    {element}, R${price} 
+                    </option>
+                );
+            });
         }
     }
 
-    return (
-        <>
-            {options_add()}
-        </>
-    )
+    return optionsAdd()
 }

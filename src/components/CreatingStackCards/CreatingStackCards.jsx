@@ -15,13 +15,9 @@ export default function CreatingStackCards({oneStack}) {
         // Ps pedidos de uma mesma pilha tem todos as mesmas informações sobre o pedido(localização, 
         // responsável, etc..)
 
-        console.log(oneStack)
-
         const idStack = oneStack[0].OrderStack
 
         var value = 0
-
-        console.log()
         
         for (var i = 0; i < oneStack.length; i++) {
             value += oneStack[i].price * oneStack[i].quantity

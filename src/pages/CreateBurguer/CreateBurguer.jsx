@@ -122,10 +122,7 @@ export default function CreateBurguer() {
             };
 
             try {
-                // await axios.post("http://localhost:8800/options", choosed_ingredients)
                 setData([...data, choosed_ingredients])
-                // console.log(choosed_ingredients)
-                // console.log(data)
             }catch(error) {
                 console.log(error)
             }
@@ -151,7 +148,7 @@ export default function CreateBurguer() {
                             <div className={styles.choose_specific_div}>
                                 <select className={styles.choose_dropdown_input} id="bread">
                                 <option></option>
-                                {bread[0] ? <OptionsElement all_options={bread}/> : null}
+                                {bread[0] ? <OptionsElement options={bread}/> : null}
                                 </select>
                             </div>
                         </div>
@@ -166,7 +163,7 @@ export default function CreateBurguer() {
                             <div className={styles.choose_specific_div}>
                                 <select className={styles.choose_dropdown_input} id="meat">
                                 <option></option>
-                                {meat[0] ? <OptionsElement all_options={meat}/> : null}
+                                {meat[0] ? <OptionsElement options={meat}/> : null}
                                 </select> 
                             </div>
                         </div>
@@ -180,7 +177,7 @@ export default function CreateBurguer() {
                             <div className={styles.choose_specific_div}>
                                 <select className={styles.choose_dropdown_input} id="meat_state">
                                 <option></option>
-                                {meat_state[0] ? <OptionsElement all_options={meat_state}/> : null}
+                                {meat_state[0] ? <OptionsElement options={meat_state}/> : null}
                                 </select> 
                             </div>
                         </div>
@@ -191,7 +188,7 @@ export default function CreateBurguer() {
                     <div className={styles.image_and_select_merge_div}>
                         <div className={styles.choose_input_div}>
                             <div className={styles.choose_specific_div} id="salads">
-                                {salads[0] ? <CheckboxElement all_options={salads}/> : null}
+                                {salads[0] ? <CheckboxElement options={salads}/> : null}
                             </div>
                         </div>
                     </div>
@@ -203,7 +200,7 @@ export default function CreateBurguer() {
                             <div className={styles.choose_specific_div}>
                                 <select className={styles.choose_dropdown_input} id="cheese">
                                     <option></option>
-                                    {cheese[0] && <OptionsElement all_options={cheese}/>}
+                                    {cheese[0] && <OptionsElement options={cheese}/>}
                                 </select> 
                             </div>
                         </div>
@@ -215,7 +212,6 @@ export default function CreateBurguer() {
             </div>
             <div className={styles.finalize_order}>
                 <span className={styles.check_order} id="check_order"> Selecione todos os ingredientes!! </span>
-                {/* <h3 className={styles.total_price}> R$ </h3> */}
                 <button type="button" className={styles.finalize_order_button} onClick={handleChoosedOptions}> Adicionar Pedido </button>
             </div>  
         </div>
