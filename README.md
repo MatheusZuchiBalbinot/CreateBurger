@@ -2,7 +2,7 @@
 
 ## 💻 Projeto
 
-#### O projeto consite basicamente em um site onde você pode criar os seus hambúrgueres a partir de vários ingredientes distintos, esse pedido será salvo em um banco de dados assim como os ingredientes e o preço total.
+#### Aplicação FullStack que simula um website de venda de Hambúrgueres utilizando React, Axios, Node, Express e MySQL.
 
 ## 🚀 Tecnologias
 * Node
