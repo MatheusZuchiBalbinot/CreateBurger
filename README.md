@@ -86,6 +86,5 @@
 ![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/login(2).png)
 ![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/main(1).png)
 ![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/main(2).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/orderStack(1).png)
 ![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/register(1).png)
 ![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/register(2).png)
