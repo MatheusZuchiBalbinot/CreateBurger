@@ -1,90 +1,112 @@
-# CreateBurguer
+# 🍔 CreateBurger
 
-## 💻 Projeto
+## 💻 Sobre o Projeto
 
-#### Aplicação FullStack que simula um website de venda de Hambúrgueres utilizando React, Axios, Node, Express e MySQL.
+**CreateBurger** é uma aplicação **Full Stack** que simula um site de venda de hambúrgueres. Desenvolvida com **React**, **Axios**, **Node.js**, **Express** e **MySQL**, a aplicação possui autenticação de usuários, sistema de pedidos, carrinho interativo e layout responsivo.
 
-## 🚀 Tecnologias
-* Node
-* Express
-* MySQL
-* React
-* Axios 
-* Javascript 
-* HTML  
-* CSS
+Este projeto foi desenvolvido enquanto eu aprendia **Node.js**, com foco especial em **Express** para a criação e gerenciamento da API.
 
-####  Para criar esse trabalho estou aprendendo Node, especialmente Express, que usei para criar e gerenciar a API.
+---
 
-#### Algumas das funcionalidades do Website:
+## 🚀 Tecnologias Utilizadas
 
-* Código Responsivo;
-* Registro e Login de usuário;
-* Validação de Erro no Login;
-* Validação de Formulário Vazio no Login;
-* Adição de Telas de carregamento caso o carrinho e a página de Pedido estejam vazias;
-* Impossibilidade de entrar em outras páginas caso não esteja logado;
-* Quando um item é adicionado ao carrinho na página principal aparece um Pop-up avisando;
-* Se um item é clicado n vezes na página principal ele é adicionado n vezes ao carrinho;
-* Dependendo da página do usuário o Header irá colocar um border-bottom green avisando a página atual;
-* Possibilidade de aumentar ou diminuir a quantidade de elementos no carrinho;
-* Quando um elemento chega a 0 no carrinho e é clicado novamente no botão de diminuir ele é apagado;
-* Cálculo e atualização de estado instântanea do preço total do carrinho;
-* Caso o carrinho esteja vazio não aparece nenhum botam para prosseguir com o pedido
-* Caso o carrinho teja algum elemento é possível continuar o pedido, que irá mostrar novamente cada elemento e pedirá informações sobre o usuário
-* Validação de Formulário Vazio do usuário responsável pelo pedido
-* Redirecionamento automático para a aba de pedidos
-* Banco de Dados:
-  -> Cada pedido(hambúrguer) tem como colunas: id, bread, meat, meat_state, salads, cheese, name, image, price, quantity e uma Foreign Key chamada OrderStack que dirá a qual pilha o pedido pertece;
-  -> OrderStack é uma tabela que possui um id e duas outras Foreign Key, a idLogin, que se refer ao usuário logado e o idCostumerInformation que se refere as informações de localização do usuário. Esse dados são recuperados posteriormente usando INNER JOINS.
+- **Front-end**
+  - React
+  - Axios
+  - JavaScript
+  - HTML
+  - CSS
 
+- **Back-end**
+  - Node.js
+  - Express
+  - MySQL
 
-## 🔖 Layout
-### Página de Login e Registro:
+---
 
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/login.png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/registro.png)
+## 🧩 Funcionalidades
 
-### Página Principal do Webiste:
+- Layout responsivo para dispositivos móveis e desktops
+- Registro e login de usuários
+- Validação de login e formulários vazios
+- Restrição de acesso a páginas sem autenticação
+- Pop-up de confirmação ao adicionar itens ao carrinho
+- Adição múltipla de itens ao carrinho com cliques sucessivos
+- Destaque visual no menu da página ativa
+- Aumento e diminuição da quantidade de itens no carrinho
+- Remoção automática de itens ao chegar em quantidade 0
+- Cálculo em tempo real do total do carrinho
+- Exibição condicional do botão "Finalizar Pedido"
+- Processo de finalização de pedido com formulário de dados do usuário
+- Redirecionamento automático para aba de pedidos após finalização
+- Sistema de pedidos com banco de dados relacional
 
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/main(1).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/main(2).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/main(3).png)
+### 🗃️ Banco de Dados
 
-### Página para criar o hambúrguer:
+- Cada item/pedido contém: `id`, `bread`, `meat`, `meat_state`, `salads`, `cheese`, `name`, `image`, `price`, `quantity` e uma **foreign key** `OrderStack` para associar à pilha de pedidos.
+- A tabela `OrderStack` contém:
+  - `id`
+  - `idLogin` → referência ao usuário logado
+  - `idCostumerInformation` → referência aos dados de localização do cliente
+- As informações são recuperadas com uso de **INNER JOINS**.
 
-![](https://raw.githubusercontent.com/MatheusZuchiBalbinot/CreateBurger/main/Imagens/github_images/criar_hamburguer(1).png)
-![](https://raw.githubusercontent.com/MatheusZuchiBalbinot/CreateBurger/main/Imagens/github_images/criar_hamburguer(2).png)
-![](https://raw.githubusercontent.com/MatheusZuchiBalbinot/CreateBurger/main/Imagens/github_images/criar_hamburguer(3).png)
+---
 
-### Página de Carrinho:
+## 🔖 Layout da Aplicação
 
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/carrinho(1).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/carrinho(2).png)
+### 🔐 Página de Login e Registro
 
-### Confirmar Pedido:
+![Login](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/login.png)
+![Registro](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/registro.png)
 
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/confirmOrder(1).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/confirmOrder(2).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/confirmOrder(3).png)
+### 🏠 Página Principal
 
-### Pedidos feitos:
+![Main 1](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/main(1).png)
+![Main 2](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/main(2).png)
+![Main 3](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/main(3).png)
 
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/makedOrder(1).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/makedOrder(2).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/confmakedOrder(3).png)
+### 🍳 Página de Criação de Hambúrguer
 
-### Algumas imagens do design responsivo do Website:
+![Criar 1](https://raw.githubusercontent.com/MatheusZuchiBalbinot/CreateBurger/main/Imagens/github_images/criar_hamburguer(1).png)
+![Criar 2](https://raw.githubusercontent.com/MatheusZuchiBalbinot/CreateBurger/main/Imagens/github_images/criar_hamburguer(2).png)
+![Criar 3](https://raw.githubusercontent.com/MatheusZuchiBalbinot/CreateBurger/main/Imagens/github_images/criar_hamburguer(3).png)
 
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/carrinho(1).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/carrinho(2).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/confirmOrder(1).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/confirmOrder(2).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/createburguer(1).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/createburguer(2).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/login(1).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/login(2).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/main(1).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/main(2).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/register(1).png)
-![](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/register(2).png)
+### 🛒 Página de Carrinho
+
+![Carrinho 1](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/carrinho(1).png)
+![Carrinho 2](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/carrinho(2).png)
+
+### ✅ Confirmação de Pedido
+
+![Confirmar 1](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/confirmOrder(1).png)
+![Confirmar 2](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/confirmOrder(2).png)
+![Confirmar 3](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/confirmOrder(3).png)
+
+### 📦 Pedidos Realizados
+
+![Pedidos 1](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/makedOrder(1).png)
+![Pedidos 2](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/makedOrder(2).png)
+![Pedidos 3](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images/confmakedOrder(3).png)
+
+---
+
+## 📱 Design Responsivo
+
+![Carrinho 1](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/carrinho(1).png)
+![Carrinho 2](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/carrinho(2).png)
+![Confirmar Pedido](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/confirmOrder(1).png)
+![Confirmar Pedido 2](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/confirmOrder(2).png)
+![Criar Burguer 1](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/createburguer(1).png)
+![Criar Burguer 2](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/createburguer(2).png)
+![Login 1](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/login(1).png)
+![Login 2](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/login(2).png)
+![Main 1](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/main(1).png)
+![Main 2](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/main(2).png)
+![Registro 1](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/register(1).png)
+![Registro 2](https://github.com/MatheusZuchiBalbinot/CreateBurger/blob/main/Imagens/github_images(responsive)/register(2).png)
+
+---
+
+## 📌 Observações
+
+Este projeto tem fins educacionais e foi desenvolvido como parte do meu aprendizado prático em desenvolvimento web Full Stack. Feedbacks são bem-vindos!
